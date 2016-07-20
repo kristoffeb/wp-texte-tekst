@@ -1,0 +1,5 @@
+wp
+composer.lock
+wp-content/upgrade
+vendor
+debug.log
