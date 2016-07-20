@@ -39,6 +39,8 @@ define('WP_DEBUG_LOG', true);
 define('SCRIPT_DEBUG', true);
 define('JETPACK_DEV_DEBUG', true);
 
+// Move content directory
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 
 
 /* That's all, stop editing! Happy blogging. */

@@ -1,5 +1,14 @@
 wp
-composer.lock
-wp-content/upgrade
 vendor
+
 debug.log
+composer.lock
+
+wp-content/upgrade
+wp-content/uploads
+
+wp-content/plugins/*
+wp-content/themes/*
+
+!wp-content/plugins/falconio-*/
+!wp-content/themes/falconio-*/
