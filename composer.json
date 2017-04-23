@@ -1,16 +1,52 @@
 {
+	"name": "textetekst",
+	"type": "project",
+	"license": "MIT",
+	"description": "WordPress stack for Texte / Tekst",
+	"homepage": "https://github.com/kristoffeb/texste-tekst",
+	"authors": [
+		{
+			"name": "Kristoffe Biglete",
+			"email": "kristoffe@coloursmove.com",
+			"homepage": "https://github.com/kristoffeb/texste-tekst"
+		}
+	],
 	"repositories": [
 		{
-	   		"type": "composer",
-	 		"url": "https://wpackagist.org"
- 		}
- 	],
- 	"require": {
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"require": {
 		"php": ">=5.4",
-		"johnpbloch/wordpress": "4.5.*",
-		"wpackagist-plugin/posts-to-posts": "1.4.x"
+		"johnpbloch/wordpress": "4.7.*",
+		"composer/installers": "~1.0",
+		"wpackagist-plugin/cmb2": "2.2.4",
+		"wpackagist-plugin/hyperdb": "1.1",
+		"wpackagist-plugin/wordpress-seo": "4.5.*"
+	},
+	"require-dev": {
+		"wpackagist-plugin/pco-kint": "1.*",
+		"wpackagist-plugin/query-monitor": "2.*"
 	},
 	"extra": {
+		"installer-paths": {
+			"wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+			"wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+			"wp-content/themes/{$name}/": ["type:wordpress-theme"]
+		},
 		"wordpress-install-dir": "wp"
+	},
+	"scripts": {
+		"post-update-cmd": [
+			"echo Moving dropins to wp-content",
+			"cp wp-content/plugins/hyperdb/db.php wp-content/db.php",
+			"cp wp-content/plugins/hyperdb/db-config.php wp-content/db-config.php"
+		],
+		"post-install-cmd": [
+			"echo Moving dropins to wp-content",
+			"cp wp-content/plugins/hyperdb/db.php wp-content/db.php",
+			"cp wp-content/plugins/hyperdb/db-config.php wp-content/db-config.php"
+		]
 	}
 }

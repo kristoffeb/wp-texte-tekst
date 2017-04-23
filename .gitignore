@@ -3,6 +3,7 @@ vendor
 
 debug.log
 composer.lock
+.DS_Store
 
 wp-content/upgrade
 wp-content/uploads
