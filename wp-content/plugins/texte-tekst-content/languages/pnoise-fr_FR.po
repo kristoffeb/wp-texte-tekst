@@ -1,0 +1,661 @@
+# Copyright (C) 2015 WebDevStudios
+# This file is distributed under the same license as the CMB2 package.
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: TexteTekst\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
+"POT-Creation-Date: 2016-10-05 10:39+0200\n"
+"PO-Revision-Date: 2016-10-05 10:43+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/settings.php:33 admin/settings.php:34
+msgid "Archive backgrounds"
+msgstr ""
+
+#: admin/settings.php:67
+msgid "Artist - Background image"
+msgstr ""
+
+#: admin/settings.php:73
+msgid "Event - Background image"
+msgstr ""
+
+#: admin/settings.php:79
+msgid "Exhibition - Background image"
+msgstr ""
+
+#: admin/settings.php:85
+msgid "Museum - Background image"
+msgstr ""
+
+#: admin/settings.php:91
+msgid "Search - Background image"
+msgstr ""
+
+#: admin/settings.php:97
+msgid "Work - Background image"
+msgstr ""
+
+#: admin/settings.php:107
+msgid "Settings updated."
+msgstr ""
+
+#: core/abstracts/widget.php:224
+msgid "All exhibitions"
+msgstr ""
+
+#: core/types/artist.php:21
+msgid "Artist"
+msgstr "Artist"
+
+#: core/types/artist.php:22
+msgid "Artists"
+msgstr "Artistes"
+
+#: core/types/artist.php:23
+msgid "artist"
+msgstr "artiste"
+
+#: core/types/artist.php:32
+msgid "artists"
+msgstr "artistes"
+
+#: core/types/event.php:21
+msgid "Event"
+msgstr "Événement"
+
+#: core/types/event.php:22 templates/sections/events.php:12
+msgid "Events"
+msgstr "Événements"
+
+#: core/types/event.php:23 core/types/event.php:32 core/types/work.php:23
+msgid "event"
+msgstr "événement"
+
+#: core/types/meta/artist.php:31
+msgid "Artist Information"
+msgstr "Informations sur l’artiste"
+
+#: core/types/meta/artist.php:39 core/types/meta/schedule.php:67
+#: core/types/meta/team.php:45 core/types/meta/work.php:38
+msgid "Description"
+msgstr "Description"
+
+#: core/types/meta/artist.php:53
+msgid "Artist Portfolio"
+msgstr "Portfolio de l’artiste"
+
+#: core/types/meta/artist.php:61 core/types/meta/event.php:99
+#: core/types/meta/work.php:60
+msgid "Videos"
+msgstr "Vidéos"
+
+#: core/types/meta/artist.php:63 core/types/meta/event.php:101
+#: core/types/meta/work.php:62
+msgid "Insert youtube or vimeo link"
+msgstr "Entrez le lien Youtube ou Vimeo"
+
+#: core/types/meta/artist.php:69 core/types/meta/event.php:107
+#: core/types/meta/work.php:68
+msgid "Pictures"
+msgstr "Photos"
+
+#: core/types/meta/artist.php:79
+msgid "Artist Links"
+msgstr "Liens de l’artiste"
+
+#: core/types/meta/artist.php:91 core/types/meta/team.php:71
+msgid "Link {#}"
+msgstr "Lien {#}"
+
+#: core/types/meta/artist.php:92 core/types/meta/team.php:72
+msgid "Add Another Link"
+msgstr "Ajouter un nouveau lien"
+
+#: core/types/meta/artist.php:93 core/types/meta/team.php:73
+msgid "Remove Link"
+msgstr "Supprimer le lien"
+
+#: core/types/meta/artist.php:99 core/types/meta/team.php:79
+msgid "Label"
+msgstr "Label"
+
+#: core/types/meta/artist.php:105 core/types/meta/team.php:85
+msgid "URL"
+msgstr "Lien URL"
+
+#: core/types/meta/city.php:27
+msgid "Background image"
+msgstr "Image background"
+
+#: core/types/meta/city.php:36
+msgid "City Information"
+msgstr "Informations sur la ville"
+
+#: core/types/meta/event.php:31
+msgid "Event Information"
+msgstr "Informations sur l’événement"
+
+#: core/types/meta/event.php:39
+msgid "Location"
+msgstr "Lieu"
+
+#: core/types/meta/event.php:45
+msgid "Start date"
+msgstr "Date d’ouverture"
+
+#: core/types/meta/event.php:52
+msgid "End date"
+msgstr "Date de fermeture"
+
+#: core/types/meta/event.php:59
+msgid "Event description"
+msgstr "Description de l’événement"
+
+#: core/types/meta/event.php:73 frontend/includes/sections.php:525
+msgid "Tickets"
+msgstr "Billets"
+
+#: core/types/meta/event.php:81
+msgid "Link to ticket sales"
+msgstr "Lien vers la billetterie"
+
+#: core/types/meta/event.php:91
+msgid "Event Portfolio"
+msgstr "Portfolio de l’événement"
+
+#: core/types/meta/schedule.php:30
+msgid "Schedule Slots"
+msgstr "Créneaux"
+
+#: core/types/meta/schedule.php:42
+msgid "Slot {#}"
+msgstr "Créneau {#}"
+
+#: core/types/meta/schedule.php:43
+msgid "Add Another Slot"
+msgstr "Ajouter un nouveau créneau"
+
+#: core/types/meta/schedule.php:44
+msgid "Remove Slot"
+msgstr "Supprimer un créneau"
+
+#: core/types/meta/schedule.php:50
+msgid "Date"
+msgstr "Date"
+
+#: core/types/meta/schedule.php:58
+msgid "Work / Artist"
+msgstr "Œuvre / Artiste"
+
+#: core/types/meta/schedule.php:73
+msgid "Tickets link"
+msgstr "Lien vers la billetterie"
+
+#: core/types/meta/sponsors.php:29
+msgid "Sponsors List"
+msgstr "Liste des sponsors"
+
+#: core/types/meta/sponsors.php:41
+msgid "Sponsor {#}"
+msgstr ""
+
+#: core/types/meta/sponsors.php:42
+msgid "Add Another Sponsor"
+msgstr "Ajouter un nouveau sponsor"
+
+#: core/types/meta/sponsors.php:43
+msgid "Remove Sponsor"
+msgstr "Supprimer le sponsor"
+
+#: core/types/meta/sponsors.php:49
+msgid "Name"
+msgstr "Nom"
+
+#: core/types/meta/sponsors.php:55
+msgid "Link"
+msgstr "Lien"
+
+#: core/types/meta/sponsors.php:61
+msgid "Logo"
+msgstr "Logo"
+
+#: core/types/meta/team.php:30
+msgid "Team Member Information"
+msgstr "Information sur le membre"
+
+#: core/types/meta/team.php:38
+msgid "Role"
+msgstr "Rôle"
+
+#: core/types/meta/team.php:59
+msgid "Team Member Links"
+msgstr "Liens du membre"
+
+#: core/types/meta/work.php:30
+msgid "work Information"
+msgstr "Information sur l’œuvre"
+
+#: core/types/meta/work.php:52
+msgid "Work Portfolio"
+msgstr "Portfolio de l’œuvre"
+
+#: core/types/schedule.php:21 templates/sections/schedule.php:12
+msgid "Schedule"
+msgstr "Programme"
+
+#: core/types/schedule.php:22
+msgid "Schedules"
+msgstr "Programmes"
+
+#: core/types/schedule.php:23 core/types/schedule.php:32
+msgid "schedule"
+msgstr "programme"
+
+#: core/types/sponsors.php:21
+msgid "Sponsor Type"
+msgstr "Type de sponsor"
+
+#: core/types/sponsors.php:22
+msgid "Sponsor Types"
+msgstr "Types de sponsor"
+
+#: core/types/sponsors.php:23 core/types/sponsors.php:32
+msgid "sponsors"
+msgstr ""
+
+#: core/types/taxonomy/city.php:22
+msgctxt "taxonomy general name"
+msgid "Cities"
+msgstr ""
+
+#: core/types/taxonomy/city.php:23
+msgctxt "taxonomy singular name"
+msgid "City"
+msgstr ""
+
+#: core/types/taxonomy/city.php:24
+msgid "Search Cities"
+msgstr "Chercher la ville"
+
+#: core/types/taxonomy/city.php:25
+msgid "All Cities"
+msgstr "Toutes les villes"
+
+#: core/types/taxonomy/city.php:26
+msgid "Parent City"
+msgstr "Ville parente"
+
+#: core/types/taxonomy/city.php:27
+msgid "Parent City:"
+msgstr "Ville parente:"
+
+#: core/types/taxonomy/city.php:28
+msgid "Edit City"
+msgstr "Modifier la ville"
+
+#: core/types/taxonomy/city.php:29
+msgid "Update City"
+msgstr "Mettre à jour la ville"
+
+#: core/types/taxonomy/city.php:30
+msgid "Add New City"
+msgstr "Ajouter une nouvelle ville"
+
+#: core/types/taxonomy/city.php:31
+msgid "New City Name"
+msgstr "Nouveau nom de ville"
+
+#: core/types/taxonomy/city.php:32
+msgid "Cities"
+msgstr "Villes"
+
+#: core/types/taxonomy/country.php:24
+msgctxt "taxonomy general name"
+msgid "Country"
+msgstr ""
+
+#: core/types/taxonomy/country.php:25
+msgctxt "taxonomy singular name"
+msgid "Country"
+msgstr ""
+
+#: core/types/taxonomy/country.php:26
+msgid "Search Countries"
+msgstr "Chercher le pays"
+
+#: core/types/taxonomy/country.php:27
+msgid "All Countries"
+msgstr "Tous les pays"
+
+#: core/types/taxonomy/country.php:28
+msgid "Parent Country"
+msgstr "Pays parent"
+
+#: core/types/taxonomy/country.php:29
+msgid "Parent Country:"
+msgstr "Pays parent:"
+
+#: core/types/taxonomy/country.php:30
+msgid "Edit Country"
+msgstr "Modifier le pays"
+
+#: core/types/taxonomy/country.php:31
+msgid "Update Country"
+msgstr "Mettre à jour le pays"
+
+#: core/types/taxonomy/country.php:32
+msgid "Add New Country"
+msgstr "Ajouter un nouveau pays"
+
+#: core/types/taxonomy/country.php:33
+msgid "New Country Name"
+msgstr "Nouveau nom de pays"
+
+#: core/types/taxonomy/country.php:34
+msgid "Countries"
+msgstr "Pays"
+
+#: core/types/taxonomy/genre.php:24
+msgctxt "taxonomy general name"
+msgid "Genres"
+msgstr ""
+
+#: core/types/taxonomy/genre.php:25
+msgctxt "taxonomy singular name"
+msgid "Genre"
+msgstr ""
+
+#: core/types/taxonomy/genre.php:26
+msgid "Search Genres"
+msgstr "Chercher le genre"
+
+#: core/types/taxonomy/genre.php:27
+msgid "All Genres"
+msgstr "Tous les genres"
+
+#: core/types/taxonomy/genre.php:28
+msgid "Parent Genre"
+msgstr "Genre parent"
+
+#: core/types/taxonomy/genre.php:29
+msgid "Parent Genre:"
+msgstr "Genre parent:"
+
+#: core/types/taxonomy/genre.php:30
+msgid "Edit Genre"
+msgstr "Modifier le genre"
+
+#: core/types/taxonomy/genre.php:31
+msgid "Update Genre"
+msgstr "Mettre à jour le genre"
+
+#: core/types/taxonomy/genre.php:32
+msgid "Add New Genre"
+msgstr "Ajouter un nouveau genre"
+
+#: core/types/taxonomy/genre.php:33
+msgid "New Genre Name"
+msgstr "Nouveau nom de genre"
+
+#: core/types/taxonomy/genre.php:34
+msgid "Genres"
+msgstr ""
+
+#: core/types/team.php:21
+msgid "Team member"
+msgstr "Collaborateur"
+
+#: core/types/team.php:22
+msgid "Team members"
+msgstr "Collaborateurs"
+
+#: core/types/team.php:23 core/types/team.php:32
+msgid "team"
+msgstr "collaborateur"
+
+#: core/types/work.php:21
+msgid "Work"
+msgstr "Œuvre"
+
+#: core/types/work.php:22
+msgid "Works"
+msgstr "Œuvres"
+
+#: core/types/work.php:32
+msgid "work"
+msgstr "œuvre"
+
+#: core/widgets/calendar.php:21
+msgid "Displays the recent events calendar."
+msgstr ""
+
+#: core/widgets/calendar.php:23
+msgid "Events Calendar"
+msgstr ""
+
+#: core/widgets/calendar.php:106 templates/sections/events.php:22
+msgid "Upcoming events"
+msgstr "Événements à venir"
+
+#: core/widgets/calendar.php:108
+msgid "Show calendar"
+msgstr ""
+
+#: frontend/includes/sections.php:148
+msgid "More info"
+msgstr "Informations"
+
+#: frontend/includes/sections.php:199
+msgid "More artists"
+msgstr "Artistes"
+
+#: frontend/includes/sections.php:324
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#: frontend/includes/sections.php:358
+msgid "Featured in"
+msgstr "Événements liés"
+
+#: frontend/includes/sections.php:380
+msgid "More about"
+msgstr "En savoir plus"
+
+#: frontend/includes/sections.php:413
+msgid "Related artists"
+msgstr "Artistes liés"
+
+#: frontend/types/event.php:66
+msgid "Buy tickets"
+msgstr "Billets"
+
+#: includes/class-custom-post-type.php:399
+#: includes/class-custom-post-type.php:400
+#: includes/class-custom-post-type.php:401
+#: includes/class-custom-post-type.php:402
+#: includes/class-custom-post-type.php:497
+#: includes/class-custom-post-type.php:498
+#: includes/class-custom-post-type.php:499
+#: includes/class-custom-post-type.php:626
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:403
+msgid "Add New"
+msgstr "Ajouter"
+
+#: includes/class-custom-post-type.php:404
+#: includes/class-custom-post-type.php:504
+#, php-format
+msgid "Add New %s"
+msgstr "Ajouter un nouveau %s"
+
+#: includes/class-custom-post-type.php:405
+#: includes/class-custom-post-type.php:501
+#, php-format
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+#: includes/class-custom-post-type.php:406
+#, php-format
+msgid "New %s"
+msgstr "Nouveau %s"
+
+#: includes/class-custom-post-type.php:407
+#: includes/class-custom-post-type.php:502
+#, php-format
+msgid "View %s"
+msgstr "Voir %s"
+
+#: includes/class-custom-post-type.php:408
+#: includes/class-custom-post-type.php:508
+#, php-format
+msgid "Search %s"
+msgstr "Chercher %s"
+
+#: includes/class-custom-post-type.php:409
+#: includes/class-custom-post-type.php:513
+#, php-format
+msgid "No %s found"
+msgstr "Aucun résultat pour %s"
+
+#: includes/class-custom-post-type.php:410
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Aucun résultat pour %s dans la corbeille"
+
+#: includes/class-custom-post-type.php:411
+#: includes/class-custom-post-type.php:507
+#, php-format
+msgid "Parent %s:"
+msgstr "%s parent:"
+
+#: includes/class-custom-post-type.php:500
+#, php-format
+msgid "All %s"
+msgstr "Tous les %s"
+
+#: includes/class-custom-post-type.php:503
+#, php-format
+msgid "Update %s"
+msgstr "Modifier %s"
+
+#: includes/class-custom-post-type.php:505
+#, php-format
+msgid "New %s Name"
+msgstr "Nouveau nom pour %s"
+
+#: includes/class-custom-post-type.php:506
+#, php-format
+msgid "Parent %s"
+msgstr "%s parent"
+
+#: includes/class-custom-post-type.php:509
+#, php-format
+msgid "Popular %s"
+msgstr "%s populaires"
+
+#: includes/class-custom-post-type.php:510
+#, php-format
+msgid "Seperate %s with commas"
+msgstr ""
+
+#: includes/class-custom-post-type.php:511
+#, php-format
+msgid "Add or remove %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:512
+#, php-format
+msgid "Choose from most used %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:700
+#, php-format
+msgid "No %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:826
+#, php-format
+msgid "Show all %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:1044
+#: includes/class-custom-post-type.php:1047
+#: includes/class-custom-post-type.php:1049
+#, php-format
+msgid "%s updated."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1045
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1046
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1048
+#, php-format
+msgid "%2$s restored to revision from %1$s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:1050
+#, php-format
+msgid "%s saved."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1051
+#, php-format
+msgid "%s submitted."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1053
+#, php-format
+msgid "%2$s scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1054
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: includes/class-custom-post-type.php:1057
+#, php-format
+msgid "%s draft updated."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1076
+#: includes/class-custom-post-type.php:1077
+#: includes/class-custom-post-type.php:1078
+#: includes/class-custom-post-type.php:1079
+#: includes/class-custom-post-type.php:1080
+#, php-format
+msgid "%s "
+msgid_plural "%s "
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/sections/events.php:15
+msgid "Find our events in Europe & in the Philippines"
+msgstr "Trouvez nos événements en Europe et aux Philippines"
+
+#: templates/sections/events.php:31
+msgid "Past events"
+msgstr "Événements passés"

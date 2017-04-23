@@ -1,15 +1,21 @@
 wp
 vendor
 
-debug.log
+*.log
+._*
 composer.lock
+.buildpath
+.project
+.settings
 .DS_Store
+Thumbs.db
 
-wp-content/upgrade
+wp-content/languages
+wp-content/uploads
 wp-content/uploads
 
 wp-content/plugins/*
 wp-content/themes/*
 
-!wp-content/plugins/falconio-*/
-!wp-content/themes/falconio-*/
+!wp-content/plugins/texte-tekst-*/
+!wp-content/themes/texte-tekst-*/
