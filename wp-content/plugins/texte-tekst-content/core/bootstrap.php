@@ -25,10 +25,11 @@ class Bootstrap {
 		}
 
 		// Type
-		// Main::require_file( 'core/types/artist.php' );
+		Main::require_file( 'core/types/author.php' );
+		Main::require_file( 'core/types/book.php' );
 
 		// Meta
-		// Main::require_file( 'core/types/meta/artist.php' );
+		Main::require_file( 'core/types/meta/author.php' );
 
 		// P2P
 		// Main::require_file( 'core/types/p2p/artist.php' );
@@ -44,10 +45,13 @@ class Bootstrap {
 	public function init() {
 		$utility            = new Utility();
 
-		// Artist
-		// $artist             = new Type\Artist();
+		// Book
+		$book = new Type\Book();
 		// $artist_meta        = new Type\Meta\Artist();
 		// $artist_p2p         = new Type\P2P\Artist();
+
+		// Author
+		$author = new Type\Author();
 
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 		add_action( 'widgets_init', [ $this, 'unregister_default_widgets' ] );

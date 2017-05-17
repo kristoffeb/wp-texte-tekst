@@ -5,9 +5,9 @@ namespace TexteTekst\Content\Core\Type;
 use TexteTekst\Content\Main;
 use Type;
 
-class Artist {
+class Book {
 
-	const POST_TYPE = 'artist';
+	const POST_TYPE = 'book';
 
 	public function __construct() {
 		$this->post_type();
@@ -18,18 +18,18 @@ class Artist {
 	public function post_type() {
 		$this->post_type = new Type( [
 			'post_type_name' => self::POST_TYPE,
-			'singular'       => __( 'Artist', Main::TEXT_DOMAIN ),
-			'plural'         => __( 'Artists', Main::TEXT_DOMAIN ),
-			'slug'           => __( 'artist', Main::TEXT_DOMAIN ),
+			'singular'       => __( 'Book', Main::TEXT_DOMAIN ),
+			'plural'         => __( 'Books', Main::TEXT_DOMAIN ),
+			'slug'           => __( 'book', Main::TEXT_DOMAIN ),
 		],
 		[
 			'supports'    => [ 'title', 'thumbnail' ],
-			'menu_icon'   => 'dashicons-universal-access',
+			'menu_icon'   => 'dashicons-book-alt',
 			'public'      => true,
 			'has_archive' => true,
 			'rewrite'     => [
 				'with_front' => false,
-				'slug'       => __( 'artists', Main::TEXT_DOMAIN ),
+				'slug'       => __( 'book', Main::TEXT_DOMAIN ),
 			],
 		] );
 	}
