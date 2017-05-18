@@ -4,7 +4,7 @@ namespace TexteTekst\Content\Core\Type\Meta;
 
 use TexteTekst\Content\Main;
 use TexteTekst\Content\Core\Utility;
-use TexteTekst\Content\Core\Type\Artist as Post_Type;
+use TexteTekst\Content\Core\Type\Author as Post_Type;
 
 class Author {
 
@@ -34,12 +34,13 @@ class Author {
 		$metabox = new_cmb2_box( $metabox_args );
 
 		$metabox->add_field( [
-			'name'    => __( 'Description', Main::TEXT_DOMAIN ),
-			'id'      => self::PREFIX . 'artist_description',
+			'name'    => __( 'Books', Main::TEXT_DOMAIN ),
+			'id'      => self::PREFIX . 'author_books',
 			'type'    => 'wysiwyg',
 			'options' => [
 				'media_buttons' => false,
-				'textarea_rows' => 12,
+				'textarea_rows' => 5,
+				'teeny'         => true,
 			],
 		] );
 	}

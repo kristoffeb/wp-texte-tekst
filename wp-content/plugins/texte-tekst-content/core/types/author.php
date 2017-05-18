@@ -23,7 +23,7 @@ class Author {
 			'slug'           => __( 'author', Main::TEXT_DOMAIN ),
 		],
 		[
-			'supports'    => [ 'title', 'thumbnail' ],
+			'supports'    => [ 'title', 'thumbnail', 'editor', 'excerpt' ],
 			'menu_icon'   => 'dashicons-edit',
 			'public'      => true,
 			'has_archive' => true,

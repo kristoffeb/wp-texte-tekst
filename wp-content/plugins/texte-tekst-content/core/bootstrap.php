@@ -53,7 +53,8 @@ class Bootstrap {
 		$book_p2p      = new Type\P2P\Book();
 
 		// Author
-		$author = new Type\Author();
+		$author      = new Type\Author();
+		$author_meta = new Type\Meta\Author();
 
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 		add_action( 'widgets_init', [ $this, 'unregister_default_widgets' ] );
