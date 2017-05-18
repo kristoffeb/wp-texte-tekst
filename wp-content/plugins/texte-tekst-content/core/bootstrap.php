@@ -33,7 +33,7 @@ class Bootstrap {
 		Main::require_file( 'core/types/meta/book.php' );
 
 		// P2P
-		// Main::require_file( 'core/types/p2p/artist.php' );
+		Main::require_file( 'core/types/p2p/book.php' );
 
 		// Taxonomy
 		Main::require_file( 'core/types/taxonomy/book-category.php' );
@@ -50,7 +50,7 @@ class Bootstrap {
 		$book          = new Type\Book();
 		$book_meta     = new Type\Meta\Book();
 		$book_category = new Type\Taxonomy\Book_Category();
-		// $artist_p2p         = new Type\P2P\Artist();
+		$book_p2p      = new Type\P2P\Book();
 
 		// Author
 		$author = new Type\Author();

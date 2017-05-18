@@ -21,6 +21,7 @@
 		"php": ">=5.4",
 		"johnpbloch/wordpress": "4.7.*",
 		"composer/installers": "~1.0",
+		"grappler/polylang-slug": "0.2.1",
 		"wpackagist-plugin/cmb2": "2.2.4",
 		"wpackagist-plugin/hyperdb": "1.1",
 		"wpackagist-plugin/polylang": "2.1.4",
