@@ -37,9 +37,9 @@ namespace TexteTekst;
 
 		<div class="inner-grid">
 
-			<?php get_template_part( 'partial/navigation', 'main' ); ?>
+			<?php // get_template_part( 'partial/navigation', 'main' ); ?>
 
-			<?php get_template_part( 'partial/navigation', 'top' ); ?>
+			<?php // get_template_part( 'partial/navigation', 'top' ); ?>
 
 		</div>
 

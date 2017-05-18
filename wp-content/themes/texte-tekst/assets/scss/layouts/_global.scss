@@ -1,8 +1,8 @@
 body {
     margin: 0 auto;
-//    padding: 0 1.875rem;
     height: 100%;
     width: 100%;
+    position: relative;
 
     @include media($desktop) {
         padding: 0;
@@ -13,19 +13,21 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: inherit;
-}
-
 .grid {
     width: $grid-width;
     margin: 0 auto;
 
     @include media($desktop) {
         width: 100%;
-//        padding: 0 1.25rem;
     }
+}
+
+.screen-reader-text{
+	@include screen-reader-text();
+
+	h1{
+		@include screen-reader-text();
+	}
 }
 
 .hide-mobile {

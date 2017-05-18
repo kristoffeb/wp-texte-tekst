@@ -34,7 +34,7 @@ function theme_setup() {
 	// Include function files
 	get_template_part( 'includes/functions-helpers' );
 	get_template_part( 'includes/foundation/class-menu-walker' );
-	get_template_part( 'includes/functions-menus' );
+	// get_template_part( 'includes/functions-menus' );
 	get_template_part( 'includes/functions-hooks' );
 	get_template_part( 'includes/functions-setup-sidebars' );
 
