@@ -12,17 +12,30 @@ class Book {
 	}
 
 	public function connection() {
-		p2p_register_connection_type( array(
-			'name'      => 'book_to_author',
-			'from'      => Type\Book::POST_TYPE,
-			'to'        => Type\Author::POST_TYPE,
-			'sortable'  => 'any',
+		p2p_register_connection_type( [
+			'title'    =>  [
+				'from' => __( 'Book Author', Main::TEXT_DOMAIN ),
+				'to'   => __( 'Written Books', Main::TEXT_DOMAIN ),
+			],
+			'name'     => 'book_to_author',
+			'from'     => Type\Book::POST_TYPE,
+			'to'       => Type\Author::POST_TYPE,
+			'sortable' => 'any',
 			/*'admin_box' => array(
 				'show' => 'from',
-			),
-			'title' => array(
-				'from' => __( 'Process', Main::TEXT_DOMAIN ),
-			)*/
-		) );
+			),*/
+		] );
+
+		p2p_register_connection_type( [
+			'title'      => __( 'Related Books', Main::TEXT_DOMAIN ),
+			'name'       => 'book_to_book',
+			'from'       => Type\Book::POST_TYPE,
+			'to'         => Type\Book::POST_TYPE,
+			'reciprocal' => TRUE,
+			'sortable'   => 'any',
+			/*'admin_box' => array(
+				'show' => 'from',
+			),*/
+		] );
 	}
 }

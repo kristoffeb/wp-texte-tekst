@@ -19,8 +19,40 @@ class Book {
 			'cmb_styles'   => is_admin() ? true : false,
 		];
 
+		add_action( 'cmb2_init', [ $this, 'information' ] );
 		add_action( 'cmb2_init', [ $this, 'pdf' ] );
 		add_action( 'cmb2_init', [ $this, 'presse' ] );
+	}
+
+	public function information() {
+		$metabox_args = array_merge(
+			[
+				'id'    => self::PREFIX . 'book_information',
+				'title' => __( 'Information', Main::TEXT_DOMAIN ),
+	   		],
+			$this->default_metabox_args
+		);
+
+		$metabox = new_cmb2_box( $metabox_args );
+
+		$metabox->add_field( [
+			'name'    => __( 'Publisher', Main::TEXT_DOMAIN ),
+			'id'      => self::PREFIX . 'book_publisher',
+			'type'    => 'text_medium',
+		] );
+
+		$metabox->add_field( [
+			'name'    => __( 'ISBN', Main::TEXT_DOMAIN ),
+			'id'      => self::PREFIX . 'book_isbn',
+			'type'    => 'text_small',
+		] );
+
+		$metabox->add_field( [
+			'name'    => __( 'Year of publication', Main::TEXT_DOMAIN ),
+			'id'      => self::PREFIX . 'book_year',
+			'type'    => 'select',
+			'options' => range( date('Y'), 1900 ),
+		] );
 	}
 
 	public function pdf() {
