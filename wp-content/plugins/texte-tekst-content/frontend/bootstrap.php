@@ -24,7 +24,7 @@ class Bootstrap {
 	 * Run core bootstrap hooks.
 	 */
 	public function init() {
-		$load_template = new Load_Template();
+		// $load_template = new Load_Template();
 		// $artist        = new Type\Artist();
 	}
 }

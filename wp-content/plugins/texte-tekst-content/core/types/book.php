@@ -23,7 +23,7 @@ class Book {
 			'slug'           => __( 'book', Main::TEXT_DOMAIN ),
 		],
 		[
-			'supports'    => [ 'title', 'thumbnail' ],
+			'supports'    => [ 'title', 'thumbnail', 'editor', 'excerpt' ],
 			'menu_icon'   => 'dashicons-book-alt',
 			'public'      => true,
 			'has_archive' => true,

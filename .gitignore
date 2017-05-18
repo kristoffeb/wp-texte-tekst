@@ -1,5 +1,6 @@
 wp
 vendor
+deploy
 
 *.log
 ._*

@@ -30,12 +30,13 @@ class Bootstrap {
 
 		// Meta
 		Main::require_file( 'core/types/meta/author.php' );
+		Main::require_file( 'core/types/meta/book.php' );
 
 		// P2P
 		// Main::require_file( 'core/types/p2p/artist.php' );
 
 		// Taxonomy
-		// Main::require_file( 'core/types/taxonomy/city.php' );
+		Main::require_file( 'core/types/taxonomy/book-category.php' );
 
 	}
 
@@ -46,8 +47,9 @@ class Bootstrap {
 		$utility            = new Utility();
 
 		// Book
-		$book = new Type\Book();
-		// $artist_meta        = new Type\Meta\Artist();
+		$book          = new Type\Book();
+		$book_meta     = new Type\Meta\Book();
+		$book_category = new Type\Taxonomy\Book_Category();
 		// $artist_p2p         = new Type\P2P\Artist();
 
 		// Author
