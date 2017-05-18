@@ -1,0 +1,28 @@
+{
+    "bitwise": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "immed": true,
+    "indent": 4,
+    "newcap": true,
+    "esnext": true,
+    "camelcase": true,
+    "latedef": true,
+    "noarg": true,
+    "node": true,
+    "undef": true,
+    "unused": true,
+    "quotmark": "single",
+    "browser": true,
+    "trailing": true,
+    "jquery": true,
+    "strict": true,
+    "curly": true,
+    "supernew": true,
+    "smarttabs": true,
+    "globals": {
+        "Backbone": true,
+        "_": true,
+        "jQuery": true
+    }
+}

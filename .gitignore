@@ -18,5 +18,5 @@ wp-content/uploads
 wp-content/plugins/*
 wp-content/themes/*
 
-!wp-content/plugins/texte-tekst-*/
-!wp-content/themes/texte-tekst-*/
+!wp-content/plugins/texte-tekst*/
+!wp-content/themes/texte-tekst*/

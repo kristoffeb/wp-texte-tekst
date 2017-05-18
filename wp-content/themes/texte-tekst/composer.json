@@ -1,0 +1,34 @@
+{
+    "name": "wp/bullet-foundation",
+    "description": "Bullet, a hacker theme, brought to you by the WordPress gurus at Peytz & Co. Do not use me as a parent theme - just hack the heck out of me!",
+    "type": "wordpress-theme",
+    "keywords": ["wordpress", "theme", "base", "bullet"],
+    "homepage": "http://gitlab.peytz.dk/wp/bullet-foundation ",
+    "authors": [
+        {
+            "name": "Peytz & Co",
+            "email": "wordpress@peytz.dk",
+            "homepage": "http://peytz.dk"
+        },
+        {
+            "name": "Patrick Hesselberg",
+            "email": "phh@peytz.dk",
+            "homepage": "http://peytz.dk/medarbejdere/phh"
+        },
+        {
+            "name": "James Bonham",
+            "email": "jb@peytz.dk",
+            "homepage": "http://peytz.dk/medarbejdere/jb"
+        },
+        {
+            "name": "Rasmus Taarnby",
+            "email": "rt@peytz.dk",
+            "homepage": "http://peytz.dk/medarbejdere/rt"
+        },
+        {
+            "name": "Kristoffe Biglete",
+            "email": "krb@peytz.dk",
+            "homepage": "http://peytz.dk/medarbejdere/krb"
+        }
+    ]
+}

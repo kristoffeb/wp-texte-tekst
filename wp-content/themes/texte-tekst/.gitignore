@@ -1,0 +1,25 @@
+## General
+.cvs
+.svn
+*.bak
+*.log
+*.swp
+
+## Windows
+Desktop.ini
+Thumbs.db
+.buildpath
+.project
+.settings
+
+## Mac
+.DS_Store
+
+## Development
+.sass-cache
+bower_components
+node_modules
+.buildpath
+.project
+.settings
+._*

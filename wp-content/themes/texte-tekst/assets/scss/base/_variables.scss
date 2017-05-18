@@ -1,0 +1,35 @@
+/* Color palette */
+$black:         #000000;
+$darkest:       #39464E;
+$darker:        #495B66;
+$dark:          #8FA3B0;
+$light:         #DADDE0;
+$lighter:       #F0F3F5;
+$lightest:      #FFFFFF;
+$blue:          #009DFF;
+$bluedark:      #004F80;
+$navyblue:      #2456B3;
+$navydarkblue:  #173773;
+$purple:        #9952CC;
+$purpledark:    #562E73;
+$purpleblack:   #2A2C44;
+$red:           #E8483C;
+$reddark:       #872A23;
+$orange:        #F57418;
+$orangedark:    #8A410E;
+$turquoise:     #09D5D9;
+$turquoisedark: #046466;
+$green:         #11D66D;
+$greendark:     #09733A;
+$yellow:        #F7BF16;
+$yellowdark:    #80620B;
+$linkedin:      #007BB6;
+
+/* Grid */
+$grid-width: 61.625rem;
+
+/* Breakpoints */
+$mobile:  '(max-width: 479px)';
+$tablet:  '(max-width: 768px)';
+$desktop: '(max-width: 1024px)';
+$large:   '(max-width: 1440px)';

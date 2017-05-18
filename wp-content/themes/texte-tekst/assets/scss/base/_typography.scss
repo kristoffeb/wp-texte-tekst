@@ -1,0 +1,12 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic,800,800italic);
+
+@font-face {
+    font-family: 'Futura';
+    src: url( '../../src/fonts/futurastd-bold.eot' );                                      /* IE9 Compat Modes */
+    src: url( '../../src/fonts/futurastd-bold.eot?#iefix' ) format( 'embedded-opentype' ), /* IE6-IE8 */
+         //url( '../../src/fonts/futurastd-bold.woff2' ) format( 'woff2' ),                /* Super Modern Browsers */
+         url( '../../src/fonts/futurastd-bold.woff' ) format( 'woff' ),                    /* Pretty Modern Browsers */
+         url( '../../src/fonts/futurastd-bold.ttf' )  format( 'truetype' ),                /* Safari, Android, iOS */
+         url( '../../src/fonts/futurastd-bold.svg#svgFutura' ) format('svg' );             /* Legacy iOS */
+}

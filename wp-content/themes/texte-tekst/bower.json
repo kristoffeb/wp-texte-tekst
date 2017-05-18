@@ -1,0 +1,30 @@
+{
+  "name": "texte-tekst",
+  "version": "0.0.1",
+  "homepage": "",
+  "authors": [
+    "Kristoffe Biglete <kristoffe.biglete@gmail.com>"
+  ],
+  "description": "",
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "fastclick": "~1.0.3",
+    "html5shiv": "~3.7.3",
+    "jquery": "~3.2.1",
+    "modernizr": "~3.3.1"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": "~3.2.1"
+  }
+}

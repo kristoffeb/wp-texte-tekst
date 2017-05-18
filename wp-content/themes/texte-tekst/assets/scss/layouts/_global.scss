@@ -1,0 +1,41 @@
+body {
+    margin: 0 auto;
+//    padding: 0 1.875rem;
+    height: 100%;
+    width: 100%;
+
+    @include media($desktop) {
+        padding: 0;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: inherit;
+}
+
+.grid {
+    width: $grid-width;
+    margin: 0 auto;
+
+    @include media($desktop) {
+        width: 100%;
+//        padding: 0 1.25rem;
+    }
+}
+
+.hide-mobile {
+    @include media($mobile) {
+        display: none;
+    }
+}
+
+.show-mobile {
+    @include media($mobile) {
+        display: block;
+    }
+}
