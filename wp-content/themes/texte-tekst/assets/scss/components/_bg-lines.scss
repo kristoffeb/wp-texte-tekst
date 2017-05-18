@@ -1,0 +1,23 @@
+.bg-lines {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+
+	.wrap {
+		width: $grid-width;
+		margin: 0 auto;
+		height: 100%;
+		@include flex;
+	}
+
+	.column {
+		width: 16.66667%;
+		height: 100%;
+		border-right: rem(1) solid $lightgray;
+
+		&:first-child {
+			border-left: rem(1) solid $lightgray;
+		}
+	}
+}

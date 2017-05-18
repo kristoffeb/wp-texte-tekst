@@ -77,8 +77,8 @@ function body_classes( $classes ) {
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
 /**
-* Deregister unused scripts.
-*/
+ * Deregister unused scripts.
+ */
 function deregister_scripts() {
 	// WP Emoji
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -97,3 +97,12 @@ function deregister_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\deregister_scripts', 100 );
+
+/**
+ * Show background lines.
+ */
+function bg_lines() {
+	get_template_part( 'partial/background', 'lines' );
+}
+
+add_action( THEMEDOMAIN . '-before_header', __NAMESPACE__ . '\bg_lines' );
