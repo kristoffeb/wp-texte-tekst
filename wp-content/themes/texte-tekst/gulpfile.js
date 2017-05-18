@@ -112,12 +112,12 @@ gulp.task( 'svgmin', function() {
  * Move files
  */
 gulp.task( 'move', ['clean'], function() {
-	gulp.src( ['bower_components/fontawesome/css/font-awesome.min.css'] )
+	// gulp.src( ['bower_components/linearicons/dist/web-font/style.css'] )
 	// .pipe( rename( { prefix: '_', extname: '.scss' } ) )
-	.pipe( gulp.dest( 'assets/fonts/fontawesome/css' ) );
+	// .pipe( gulp.dest( 'assets/fonts/linearicons' ) );
 
-	gulp.src( ['bower_components/fontawesome/fonts/*.*'] )
-	.pipe( gulp.dest( 'assets/fonts/fontawesome/fonts' ) );
+	gulp.src( ['bower_components/linearicons/dist/web-font/fonts/*.*'] )
+	.pipe( gulp.dest( 'assets/fonts/linearicons' ) );
 
 	util.log( util.colors.yellow( 'Files and fonts copied' ));	// Output to terminal
 } );

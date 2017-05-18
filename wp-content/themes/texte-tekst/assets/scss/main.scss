@@ -1,5 +1,5 @@
 /* Base */
-// @import 'base/typography';
+@import 'base/typography';
 @import 'base/variables';
 @import 'base/reset';
 
@@ -7,7 +7,7 @@
 @import 'helpers/mixins';
 
 /* Components */
-// @import 'components/action';
+@import 'components/header';
 
 /* Layouts */
 @import 'layouts/global';

@@ -1,0 +1,9 @@
+.header {
+	#logo {
+
+	}
+
+	#menu {
+		@include icons( $symbol: '\e871', $place: 'after' )
+	}
+}

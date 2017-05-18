@@ -59,6 +59,10 @@ add_filter( 'request', __NAMESPACE__ . '\search_filter' );
 function body_classes( $classes ) {
 	global $post;
 
+	if ( function_exists( 'pll_current_language' ) ) {
+		$classes[] = sprintf( 'lang-%s', pll_current_language( 'slug' ) );
+	}
+
 	if ( isset( $post ) && isset( $post->post_type ) ) {
 		$classes[] = $post->post_type . '-' . $post->post_name;
 	}
