@@ -1,9 +1,64 @@
 .header {
-	#logo {
+	#main-nav {
+		@include flex;
+		padding: rem(30) 0;
+	}
 
+	#logo {
+		height: rem(89);
+		width: rem(175);
+		background-size: cover;
+
+		.lang-da & {
+			background-image: url('../img/logo-navy-sky.png');
+		}
+		.lang-fr & {
+			background-image: url('../img/logo-navy-orange.png');
+		}
+		.lang-de & {
+			background-image: url('../img/logo-navy-mint.png');
+		}
+	}
+
+	#languages {
+		width: calc(100% - 2 * #{rem(175)});
+		text-align: center;
+
+		.lang-item {
+			display: inline-block;
+			padding: 0 rem(13);
+
+			a {
+				color: $mediumgray;
+				font-family: 'Lora';
+				text-transform: lowercase;
+				font-size: 1.1rem;
+			}
+
+			&.current-lang a {
+				@include main-color;
+			}
+		}
 	}
 
 	#menu {
-		@include icons( $symbol: '\e871', $place: 'after' )
+		width: rem(175);
+		text-align: right;
+
+		.burger {
+			@include icons( $symbol: '\e871', $place: 'after', $margin: '0' );
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 0.9rem;
+			padding-right: 2.5rem;
+			position: relative;
+
+			&::after {
+				font-size: 1.75rem;
+				position: absolute;
+				top: - rem(7);
+				right: 0;
+			}
+		}
 	}
 }

@@ -7,8 +7,14 @@ namespace TexteTekst;
 	<nav id="main-nav" role="navigation">
 		<div id="logo" itemscope="" itemtype="http://schema.org/Organization"></div>
 
+		<ul id="languages">
+			<?php pll_the_languages(); ?>
+		</ul>
+
 		<div id="menu">
-			<?php _e( 'Menu', THEMEDOMAIN ); ?>
+			<button class="burger">
+				<?php _e( 'Menu', THEMEDOMAIN ); ?>
+			</button>
 		</div>
 	</nav>
 

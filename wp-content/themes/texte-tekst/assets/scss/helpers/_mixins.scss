@@ -15,7 +15,7 @@
 	border: 0;
 }
 
-@mixin icons( $symbol, $set: 'linearicons', $place: 'before', $color: '', $margin: '0 12px' ) {
+@mixin icons($symbol, $set: 'linearicons', $place: 'before', $color: '', $margin: '0 12px') {
 	&::#{$place} {
 		font-family: $set;
 		content: $symbol;
@@ -25,4 +25,47 @@
 			color: $color;
 		}
 	}
+}
+
+@function rem($pixels, $context: 16) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return $pixels / $context * 1rem;
+}
+
+@mixin flex() {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    align-items: center;
+}
+
+@mixin main-color() {
+    .lang-fr & {
+        color: $orange;
+    }
+    .lang-da & {
+        color: $sky;
+    }
+    .lang-de & {
+        color: $mint;
+    }
+}
+
+@mixin main-bg-color() {
+    .lang-fr & {
+        background-color: $orange;
+    }
+    .lang-da & {
+        background-color: $sky;
+    }
+    .lang-de & {
+        background-color: $mint;
+    }
 }

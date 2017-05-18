@@ -75,6 +75,13 @@ input {
 	border: none;
 }
 
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
 :focus {
 	outline-style: none;
 	box-shadow: none;
