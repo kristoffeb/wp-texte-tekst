@@ -15,9 +15,8 @@ class Bootstrap {
 	 * Include files.
 	 */
 	private function includes() {
-		Main::require_file( 'frontend/includes/load-template.php' );
-
-		// Main::require_file( 'frontend/types/artist.php' );
+		// Main::require_file( 'frontend/includes/load-template.php' );
+		Main::require_file( 'frontend/types/page.php' );
 	}
 
 	/**
@@ -25,6 +24,6 @@ class Bootstrap {
 	 */
 	public function init() {
 		// $load_template = new Load_Template();
-		// $artist        = new Type\Artist();
+		$page = new Type\Page();
 	}
 }

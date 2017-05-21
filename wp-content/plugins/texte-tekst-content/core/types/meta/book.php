@@ -36,15 +36,15 @@ class Book {
 		$metabox = new_cmb2_box( $metabox_args );
 
 		$metabox->add_field( [
-			'name'    => __( 'Publisher', Main::TEXT_DOMAIN ),
-			'id'      => self::PREFIX . 'book_publisher',
-			'type'    => 'text_medium',
+			'name' => __( 'Publisher', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_publisher',
+			'type' => 'text_medium',
 		] );
 
 		$metabox->add_field( [
-			'name'    => __( 'ISBN', Main::TEXT_DOMAIN ),
-			'id'      => self::PREFIX . 'book_isbn',
-			'type'    => 'text_small',
+			'name' => __( 'ISBN', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_isbn',
+			'type' => 'text_small',
 		] );
 
 		$metabox->add_field( [
@@ -77,20 +77,16 @@ class Book {
 		] );
 
 		$metabox->add_group_field( $group_id, [
-			'name'    => __( 'Upload PDF', Main::TEXT_DOMAIN ),
-			'id'      => 'file',
-			'type'    => 'file',
+			'name' => __( 'Upload PDF', Main::TEXT_DOMAIN ),
+			'id'   => 'file',
+			'type' => 'file',
 		] );
 
 		$metabox->add_group_field( $group_id, [
 			'name'    => __( 'Language', Main::TEXT_DOMAIN ),
 			'id'      => 'language',
 			'type'    => 'select',
-			'options' => [
-				'de' => __( 'German', Main::TEXT_DOMAIN ),
-				'dk' => __( 'Danish', Main::TEXT_DOMAIN ),
-				'fr' => __( 'French', Main::TEXT_DOMAIN ),
-			],
+			'options' => Utility::get_languages(),
 		] );
 	}
 
@@ -116,15 +112,15 @@ class Book {
 		] );
 
 		$metabox->add_group_field( $group_id, [
-			'name'    => __( 'Quote', Main::TEXT_DOMAIN ),
-			'id'      => 'quote',
-			'type'    => 'textarea',
+			'name' => __( 'Quote', Main::TEXT_DOMAIN ),
+			'id'   => 'quote',
+			'type' => 'textarea',
 		] );
 
 		$metabox->add_group_field( $group_id, [
-			'name'    => __( 'Source', Main::TEXT_DOMAIN ),
-			'id'      => 'source',
-			'type'    => 'text_medium',
+			'name' => __( 'Source', Main::TEXT_DOMAIN ),
+			'id'   => 'source',
+			'type' => 'text_medium',
 		] );
 	}
 }

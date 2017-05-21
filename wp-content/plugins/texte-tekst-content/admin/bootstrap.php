@@ -15,13 +15,13 @@ class Bootstrap {
 	 * Include files.
 	 */
 	private function includes() {
-		// Main::require_file( 'admin/settings.php' );
+		Main::require_file( 'admin/settings.php' );
 	}
 
 	/**
 	 * Run core bootstrap hooks.
 	 */
 	public function init() {
-		// $settings = new Settings();
+		$settings = new Settings();
 	}
 }

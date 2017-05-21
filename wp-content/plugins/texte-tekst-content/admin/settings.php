@@ -6,6 +6,9 @@
 namespace TexteTekst\Content\Admin;
 
 use TexteTekst\Content\Main;
+use TexteTekst\Content\Core\Type;
+use TexteTekst\Content\Core\Utility;
+use WP_Query;
 
 class Settings {
 
@@ -19,19 +22,16 @@ class Settings {
 	}
 
 	public function register() {
-		register_setting(
-			self::PREFIX . 'options',
-			self::PREFIX . 'options'
-		);
+
 	}
 
 	public function add_options_page() {
 		$options_page = '';
 
 		$options_page = add_submenu_page(
-			'themes.php',
-			__( 'Archive backgrounds', Main::TEXT_DOMAIN ),
-			__( 'Archive backgrounds', Main::TEXT_DOMAIN ),
+			'edit.php?post_type=book',
+			__( 'Options', Main::TEXT_DOMAIN ),
+			__( 'Featured books', Main::TEXT_DOMAIN ),
 			'manage_options',
 			self::PREFIX . 'options',
 			[ $this, 'admin_page_display' ]
@@ -63,41 +63,16 @@ class Settings {
 			],
 		) );
 
-		$meta_box->add_field( [
-			'name'         => __( 'Artist - Background image', Main::TEXT_DOMAIN ),
-			'id'           => self::PREFIX . 'artist_background_image',
-			'type'         => 'file',
-		] );
+		$languages = Utility::get_languages();
 
-		$meta_box->add_field( [
-			'name'         => __( 'Event - Background image', Main::TEXT_DOMAIN ),
-			'id'           => self::PREFIX . 'event_background_image',
-			'type'         => 'file',
-		] );
-
-		$meta_box->add_field( [
-			'name'         => __( 'Exhibition - Background image', Main::TEXT_DOMAIN ),
-			'id'           => self::PREFIX . 'exhibition_background_image',
-			'type'         => 'file',
-		] );
-
-		$meta_box->add_field( [
-			'name'         => __( 'Museum - Background image', Main::TEXT_DOMAIN ),
-			'id'           => self::PREFIX . 'museum_background_image',
-			'type'         => 'file',
-		] );
-
-		$meta_box->add_field( [
-			'name'         => __( 'Search - Background image', Main::TEXT_DOMAIN ),
-			'id'           => self::PREFIX . 'search_background_image',
-			'type'         => 'file',
-		] );
-
-		$meta_box->add_field( [
-			'name'         => __( 'Work - Background image', Main::TEXT_DOMAIN ),
-			'id'           => self::PREFIX . 'work_background_image',
-			'type'         => 'file',
-		] );
+		foreach ( $languages as $slug => $language ) {
+			$meta_box->add_field( [
+				'name'    => sprintf( '%s - %s', __( 'Featured book', Main::TEXT_DOMAIN ), $language ),
+				'id'      => self::PREFIX . 'featured_book_' . $slug,
+				'type'    => 'select',
+				'options' => $this->get_books( $slug ),
+			] );
+		}
 	}
 
 	public function settings_notices( $object_id, $updated ) {
@@ -106,5 +81,18 @@ class Settings {
 		}
 		add_settings_error( self::PREFIX . 'options-notices', '', __( 'Settings updated.', Main::TEXT_DOMAIN ), 'updated' );
 		settings_errors( self::PREFIX . 'options-notices' );
+	}
+
+	public function get_books( $lang = '' ) {
+		$args = [ 'post_type' => Type\Book::POST_TYPE, 'lang' => $lang ];
+
+		$books = new WP_Query( $args );
+
+		$posts = [];
+		foreach ( $books->posts as $post ) {
+			$posts[ $post->ID ] = $post->post_title;
+		}
+
+		return $posts;
 	}
 }

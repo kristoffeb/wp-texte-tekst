@@ -41,4 +41,20 @@ class Utility {
 
 		return false;
 	}
+
+	public static function get_languages( $type = 'select' ) {
+		$languages = PLL()->model->get_languages_list();
+
+		$list = [];
+
+		foreach ( $languages as $language ) {
+			if ( $type === 'slug' ) {
+				$list[] = $language->slug;
+			} else {
+				$list[ $language->slug ] = $language->name;
+			}
+		}
+
+		return $list;
+	}
 }
