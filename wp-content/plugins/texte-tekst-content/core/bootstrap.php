@@ -31,6 +31,7 @@ class Bootstrap {
 		// Meta
 		Main::require_file( 'core/types/meta/author.php' );
 		Main::require_file( 'core/types/meta/book.php' );
+		Main::require_file( 'core/types/meta/page.php' );
 
 		// P2P
 		Main::require_file( 'core/types/p2p/book.php' );
@@ -44,7 +45,7 @@ class Bootstrap {
 	 * Run core bootstrap hooks.
 	 */
 	public function init() {
-		$utility            = new Utility();
+		$utility       = new Utility();
 
 		// Book
 		$book          = new Type\Book();
@@ -53,8 +54,11 @@ class Bootstrap {
 		$book_p2p      = new Type\P2P\Book();
 
 		// Author
-		$author      = new Type\Author();
-		$author_meta = new Type\Meta\Author();
+		$author        = new Type\Author();
+		$author_meta   = new Type\Meta\Author();
+
+		// Page
+		$page_meta     = new Type\Meta\Page();
 
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 		add_action( 'widgets_init', [ $this, 'unregister_default_widgets' ] );

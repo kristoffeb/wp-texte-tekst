@@ -15,6 +15,7 @@ class Page {
 	public function init() {
 		if ( is_front_page() ) {
 			add_action( THEMEDOMAIN . '-main_front_page', [ $this, 'frontpage' ] );
+			add_action( THEMEDOMAIN . '-article_footer', [ $this, 'cta' ] );
 		}
 	}
 
@@ -42,6 +43,15 @@ class Page {
 				get_template_part( 'template-part/content', 'page' );
 			endwhile;
 		endif;
+	}
+
+	public function cta() {
+		$page_id = get_post_meta( get_the_ID(), Type\Meta\Page::PREFIX . 'frontpage_cta_page', true );
+		$text = get_post_meta( get_the_ID(), Type\Meta\Page::PREFIX . 'frontpage_cta_text', true );
+
+		$link = sprintf( '<a href="%s">%s</a>', get_permalink( $page_id ), $text );
+
+		echo $link;
 	}
 
 	public function get_featured() {

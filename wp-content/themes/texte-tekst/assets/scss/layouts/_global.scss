@@ -42,3 +42,10 @@ body {
         display: block;
     }
 }
+
+.header,
+#content,
+.footer {
+    position: relative;
+    z-index: 2;
+}

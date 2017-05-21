@@ -57,4 +57,10 @@ class Utility {
 
 		return $list;
 	}
+
+	public static function get_post_language() {
+		$language = PLL()->curlang;
+
+		return $language;
+	}
 }
