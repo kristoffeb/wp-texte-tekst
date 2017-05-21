@@ -19,6 +19,20 @@ class Page {
 	}
 
 	public function frontpage() {
+		ob_start();
+
+			$this->get_frontpage();
+			$this->get_featured();
+
+		$content = ob_get_clean();
+
+		$intro = sprintf( '<section class="intro">%s</div>', $content );
+
+		echo $intro;
+
+	}
+
+	public function get_frontpage() {
 		$page_id = get_option( 'page_on_front' );
 
 		$frontpage = new WP_Query( [ 'page_id' => $page_id ] );
@@ -28,5 +42,35 @@ class Page {
 				get_template_part( 'template-part/content', 'page' );
 			endwhile;
 		endif;
+	}
+
+	public function get_featured() {
+		$featured_id = cmb2_get_option( 'texttekst_settings_options', 'texttekst_settings_featured_book_' . pll_current_language( 'slug' ) );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured_id ), 'full' );
+
+		$title = sprintf(
+			'<strong>%s</strong> <em>%s</em>, %s',
+			__( 'Featured book', Main::TEXT_DOMAIN ),
+			get_the_title( $featured_id ),
+			$this->get_author( $featured_id )
+		);
+
+		Main::get_template_part( 'partials/book-loop.html', [
+			'cover'  => isset( $image ) ? $image[0] : '',
+			'title'  => $title,
+		] );
+	}
+
+	public function get_author( $post_id ) {
+
+		$args = [
+			'connected_type'  => 'book_to_author',
+			'connected_items' => $post_id,
+			'posts_per_page'  => 1,
+		];
+
+		$author = new WP_Query( $args );
+
+		return $author->post->post_title;
 	}
 }

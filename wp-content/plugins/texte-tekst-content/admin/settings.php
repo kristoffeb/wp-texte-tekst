@@ -12,8 +12,8 @@ use WP_Query;
 
 class Settings {
 
-	const PREFIX = 'pnoise_settings_';
-	const METABOX_ID = 'pnoise_options';
+	const PREFIX = 'texttekst_settings_';
+	const METABOX_ID = 'texttekst_options';
 
 	public function __construct() {
 		add_action( 'admin_init', [ $this, 'register' ] );
