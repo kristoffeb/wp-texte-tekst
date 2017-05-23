@@ -15,13 +15,15 @@ class Bootstrap {
 	 * Include files.
 	 */
 	private function includes() {
-		Main::require_file( 'admin/settings.php' );
+		Main::require_file( 'admin/includes/featured-book.php' );
+		Main::require_file( 'admin/includes/partners.php' );
 	}
 
 	/**
 	 * Run core bootstrap hooks.
 	 */
 	public function init() {
-		$settings = new Settings();
+		$featured_book = new Featured_Book();
+		$partners      = new Partners();
 	}
 }

@@ -10,10 +10,10 @@ use TexteTekst\Content\Core\Type;
 use TexteTekst\Content\Core\Utility;
 use WP_Query;
 
-class Settings {
+class Featured_Book {
 
-	const PREFIX = 'texttekst_settings_';
-	const METABOX_ID = 'texttekst_options';
+	const PREFIX = 'texttekst_featured_book_';
+	const METABOX_ID = 'texttekst_featured_book_options';
 
 	public function __construct() {
 		add_action( 'admin_init', [ $this, 'register' ] );
