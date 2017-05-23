@@ -20,4 +20,10 @@
 			border-left: rem(1) solid $lightgray;
 		}
 	}
+
+	.partners & {
+		.column {
+			border-color: $white;
+		}
+	}
 }

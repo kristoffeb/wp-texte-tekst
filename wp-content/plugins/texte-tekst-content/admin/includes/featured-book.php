@@ -68,7 +68,7 @@ class Featured_Book {
 		foreach ( $languages as $slug => $language ) {
 			$meta_box->add_field( [
 				'name'    => sprintf( '%s - %s', __( 'Featured book', Main::TEXT_DOMAIN ), $language ),
-				'id'      => self::PREFIX . 'featured_book_' . $slug,
+				'id'      => self::PREFIX . $slug,
 				'type'    => 'select',
 				'options' => $this->get_books( $slug ),
 			] );

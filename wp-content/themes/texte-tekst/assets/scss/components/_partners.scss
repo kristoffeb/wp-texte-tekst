@@ -1,0 +1,31 @@
+.partners {
+	background-color: $lightgray;
+
+	.inner-grid {
+		position: relative;
+		z-index: 2;
+		@include flex;
+		padding: rem(100) 0;
+	}
+
+	h2 {
+		width: 28%;
+		font-weight: 800;
+		font-size: 2rem;
+		color: $gray;
+	}
+
+	.partner-loop {
+		width: 24%;
+
+		.title {
+			display: none;
+		}
+
+		.logo {
+			img {
+				width: rem(165);
+			}
+		}
+	}
+}

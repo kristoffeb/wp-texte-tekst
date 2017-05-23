@@ -1,4 +1,6 @@
 .intro {
+	margin-bottom: rem(70);
+
 	> .inner-grid {
 		@include flex;
 	}

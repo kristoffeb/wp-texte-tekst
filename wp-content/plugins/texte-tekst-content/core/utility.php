@@ -63,4 +63,12 @@ class Utility {
 
 		return $language;
 	}
+
+	public static function get_bg_lines() {
+		ob_start();
+			get_template_part( 'partial/background', 'lines' );
+		$bg = ob_get_clean();
+
+		return $bg;
+	}
 }
