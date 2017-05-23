@@ -50,11 +50,13 @@ class Page {
 
 	public function get_pages() {
 
+		$lang = Utility::get_post_language();
+
 		$pages = get_posts( [
 			'post_type'      => 'page',
 			'post_status'    => 'publish',
 			'posts_per_page' => -1,
-			'lang'           => Utility::get_post_language()->slug,
+			'lang'           => isset( $lang->slug ) ? $lang->slug : '',
 		] );
 
 		$options = [];
