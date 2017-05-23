@@ -26,7 +26,7 @@
 		"wpackagist-plugin/hyperdb": "1.1",
 		"wpackagist-plugin/polylang": "2.1.4",
 		"wpackagist-plugin/posts-to-posts": "1.6.5",
-		"wpackagist-plugin/wordpress-seo": "4.7.*"
+		"wpackagist-plugin/wordpress-seo": "4.8.*"
 	},
 	"require-dev": {
 		"wpackagist-plugin/pco-kint": "1.*",
