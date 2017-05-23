@@ -48,10 +48,10 @@
 
 @mixin main-color() {
     .lang-fr & {
-        color: $orange;
+        color: $sky;
     }
     .lang-da & {
-        color: $sky;
+        color: $orange;
     }
     .lang-de & {
         color: $mint;
@@ -60,10 +60,10 @@
 
 @mixin main-bg-color() {
     .lang-fr & {
-        background-color: $orange;
+        background-color: $sky;
     }
     .lang-da & {
-        background-color: $sky;
+        background-color: $orange;
     }
     .lang-de & {
         background-color: $mint;

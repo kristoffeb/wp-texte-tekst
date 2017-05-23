@@ -9,14 +9,13 @@
 	#logo {
 		height: rem(89);
 		width: rem(175);
-		margin-left: rem(20);
 		background-size: cover;
 
 		.lang-da & {
-			background-image: url('../img/logo-navy-sky.png');
+			background-image: url('../img/logo-navy-orange.png');
 		}
 		.lang-fr & {
-			background-image: url('../img/logo-navy-orange.png');
+			background-image: url('../img/logo-navy-sky.png');
 		}
 		.lang-de & {
 			background-image: url('../img/logo-navy-mint.png');
@@ -24,7 +23,7 @@
 	}
 
 	#languages {
-		width: calc(100% - 2 * ( #{rem(175)} + #{rem(20)} ) );
+		width: calc(100% - 2 * #{rem(175)} );
 		text-align: center;
 
 		.lang-item {
@@ -47,7 +46,6 @@
 	#menu {
 		width: rem(175);
 		text-align: right;
-		margin-right: rem(20);
 
 		.burger {
 			@include icons( $symbol: '\e871', $place: 'after', $margin: '0' );

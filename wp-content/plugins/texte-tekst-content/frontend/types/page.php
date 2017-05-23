@@ -27,7 +27,7 @@ class Page {
 
 		$content = ob_get_clean();
 
-		$intro = sprintf( '<section class="intro">%s</div>', $content );
+		$intro = sprintf( '<section class="intro"><div class="inner-grid">%s</div></section>', $content );
 
 		echo $intro;
 
@@ -49,14 +49,14 @@ class Page {
 		$page_id = get_post_meta( get_the_ID(), Type\Meta\Page::PREFIX . 'frontpage_cta_page', true );
 		$text = get_post_meta( get_the_ID(), Type\Meta\Page::PREFIX . 'frontpage_cta_text', true );
 
-		$link = sprintf( '<a href="%s">%s</a>', get_permalink( $page_id ), $text );
+		$link = sprintf( '<a href="%s" class="button">%s</a>', get_permalink( $page_id ), $text );
 
 		echo $link;
 	}
 
 	public function get_featured() {
 		$featured_id = cmb2_get_option( 'texttekst_settings_options', 'texttekst_settings_featured_book_' . pll_current_language( 'slug' ) );
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured_id ), 'full' );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured_id ), 'large' );
 
 		$title = sprintf(
 			'<strong>%s</strong> <em>%s</em>, %s',

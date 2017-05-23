@@ -1,0 +1,8 @@
+.button {
+	@include main-bg-color;
+	color: $white;
+	font-weight: 400;
+	font-size: 1rem;
+	padding: rem(15) rem(40);
+	display: inline-block;
+}

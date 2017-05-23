@@ -1,0 +1,45 @@
+.intro {
+	> .inner-grid {
+		@include flex;
+	}
+
+	.article,
+	.book-loop {
+		position: relative;
+
+		> .inner-grid {
+			max-width: 100%;
+		}
+	}
+
+	.article {
+		width: 55%;
+
+		h1 {
+			color: $black;
+			font-weight: 800;
+			font-size: rem(70);
+			letter-spacing: -0.03rem;
+			margin-bottom: rem(25);
+
+			span {
+				font-family: Lora;
+				font-weight: 700;
+				font-style: italic;
+				@include main-color;
+			}
+		}
+
+		.article-content {
+			font-size: 1rem;
+			color: $darkgray;
+			line-height: 1.8rem;
+			font-weight: 300;
+			margin-bottom: rem(35);
+		}
+	}
+
+	.book-loop {
+		width: 45%;
+	}
+}

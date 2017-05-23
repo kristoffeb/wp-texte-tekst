@@ -1,0 +1,64 @@
+.book-loop {
+	position: relative;
+
+	.cover {
+		width: 65%;
+		margin: 0 auto;
+	}
+
+	.cover {
+		margin-bottom: rem(65);
+
+		img {
+			width: 100%;
+			position: relative;
+			z-index: 3;
+		}
+
+		.wrap {
+			position: relative;
+			width: 100%;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				display: block;
+			}
+
+			&::after {
+				@include main-bg-color;
+				left: - rem(15);
+				bottom: - rem(20);
+				z-index: 2;
+			}
+
+			&::before {
+				background-color: $navy;
+				right: - rem(15);
+				bottom: - rem(35);
+				z-index: 1;
+			}
+		}
+	}
+
+	.title {
+		color: $navy;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		text-align: center;
+		font-weight: 400;
+
+		strong {
+			font-weight: 800;
+			margin-right: rem(12);
+		}
+
+		em {
+			font-style: italic;
+			font-weight: 700;
+		}
+	}
+}
