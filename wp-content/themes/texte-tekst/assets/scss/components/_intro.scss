@@ -43,5 +43,10 @@
 
 	.book-loop {
 		width: 45%;
+
+		.excerpt,
+		.author {
+			display: none;
+		}
 	}
 }

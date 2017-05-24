@@ -2,12 +2,30 @@
 
 	<div class="cover">
 		<div class="wrap">
-			<img src="<?php echo $cover; ?>" alt="" />
+			<a href="<?php echo $permalink; ?>">
+				<img src="<?php echo $cover; ?>" alt="" />
+			</a>
 		</div>
 	</div>
 
-	<div class="title">
-		<?php echo $title; ?>
+	<div class="content">
+
+		<div class="title">
+			<a href="<?php echo $permalink; ?>">
+				<?php echo $title; ?>
+			</a>
+		</div>
+
+		<div class="author">
+			<a href="<?php echo $author_url; ?>">
+				<?php echo $author; ?>
+			</a>
+		</div>
+
+		<div class="excerpt">
+			<?php echo $excerpt; ?>
+		</div>
+
 	</div>
 
 </div>

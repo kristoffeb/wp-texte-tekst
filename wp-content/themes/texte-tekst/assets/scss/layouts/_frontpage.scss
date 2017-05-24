@@ -1,0 +1,6 @@
+.home {
+	.columns {
+		margin: rem(70) 0;
+		@include flex;
+	}
+}

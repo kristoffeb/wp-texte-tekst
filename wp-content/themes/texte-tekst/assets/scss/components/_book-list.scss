@@ -1,0 +1,17 @@
+.book-list {
+	h2 {
+		color: $black;
+		font-weight: 800;
+		font-size: rem(40);
+		letter-spacing: -0.03rem;
+		margin-bottom: rem(40);
+	}
+
+	.button {
+		background-color: $darkgray !important;
+	}
+
+	.home & {
+		width: 66.6667%;
+	}
+}

@@ -16,8 +16,9 @@ class Frontpage {
 	public function init() {
 		if ( is_front_page() ) {
 			add_action( THEMEDOMAIN . '-main_front_page', [ $this, 'intro' ] );
-			add_action( THEMEDOMAIN . '-main_front_page', [ $this, 'partners' ] );
 			add_action( THEMEDOMAIN . '-article_footer', [ $this, 'cta' ] );
+			add_action( THEMEDOMAIN . '-main_front_page', [ $this, 'partners' ] );
+			add_action( THEMEDOMAIN . '-main_front_page', [ $this, 'columns' ] );
 		}
 	}
 
@@ -56,20 +57,30 @@ class Frontpage {
 	}
 
 	public function get_featured() {
-		$featured_id = cmb2_get_option( 'texttekst_featured_book_options', 'texttekst_featured_book_' . pll_current_language( 'slug' ) );
+		$featured_id = $this->get_featured_id();
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $featured_id ), 'large' );
 
 		$title = sprintf(
 			'<strong>%s</strong> <em>%s</em>, %s',
 			__( 'Featured book', Main::TEXT_DOMAIN ),
 			get_the_title( $featured_id ),
-			$this->get_author( $featured_id )
+			$this->get_author( $featured_id )->post_title
 		);
 
 		Main::get_template_part( 'partials/book-loop.html', [
-			'cover'  => isset( $image ) ? $image[0] : '',
-			'title'  => $title,
+			'cover'      => isset( $image ) ? $image[0] : '',
+			'title'      => $title,
+			'permalink'  => get_permalink( $featured_id ),
+			'author'     => '',
+			'author_url' => '',
+			'excerpt'    => '',
 		] );
+	}
+
+	public function get_featured_id() {
+		$post_id = cmb2_get_option( 'texttekst_featured_book_options', 'texttekst_featured_book_' . pll_current_language( 'slug' ) );
+
+		return $post_id;
 	}
 
 	public function get_author( $post_id ) {
@@ -81,7 +92,7 @@ class Frontpage {
 
 		$author = new WP_Query( $args );
 
-		return $author->post->post_title;
+		return $author->post;
 	}
 
 	public function partners() {
@@ -92,9 +103,9 @@ class Frontpage {
 
 		$content = ob_get_clean();
 
-		$intro = sprintf( '<section class="partners">%s<div class="inner-grid">%s</div></section>', Utility::get_bg_lines(), $content );
+		$partners = sprintf( '<section class="partners">%s<div class="inner-grid">%s</div></section>', Utility::get_bg_lines(), $content );
 
-		echo $intro;
+		echo $partners;
 	}
 
 	public function get_partners_loop() {
@@ -107,5 +118,59 @@ class Frontpage {
 				'logo'  => $partner['logo'],
 			] );
 		}
+	}
+
+	public function columns() {
+		ob_start();
+
+			$this->get_books();
+
+		$content = ob_get_clean();
+
+		$columns = sprintf( '<section class="columns"><div class="inner-grid">%s</div></section>', $content );
+
+		echo $columns;
+	}
+
+	public function get_books() {
+		$args = [
+			'post_type'      => Type\Book::POST_TYPE,
+			'posts_per_page' => 4,
+			'lang'           => pll_current_language( 'slug' ),
+			'post__not_in'   => [ $this->get_featured_id() ],
+		];
+
+		$books = new WP_Query( $args );
+
+		$archive_link =
+
+		ob_start();
+
+			echo sprintf( '<h2>%s</h2>', __( 'Books', Main::TEXT_DOMAIN ) );
+
+			foreach ( $books->posts as $post ) {
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+
+				Main::get_template_part( 'partials/book-loop.html', [
+					'cover'      => isset( $image ) ? $image[0] : '',
+					'title'      => $post->post_title,
+					'permalink'  => get_permalink( $post->ID ),
+					'author'     => $this->get_author( $post->ID )->post_title,
+					'author_url' => get_permalink( $this->get_author( $post->ID )->ID ),
+					'excerpt'    => get_the_excerpt( $post->ID ),
+				] );
+			}
+
+			echo sprintf(
+				'<a href="%s" class="button">%s</a>',
+				get_post_type_archive_link( Type\Book::POST_TYPE ),
+				__( 'See all books', Main::TEXT_DOMAIN )
+			);
+
+		$content = ob_get_clean();
+
+		$book_list = sprintf( '<div class="book-list">%s</div>', $content );
+
+		echo $book_list;
 	}
 }
