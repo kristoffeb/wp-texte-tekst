@@ -124,6 +124,7 @@ class Frontpage {
 		ob_start();
 
 			$this->get_books();
+			$this->get_search();
 
 		$content = ob_get_clean();
 
@@ -172,5 +173,9 @@ class Frontpage {
 		$book_list = sprintf( '<div class="book-list">%s</div>', $content );
 
 		echo $book_list;
+	}
+
+	public function get_search() {
+		get_template_part( 'partial/search', 'form' );
 	}
 }
