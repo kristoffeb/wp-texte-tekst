@@ -1,6 +1,20 @@
 .home {
 	.columns {
 		margin: rem(70) 0;
-		@include flex;
+
+		.inner-grid {
+			@include flex;
+			align-items: flex-start;
+		}
+
+		.column {
+			&:first-child {
+				width: 66.6666%;
+			}
+
+			&:last-child {
+				width: 33.3333%;
+			}
+		}
 	}
 }

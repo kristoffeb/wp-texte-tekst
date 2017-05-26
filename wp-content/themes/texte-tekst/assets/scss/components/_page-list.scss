@@ -1,0 +1,39 @@
+.page-list {
+	h2 {
+		color: $black;
+		font-weight: 800;
+		font-size: rem(40);
+		letter-spacing: -0.03rem;
+		margin-bottom: rem(40);
+	}
+
+	.list {
+
+	}
+
+	.item {
+		margin-bottom: rem(35);
+		padding-left: rem(80);
+		position: relative;
+
+		a {
+			@include main-color;
+			font-style: italic;
+			font-family: 'Lora';
+			font-size: 1.75rem;
+			font-weight: 700;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: rem(14);
+			width: rem(14);
+			@include main-bg-color;
+			top: rem(8);
+			left: rem(20);
+			border-radius: 50%;
+			box-shadow: -1.1rem 0 $navy, 1.1rem 0 $black;
+		}
+	}
+}

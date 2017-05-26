@@ -121,13 +121,18 @@ class Frontpage {
 	}
 
 	public function columns() {
-		ob_start();
+		$content = '';
 
+		ob_start();
 			$this->get_books();
+		$column_books = ob_get_clean();
+		$content .= sprintf( '<div class="column">%s</div>', $column_books );
+
+		ob_start();
 			$this->get_search();
 			$this->get_grants();
-
-		$content = ob_get_clean();
+		$column_sidebar = ob_get_clean();
+		$content .= sprintf( '<div class="column">%s</div>', $column_sidebar );
 
 		$columns = sprintf( '<section class="columns"><div class="inner-grid">%s</div></section>', $content );
 
@@ -200,7 +205,7 @@ class Frontpage {
 		}
 
 		$title = sprintf( '<h2>%s</h2>', __( 'Grants', Main::TEXT_DOMAIN ) );
-		$grants_list = sprintf( '<div class="grants-list">%s<ul class="list">%s</ul></div>', $title, $items );
+		$grants_list = sprintf( '<div class="page-list">%s<ul class="list">%s</ul></div>', $title, $items );
 
 		echo $grants_list;
 	}

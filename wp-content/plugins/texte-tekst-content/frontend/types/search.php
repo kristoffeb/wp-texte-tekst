@@ -50,7 +50,7 @@ class Search {
 			$options .= sprintf( '<option value="%s">%s</option>', $key, $option );
 		}
 
-		$select = sprintf( '<select name="%s">%s</select>', $args['name'], $options );
+		$select = sprintf( '<div class="select-wrap"><select name="%s">%s</select></div>', $args['name'], $options );
 
 		echo $select;
 	}

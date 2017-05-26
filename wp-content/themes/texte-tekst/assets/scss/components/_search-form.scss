@@ -1,0 +1,63 @@
+.search {
+	.home & {
+		margin-bottom: rem(80);
+	}
+
+	h2 {
+		color: $black;
+		font-weight: 800;
+		font-size: rem(40);
+		letter-spacing: -0.03rem;
+		margin-bottom: rem(40);
+	}
+
+	.input-wrap,
+	.select-wrap {
+		position: relative;
+		height: rem(45);
+		margin-bottom: rem(35);
+		box-shadow: (- rem(7)) rem(8) $navy;
+	}
+
+	input,
+	select {
+		border: 0;
+		background: transparent;
+		-webkit-appearance: none;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		border-radius: 0;
+
+		height: rem(45);
+		line-height: rem(45);
+		vertical-align: middle;
+		@include main-bg-color;
+		padding: 0 rem(18);
+		color: $white;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: -0.03rem;
+		text-align: left;
+		font-size: 0.9rem;
+
+		&::placeholder {
+			color: $white;
+		}
+
+		&::hover {
+			cursor: pointer;
+		}
+
+		option {
+			text-transform: none;
+		}
+	}
+
+	input.button {
+		background-color: $darkgray;
+		width: auto;
+		margin: 0 auto;
+		display: block;
+	}
+}
