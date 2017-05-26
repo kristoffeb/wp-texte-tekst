@@ -125,6 +125,7 @@ class Frontpage {
 
 			$this->get_books();
 			$this->get_search();
+			$this->get_grants();
 
 		$content = ob_get_clean();
 
@@ -177,5 +178,30 @@ class Frontpage {
 
 	public function get_search() {
 		get_template_part( 'partial/search', 'form' );
+	}
+
+	public function get_grants() {
+		$args = [
+			'post_type' => 'page',
+			'tax_query' => [
+				[
+					'taxonomy' => Type\Taxonomy\Page_Category::TERM,
+					'field' => 'slug',
+					'terms' => 'grants',
+				],
+			],
+		];
+
+		$pages = new WP_Query( $args );
+
+		$items = '';
+		foreach ( $pages->posts as $page ) {
+			$items .= sprintf( '<li class="item"><a href="%s">%s</a></li>', get_permalink( $page->ID ), $page->post_title );
+		}
+
+		$title = sprintf( '<h2>%s</h2>', __( 'Grants', Main::TEXT_DOMAIN ) );
+		$grants_list = sprintf( '<div class="grants-list">%s<ul class="list">%s</ul></div>', $title, $items );
+
+		echo $grants_list;
 	}
 }

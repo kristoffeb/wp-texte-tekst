@@ -38,6 +38,7 @@ class Bootstrap {
 
 		// Taxonomy
 		Main::require_file( 'core/types/taxonomy/book-category.php' );
+		Main::require_file( 'core/types/taxonomy/page-category.php' );
 
 	}
 
@@ -59,6 +60,7 @@ class Bootstrap {
 
 		// Page
 		$page_meta     = new Type\Meta\Page();
+		$page_category = new Type\Taxonomy\Page_Category();
 
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 		add_action( 'widgets_init', [ $this, 'unregister_default_widgets' ] );

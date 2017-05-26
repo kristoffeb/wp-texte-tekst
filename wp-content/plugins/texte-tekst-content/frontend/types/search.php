@@ -12,7 +12,12 @@ class Search {
 	}
 
 	public function init() {
+		add_action( THEMEDOMAIN . '-before_search_form', [ $this, 'title' ] );
 		add_action( THEMEDOMAIN . '-search_fields', [ $this, 'fields' ] );
+	}
+
+	public function title() {
+		echo sprintf( '<h2>%s</h2>', __( 'Find books', Main::TEXT_DOMAIN ) );
 	}
 
 	public function fields() {

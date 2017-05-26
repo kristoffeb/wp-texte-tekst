@@ -10,7 +10,7 @@
 ?>
 <div class="search-wrapper">
 
-	<button class="search-icon"></button>
+	<?php do_action( THEMEDOMAIN . '-before_search_form' ); ?>
 
 	<div class="search-form">
 
@@ -25,5 +25,7 @@
 		</form>
 
 	</div>
+
+	<?php do_action( THEMEDOMAIN . '-after_search_form' ); ?>
 
 </div>
