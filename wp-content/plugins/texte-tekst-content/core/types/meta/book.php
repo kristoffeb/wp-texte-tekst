@@ -44,14 +44,14 @@ class Book {
 		$metabox->add_field( [
 			'name' => __( 'ISBN', Main::TEXT_DOMAIN ),
 			'id'   => self::PREFIX . 'book_isbn',
-			'type' => 'text_small',
+			'type' => 'text_medium',
 		] );
 
 		$metabox->add_field( [
 			'name'    => __( 'Year of publication', Main::TEXT_DOMAIN ),
 			'id'      => self::PREFIX . 'book_year',
 			'type'    => 'select',
-			'options' => range( date('Y'), 1900 ),
+			'options' => array_combine( range( date('Y'), 1900 ), range( date('Y'), 1900 ) ),
 		] );
 	}
 

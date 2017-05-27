@@ -27,7 +27,7 @@ class Template {
 
 		if ( is_page() ) {
 			$context = 'page';
-		} elseif ( is_single() ) {
+		} elseif ( is_singular( 'post' ) ) {
 			$context = 'single';
 		} elseif ( is_archive() ) {
 			$context = 'loop';

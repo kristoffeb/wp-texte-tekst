@@ -12,6 +12,8 @@
 
 	<div class="inner-grid">
 
+		<?php do_action( THEMEDOMAIN . '-before_article' ); ?>
+
 		<header class="article-header">
 
 			<?php do_action( THEMEDOMAIN . '-before_article_header' ); ?>
@@ -24,7 +26,11 @@
 
 		<div class="article-content">
 
-			<?php the_content(); ?>
+			<?php do_action( THEMEDOMAIN . '-before_article_content' ); ?>
+
+				<?php the_content(); ?>
+
+			<?php do_action( THEMEDOMAIN . '-after_article_content' ); ?>
 
 		</div>
 
@@ -33,6 +39,8 @@
 			<?php do_action( THEMEDOMAIN . '-article_footer' ); ?>
 
 		</footer>
+
+		<?php do_action( THEMEDOMAIN . '-after_article' ); ?>
 
 	</div>
 

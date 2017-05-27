@@ -13,6 +13,7 @@
 
 	.input-wrap,
 	.select-wrap {
+		@include main-bg-color;
 		position: relative;
 		height: rem(45);
 		margin-bottom: rem(35);
@@ -21,6 +22,8 @@
 
 	input,
 	select {
+		position: relative;
+		z-index: 2;
 		border: 0;
 		background: transparent;
 		-webkit-appearance: none;
@@ -28,11 +31,9 @@
 		padding: 0;
 		margin: 0;
 		border-radius: 0;
-
 		height: rem(45);
 		line-height: rem(45);
 		vertical-align: middle;
-		@include main-bg-color;
 		padding: 0 rem(18);
 		color: $white;
 		text-transform: uppercase;
@@ -45,12 +46,23 @@
 			color: $white;
 		}
 
-		&::hover {
+		&:hover {
 			cursor: pointer;
 		}
 
 		option {
 			text-transform: none;
+		}
+	}
+
+	.select-wrap {
+		@include icons( $symbol: '\e874', $color: $white, $margin: '0' );
+
+		&::before {
+			position: absolute;
+			z-index: 1;
+			right: rem(18);
+			top: 1.25rem;
 		}
 	}
 
