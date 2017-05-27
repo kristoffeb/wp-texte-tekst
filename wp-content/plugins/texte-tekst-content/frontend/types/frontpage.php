@@ -30,9 +30,10 @@ class Frontpage {
 
 		$content = ob_get_clean();
 
-		$intro = sprintf( '<section class="intro"><div class="inner-grid">%s</div></section>', $content );
-
-		echo $intro;
+		Main::get_template_part( 'partials/section.html', [
+			'class'    => 'intro',
+			'content'  => $content,
+		] );
 	}
 
 	public function get_frontpage() {
@@ -98,14 +99,16 @@ class Frontpage {
 	public function partners() {
 		ob_start();
 
-			echo sprintf( '<h2>%s</h2>', __( 'Partners', Main::TEXT_DOMAIN ) );
 			$this->get_partners_loop();
 
 		$content = ob_get_clean();
 
-		$partners = sprintf( '<section class="partners">%s<div class="inner-grid">%s</div></section>', Utility::get_bg_lines(), $content );
-
-		echo $partners;
+		Main::get_template_part( 'partials/section.html', [
+			'class'    => 'partners',
+			'title'    => __( 'Partners', Main::TEXT_DOMAIN ),
+			'content'  => $content,
+			'bg_lines' => Utility::get_bg_lines(),
+		] );
 	}
 
 	public function get_partners_loop() {
@@ -126,17 +129,29 @@ class Frontpage {
 		ob_start();
 			$this->get_books();
 		$column_books = ob_get_clean();
-		$content .= sprintf( '<div class="column">%s</div>', $column_books );
+		$content .= $this->get_column( $column_books );
 
 		ob_start();
 			$this->get_search();
 			$this->get_grants();
 		$column_sidebar = ob_get_clean();
-		$content .= sprintf( '<div class="column">%s</div>', $column_sidebar );
+		$content .= $this->get_column( $column_sidebar );
 
-		$columns = sprintf( '<section class="columns"><div class="inner-grid">%s</div></section>', $content );
+		Main::get_template_part( 'partials/section.html', [
+			'class'    => 'columns',
+			'content'  => $content,
+		] );
+	}
 
-		echo $columns;
+	public function get_column( $content ) {
+		ob_start();
+			Main::get_template_part( 'partials/block.html', [
+				'class'    => 'column',
+				'content'  => $content,
+			] );
+		$column = ob_get_clean();
+
+		return $column;
 	}
 
 	public function get_books() {
@@ -153,8 +168,6 @@ class Frontpage {
 
 		ob_start();
 
-			echo sprintf( '<h2>%s</h2>', __( 'Books', Main::TEXT_DOMAIN ) );
-
 			foreach ( $books->posts as $post ) {
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
 
@@ -168,17 +181,20 @@ class Frontpage {
 				] );
 			}
 
-			echo sprintf(
-				'<a href="%s" class="button">%s</a>',
-				get_post_type_archive_link( Type\Book::POST_TYPE ),
-				__( 'See all books', Main::TEXT_DOMAIN )
-			);
-
 		$content = ob_get_clean();
 
-		$book_list = sprintf( '<div class="book-list">%s</div>', $content );
+		$more = sprintf(
+			'<a href="%s" class="button">%s</a>',
+			get_post_type_archive_link( Type\Book::POST_TYPE ),
+			__( 'See all books', Main::TEXT_DOMAIN )
+		);
 
-		echo $book_list;
+		Main::get_template_part( 'partials/block.html', [
+			'title'   => __( 'Books', Main::TEXT_DOMAIN ),
+			'class'   => 'book-list',
+			'content' => $content,
+			'more'    => $more,
+		] );
 	}
 
 	public function get_search() {
@@ -204,9 +220,10 @@ class Frontpage {
 			$items .= sprintf( '<li class="item"><a href="%s">%s</a></li>', get_permalink( $page->ID ), $page->post_title );
 		}
 
-		$title = sprintf( '<h2>%s</h2>', __( 'Grants', Main::TEXT_DOMAIN ) );
-		$grants_list = sprintf( '<div class="page-list">%s<ul class="list">%s</ul></div>', $title, $items );
-
-		echo $grants_list;
+		Main::get_template_part( 'partials/block-list.html', [
+			'class' => 'page-list',
+			'title' => __( 'Grants', Main::TEXT_DOMAIN ),
+			'list'  => $items,
+		] );
 	}
 }

@@ -16,6 +16,8 @@ class Book {
 	public function init() {
 		if ( get_post_type() === Type\Book::POST_TYPE ) {
 			add_action( THEMEDOMAIN . '-before_article', [ $this, 'metas' ] );
+			add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'author' ] );
+			add_action( THEMEDOMAIN . '-after_article', [ $this, 'sidebar' ] );
 		}
 	}
 
@@ -27,17 +29,20 @@ class Book {
 
 		$content = ob_get_clean();
 
-		$meta = sprintf( '<div class="meta">%s</div>', $content );
-
-		echo $meta;
+		Main::get_template_part( 'partials/block.html', [
+			'class'    => 'meta',
+			'content'  => $content,
+		] );
 	}
 
 	public function get_cover() {
 		$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+		$image = sprintf( '<img src="%s" alt="" />', $source[0] );
 
-		$image = sprintf( '<div class="cover"><img src="%s" alt="" /></div>', $source[0] );
-
-		echo $image;
+		Main::get_template_part( 'partials/block.html', [
+			'class'    => 'cover',
+			'content'  => $image,
+		] );
 	}
 
 	public function get_infos() {
@@ -66,9 +71,19 @@ class Book {
 		}
 
 		$title = sprintf( '<li><strong>%s</strong>, %s</li>', get_the_title(), $this->get_author()->post_title );
-		$infos = sprintf( '<ul class="infos">%s%s</ul>', $title, $content );
 
-		echo $infos;
+		Main::get_template_part( 'partials/block-list.html', [
+			'class' => 'infos',
+			'list'  => $title . $content,
+		] );
+	}
+
+	public function author() {
+		$post = $this->get_author();
+
+		$author = sprintf( '<a href="%s">%s</a>', get_permalink( $post->ID ), $post->post_title );
+
+		echo $author;
 	}
 
 	public function get_author() {
@@ -81,5 +96,22 @@ class Book {
 		$author = new WP_Query( $args );
 
 		return $author->post;
+	}
+
+	public function sidebar() {
+		ob_start();
+
+			$this->get_pdf();
+
+		$content = ob_get_clean();
+
+		Main::get_template_part( 'partials/block.html', [
+			'class'   => 'sidebar',
+			'content' => $content,
+		] );
+	}
+
+	public function get_pdf() {
+
 	}
 }
