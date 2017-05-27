@@ -8,11 +8,6 @@
 
 	.cover {
 		margin-bottom: rem(65);
-		@include shadow;
-
-		img {
-			width: 100%;
-		}
 	}
 
 	.title {
@@ -42,7 +37,6 @@
 
 		.cover {
 			width: rem(100);
-			@include shadow('small');
 		}
 
 		.content {

@@ -1,0 +1,27 @@
+.cover {
+	img {
+		width: 100%;
+	}
+
+	.lang-fr & {
+        box-shadow: (- rem(15)) rem(20) $sky, rem(15) rem(35) $navy;
+
+		&.small {
+            box-shadow: (- rem(7)) rem(10) $sky, rem(7) rem(20) $navy;
+        }
+    }
+    .lang-da & {
+        box-shadow: (- rem(15)) rem(20) $orange, rem(15) rem(35) $navy;
+
+        &.small {
+            box-shadow: (- rem(7)) rem(10) $orange, rem(7) rem(20) $navy;
+        }
+    }
+    .lang-de & {
+        box-shadow: (- rem(15)) rem(20) $mint, rem(15) rem(35) $navy;
+
+        &.small {
+            box-shadow: (- rem(7)) rem(10) $mint, rem(7) rem(20) $navy;
+        }
+    }
+}

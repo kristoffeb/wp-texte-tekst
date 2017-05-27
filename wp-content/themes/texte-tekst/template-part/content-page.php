@@ -28,7 +28,9 @@
 
 			<?php do_action( THEMEDOMAIN . '-before_article_content' ); ?>
 
-				<?php the_content(); ?>
+				<div class="content">
+					<?php the_content(); ?>
+				</div>
 
 			<?php do_action( THEMEDOMAIN . '-after_article_content' ); ?>
 

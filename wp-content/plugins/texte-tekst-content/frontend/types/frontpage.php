@@ -173,6 +173,7 @@ class Frontpage {
 
 				Main::get_template_part( 'partials/book-loop.html', [
 					'cover'      => isset( $image ) ? $image[0] : '',
+					'size'       => 'small',
 					'title'      => $post->post_title,
 					'permalink'  => get_permalink( $post->ID ),
 					'author'     => $this->get_author( $post->ID )->post_title,
@@ -221,7 +222,7 @@ class Frontpage {
 		}
 
 		Main::get_template_part( 'partials/block-list.html', [
-			'class' => 'page-list',
+			'class' => 'items-list',
 			'title' => __( 'Grants', Main::TEXT_DOMAIN ),
 			'list'  => $items,
 		] );

@@ -7,16 +7,20 @@
 @import 'helpers/mixins';
 
 /* Components */
+@import 'components/article';
 @import 'components/bg-lines';
 @import 'components/book-list';
 @import 'components/book-loop';
 @import 'components/buttons';
+@import 'components/cover';
 @import 'components/header';
 @import 'components/intro';
-@import 'components/page-list';
+@import 'components/items-list';
+@import 'components/pdf';
 @import 'components/partners';
 @import 'components/search-form';
 
 /* Layouts */
+@import 'layouts/book';
 @import 'layouts/frontpage';
 @import 'layouts/global';

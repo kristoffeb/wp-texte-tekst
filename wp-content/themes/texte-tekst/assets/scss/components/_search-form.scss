@@ -4,11 +4,7 @@
 	}
 
 	h2 {
-		color: $black;
-		font-weight: 800;
-		font-size: rem(40);
-		letter-spacing: -0.03rem;
-		margin-bottom: rem(40);
+		@include block-title;
 	}
 
 	.input-wrap,
@@ -21,38 +17,8 @@
 	}
 
 	input,
-	select {
-		position: relative;
-		z-index: 2;
-		border: 0;
-		background: transparent;
-		-webkit-appearance: none;
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		border-radius: 0;
-		height: rem(45);
-		line-height: rem(45);
-		vertical-align: middle;
-		padding: 0 rem(18);
-		color: $white;
-		text-transform: uppercase;
-		font-weight: 400;
-		letter-spacing: -0.03rem;
-		text-align: left;
-		font-size: 0.9rem;
-
-		&::placeholder {
-			color: $white;
-		}
-
-		&:hover {
-			cursor: pointer;
-		}
-
-		option {
-			text-transform: none;
-		}
+    select {
+		@include styled-input;
 	}
 
 	.select-wrap {

@@ -15,10 +15,25 @@ class Book {
 
 	public function init() {
 		if ( get_post_type() === Type\Book::POST_TYPE ) {
+			add_action( THEMEDOMAIN . '-loop', [ $this, 'background' ], 5 );
 			add_action( THEMEDOMAIN . '-before_article', [ $this, 'metas' ] );
+			add_action( THEMEDOMAIN . '-before_article', [ $this, 'open_wrap' ] );
+			add_action( THEMEDOMAIN . '-after_article', [ $this, 'close_wrap' ] );
 			add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'author' ] );
-			add_action( THEMEDOMAIN . '-after_article', [ $this, 'sidebar' ] );
+			add_action( THEMEDOMAIN . '-after_article_content', [ $this, 'sidebar' ] );
 		}
+	}
+
+	public function background() {
+		echo Utility::get_bg_lines();
+	}
+
+	public function open_wrap() {
+		echo '<div class="content-wrap">';
+	}
+
+	public function close_wrap() {
+		echo '</div>';
 	}
 
 	public function metas() {
@@ -124,7 +139,7 @@ class Book {
 			$language = get_term_by( 'slug', $pdf['language'], 'language' );
 
 			$items .= sprintf(
-				'<li class="item"><a href="%s">%s (%s)</a></li>',
+				'<li class="item"><div class="item-wrap"><a href="%s">%s (%s)</a></div></li>',
 				$pdf['file'],
 				__( 'Read', Main::TEXT_DOMAIN ),
 				$language->name
@@ -132,9 +147,10 @@ class Book {
 		}
 
 		Main::get_template_part( 'partials/block-list.html', [
-			'class' => 'pdf',
-			'title' => __( 'First pages', Main::TEXT_DOMAIN ),
-			'list'  => $items,
+			'class'      => 'pdf',
+			'title'      => __( 'First pages', Main::TEXT_DOMAIN ),
+			'list'       => $items,
+			'list_class' => 'styled'
 		] );
 	}
 
@@ -151,7 +167,7 @@ class Book {
 		}
 
 		Main::get_template_part( 'partials/block-list.html', [
-			'class' => 'categories',
+			'class' => 'items-list',
 			'title' => __( 'Categories', Main::TEXT_DOMAIN ),
 			'list'  => $items,
 		] );

@@ -1,0 +1,20 @@
+.pdf {
+	.item {
+		@include main-bg-color;
+		position: relative;
+		height: rem(45);
+		margin-bottom: rem(35);
+		box-shadow: (- rem(7)) rem(8) $navy;
+
+		a {
+			color: $white;
+			font-weight: 400;
+			text-transform: none;
+			letter-spacing: normal;
+		}
+	}
+
+	.item-wrap {
+		@include styled-input;
+	}
+}

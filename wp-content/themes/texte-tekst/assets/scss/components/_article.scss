@@ -1,0 +1,45 @@
+.article {
+	.article-header {
+		margin: rem(50) 0;
+
+		h1 {
+			font-family: Lora;
+			font-weight: 700;
+			font-style: italic;
+			font-size: rem(50);
+			margin-bottom: 0.8rem;
+		}
+
+		a {
+			font-weight: 500;
+			@include main-color;
+			font-size: 1.5rem;
+		}
+	}
+
+	.article-content {
+		@include flex;
+		align-items: flex-start;
+
+		.content {
+			width: 70%;
+			font-size: 0.9rem;
+			line-height: 1.6rem;
+		}
+
+		.sidebar {
+			width: 30%;
+
+			h2 {
+				@include block-title;
+				color: $darkgray;
+				font-size: rem(25);
+				margin-bottom: rem(30);
+			}
+
+			> * {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+}
