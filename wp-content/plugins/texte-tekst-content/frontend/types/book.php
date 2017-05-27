@@ -106,6 +106,7 @@ class Book {
 		ob_start();
 
 			$this->get_pdf();
+			$this->get_categories();
 
 		$content = ob_get_clean();
 
@@ -133,6 +134,25 @@ class Book {
 		Main::get_template_part( 'partials/block-list.html', [
 			'class' => 'pdf',
 			'title' => __( 'First pages', Main::TEXT_DOMAIN ),
+			'list'  => $items,
+		] );
+	}
+
+	public function get_categories() {
+		$categories = get_categories( [ 'taxonomy' => Type\Taxonomy\Book_Category::TERM ] );
+
+		$items = '';
+		foreach ( $categories as $category ) {
+			$items .= sprintf(
+				'<li class="item"><a href="%s">%s</a></li>',
+				get_term_link( $category->term_id, Type\Taxonomy\Book_Category::TERM ),
+				$category->name
+			);
+		}
+
+		Main::get_template_part( 'partials/block-list.html', [
+			'class' => 'categories',
+			'title' => __( 'Categories', Main::TEXT_DOMAIN ),
 			'list'  => $items,
 		] );
 	}
