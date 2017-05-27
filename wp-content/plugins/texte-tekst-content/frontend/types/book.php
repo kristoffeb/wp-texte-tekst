@@ -70,7 +70,11 @@ class Book {
 			);
 		}
 
-		$title = sprintf( '<li><strong>%s</strong>, %s</li>', get_the_title(), $this->get_author()->post_title );
+		$title = sprintf(
+			'<li><strong>%s</strong>, %s</li>',
+			get_the_title(),
+			$this->get_author()->post_title
+		);
 
 		Main::get_template_part( 'partials/block-list.html', [
 			'class' => 'infos',
@@ -112,6 +116,24 @@ class Book {
 	}
 
 	public function get_pdf() {
+		$pdfs = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_pdf', TRUE );
 
+		$items = '';
+		foreach ( $pdfs as $pdf ) {
+			$language = get_term_by( 'slug', $pdf['language'], 'language' );
+
+			$items .= sprintf(
+				'<li class="item"><a href="%s">%s (%s)</a></li>',
+				$pdf['file'],
+				__( 'Read', Main::TEXT_DOMAIN ),
+				$language->name
+			);
+		}
+
+		Main::get_template_part( 'partials/block-list.html', [
+			'class' => 'pdf',
+			'title' => __( 'First pages', Main::TEXT_DOMAIN ),
+			'list'  => $items,
+		] );
 	}
 }

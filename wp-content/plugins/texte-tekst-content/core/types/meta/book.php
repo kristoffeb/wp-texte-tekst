@@ -67,7 +67,7 @@ class Book {
 		$metabox = new_cmb2_box( $metabox_args );
 
 		$group_id = $metabox->add_field( [
-			'id'      => self::PREFIX . 'file_group',
+			'id'      => self::PREFIX . 'book_pdf',
 			'type'    => 'group',
 			'options' => [
 				'group_title'   => __( 'Document {#}', Main::TEXT_DOMAIN ),
