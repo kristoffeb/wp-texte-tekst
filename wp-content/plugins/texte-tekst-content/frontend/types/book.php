@@ -183,8 +183,9 @@ class Book {
 		$content = ob_get_clean();
 
 		Main::get_template_part( 'partials/section.html', [
-			'class'   => 'about',
-			'content' => $content,
+			'class'    => 'about',
+			'content'  => $content,
+			'bg_lines' => Utility::get_bg_lines(),
 		] );
 	}
 
@@ -202,6 +203,7 @@ class Book {
 
 		Main::get_template_part( 'partials/block.html', [
 			'class'   => 'reviews',
+			'title'   => __( 'Press', Main::TEXT_DOMAIN ),
 			'content' => $quotes,
 		] );
 	}
@@ -209,11 +211,16 @@ class Book {
 	public function get_author_bio() {
 		$author = $this->get_author();
 
+		$link = sprintf( '<a href="%s" class="button">%s</a>', get_permalink( $author->ID ), __( 'Read more', Main::TEXT_DOMAIN ) );
+
+		$excerpt = wpautop( get_the_excerpt( $author->ID ) );
+		$author_link = sprintf( '<a href="%s" class="author-link">%s</a>', get_permalink( $author->ID ), $author->post_title );
+
 		Main::get_template_part( 'partials/block.html', [
 			'class'   => 'author-bio',
-			'title'   => $author->post_title,
-			'content' => wpautop( get_the_excerpt( $author->ID ) ),
-			'more'    => sprintf( '<a href="%s">%s</a>', get_permalink( $author->ID ), __( 'Read more', Main::TEXT_DOMAIN ) ),
+			'title'   => __( 'Author', Main::TEXT_DOMAIN ),
+			'content' => $author_link . $excerpt,
+			'more'    => $link,
 		] );
 	}
 }
