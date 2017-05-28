@@ -250,7 +250,7 @@ class Book {
 		$list = '';
 		foreach ( $books->posts as $book ) {
 			ob_start();
-				$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+				$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 
 				Main::get_template_part( 'partials/book-loop.html', [
 					'title'     => $book->post_title,
@@ -260,7 +260,7 @@ class Book {
 				] );
 			$block = ob_get_clean();
 
-			$list .= sprintf( '<li>%s</li>', $block );
+			$list .= sprintf( '<li class="item">%s</li>', $block );
 		}
 
 		Main::get_template_part( 'partials/block-list.html', [

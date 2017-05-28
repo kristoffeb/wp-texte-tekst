@@ -1,0 +1,33 @@
+.related {
+	margin: rem(50) 0;
+
+	h2 {
+		@include block-title;
+	}
+
+	.list {
+		@include flex;
+	}
+
+	.item {
+		width: 20%;
+	}
+
+	.cover {
+		width: 70%;
+		margin-bottom: rem(35);
+	}
+
+	.title {
+		width: 65%;
+		text-align: left;
+		margin: 0 auto;
+
+		a {
+			font-family: 'Lora';
+			font-style: italic;
+			font-size: 1.15rem;
+			text-transform: none;
+		}
+	}
+}
