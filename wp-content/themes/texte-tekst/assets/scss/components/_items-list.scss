@@ -31,5 +31,21 @@
 			border-radius: 50%;
 			box-shadow: -1.1rem 0 $navy, 1.1rem 0 $black;
 		}
+
+		.sidebar & {
+			padding-left: rem(50);
+
+			a {
+				font-size: 1.1rem;
+			}
+
+			&::before {
+				height: rem(10);
+				width: rem(10);
+				box-shadow: -0.8rem 0 $navy, 0.8rem 0 $black;
+				top: rem(4);
+				left: rem(15);
+			}
+		}
 	}
 }
