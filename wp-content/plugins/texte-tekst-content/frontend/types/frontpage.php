@@ -75,6 +75,7 @@ class Frontpage {
 			'author'     => '',
 			'author_url' => '',
 			'excerpt'    => '',
+			'size'       => 'normal',
 		] );
 	}
 
@@ -114,12 +115,14 @@ class Frontpage {
 	public function get_partners_loop() {
 		$partners = cmb2_get_option( 'texttekst_partners_options', 'texttekst_partners_partner' );
 
-		foreach ( $partners as $partner ) {
-			Main::get_template_part( 'partials/partner-loop.html', [
-				'title' => $partner['title'],
-				'url'   => $partner['url'],
-				'logo'  => $partner['logo'],
-			] );
+		if ( ! empty( $partners ) ) {
+			foreach ( $partners as $partner ) {
+				Main::get_template_part( 'partials/partner-loop.html', [
+					'title' => $partner['title'],
+					'url'   => $partner['url'],
+					'logo'  => $partner['logo'],
+				] );
+			}
 		}
 	}
 
@@ -168,18 +171,20 @@ class Frontpage {
 
 		ob_start();
 
-			foreach ( $books->posts as $post ) {
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+			if ( $books->have_posts() ) {
+				foreach ( $books->posts as $post ) {
+					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
 
-				Main::get_template_part( 'partials/book-loop.html', [
-					'cover'      => isset( $image ) ? $image[0] : '',
-					'size'       => 'small',
-					'title'      => $post->post_title,
-					'permalink'  => get_permalink( $post->ID ),
-					'author'     => $this->get_author( $post->ID )->post_title,
-					'author_url' => get_permalink( $this->get_author( $post->ID )->ID ),
-					'excerpt'    => get_the_excerpt( $post->ID ),
-				] );
+					Main::get_template_part( 'partials/book-loop.html', [
+						'cover'      => isset( $image ) ? $image[0] : '',
+						'size'       => 'small',
+						'title'      => $post->post_title,
+						'permalink'  => get_permalink( $post->ID ),
+						'author'     => $this->get_author( $post->ID )->post_title,
+						'author_url' => get_permalink( $this->get_author( $post->ID )->ID ),
+						'excerpt'    => get_the_excerpt( $post->ID ),
+					] );
+				}
 			}
 
 		$content = ob_get_clean();
@@ -217,8 +222,10 @@ class Frontpage {
 		$pages = new WP_Query( $args );
 
 		$items = '';
-		foreach ( $pages->posts as $page ) {
-			$items .= sprintf( '<li class="item"><a href="%s">%s</a></li>', get_permalink( $page->ID ), $page->post_title );
+		if ( $pages->have_posts() ) {
+			foreach ( $pages->posts as $page ) {
+				$items .= sprintf( '<li class="item"><a href="%s">%s</a></li>', get_permalink( $page->ID ), $page->post_title );
+			}
 		}
 
 		Main::get_template_part( 'partials/block-list.html', [

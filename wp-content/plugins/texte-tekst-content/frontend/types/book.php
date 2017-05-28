@@ -54,7 +54,7 @@ class Book {
 
 	public function get_cover() {
 		$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-		$image = sprintf( '<img src="%s" alt="" />', $source[0] );
+		$image = ! empty( $source ) ? sprintf( '<img src="%s" alt="" />', $source[0] ) : '';
 
 		Main::get_template_part( 'partials/block.html', [
 			'class'    => 'cover',
@@ -80,11 +80,15 @@ class Book {
 
 		$content = '';
 		foreach ( $meta_ids as $meta ) {
-			$content .= sprintf(
-				'<li>%s: %s</li>',
-				$meta['label'],
-				get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_' . $meta['id'], TRUE )
-			);
+			$value = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_' . $meta['id'], TRUE );
+
+			if ( ! empty( $value ) ) {
+				$content .= sprintf(
+					'<li>%s: %s</li>',
+					$meta['label'],
+					$value
+				);
+			}
 		}
 
 		$title = sprintf(
@@ -140,20 +144,24 @@ class Book {
 		foreach ( $pdfs as $pdf ) {
 			$language = get_term_by( 'slug', $pdf['language'], 'language' );
 
-			$items .= sprintf(
-				'<li class="item"><div class="item-wrap"><a href="%s">%s (%s)</a></div></li>',
-				$pdf['file'],
-				__( 'Read', Main::TEXT_DOMAIN ),
-				$language->name
-			);
+			if ( ! empty( $pdf['file'] ) ) {
+				$items .= sprintf(
+					'<li class="item"><div class="item-wrap"><a href="%s">%s (%s)</a></div></li>',
+					$pdf['file'],
+					__( 'Read', Main::TEXT_DOMAIN ),
+					$language->name
+				);
+			}
 		}
 
-		Main::get_template_part( 'partials/block-list.html', [
-			'class'      => 'pdf',
-			'title'      => __( 'First pages', Main::TEXT_DOMAIN ),
-			'list'       => $items,
-			'list_class' => 'styled'
-		] );
+		if ( ! empty( $items ) ) {
+			Main::get_template_part( 'partials/block-list.html', [
+				'class'      => 'pdf',
+				'title'      => __( 'First pages', Main::TEXT_DOMAIN ),
+				'list'       => $items,
+				'list_class' => 'styled'
+			] );
+		}
 	}
 
 	public function get_categories() {
@@ -168,11 +176,13 @@ class Book {
 			);
 		}
 
-		Main::get_template_part( 'partials/block-list.html', [
-			'class' => 'items-list',
-			'title' => __( 'Categories', Main::TEXT_DOMAIN ),
-			'list'  => $items,
-		] );
+		if ( ! empty( $items ) ) {
+			Main::get_template_part( 'partials/block-list.html', [
+				'class' => 'items-list',
+				'title' => __( 'Categories', Main::TEXT_DOMAIN ),
+				'list'  => $items,
+			] );
+		}
 	}
 
 	public function about() {
@@ -194,11 +204,13 @@ class Book {
 		$reviews = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'reviews_group', TRUE );
 
 		ob_start();
-			foreach ( $reviews as $review ) {
-				Main::get_template_part( 'partials/quote.html', [
-					'quote'  => $review['quote'],
-					'source' => $review['source'],
-				] );
+			if ( ! empty( $reviews ) ) {
+				foreach ( $reviews as $review ) {
+					Main::get_template_part( 'partials/quote.html', [
+						'quote'  => $review['quote'],
+						'source' => $review['source'],
+					] );
+				}
 			}
 		$quotes = ob_get_clean();
 
@@ -248,19 +260,21 @@ class Book {
 		$books = new WP_Query( $args );
 
 		$list = '';
-		foreach ( $books->posts as $book ) {
-			ob_start();
-				$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+		if ( $books->have_posts() ) {
+			foreach ( $books->posts as $book ) {
+				ob_start();
+					$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 
-				Main::get_template_part( 'partials/book-loop.html', [
-					'title'     => $book->post_title,
-					'size'      => 'small',
-					'permalink' => get_permalink( $book->ID ),
-					'cover'     => isset( $source ) ? $source[0] : '',
-				] );
-			$block = ob_get_clean();
+					Main::get_template_part( 'partials/book-loop.html', [
+						'title'     => $book->post_title,
+						'size'      => 'small',
+						'permalink' => get_permalink( $book->ID ),
+						'cover'     => isset( $source ) ? $source[0] : '',
+					] );
+				$block = ob_get_clean();
 
-			$list .= sprintf( '<li class="item">%s</li>', $block );
+				$list .= sprintf( '<li class="item">%s</li>', $block );
+			}
 		}
 
 		Main::get_template_part( 'partials/block-list.html', [
