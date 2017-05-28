@@ -15,12 +15,13 @@ class Book {
 
 	public function init() {
 		if ( get_post_type() === Type\Book::POST_TYPE ) {
-			add_action( THEMEDOMAIN . '-loop', [ $this, 'background' ], 5 );
-			add_action( THEMEDOMAIN . '-before_article', [ $this, 'metas' ] );
-			add_action( THEMEDOMAIN . '-before_article', [ $this, 'open_wrap' ] );
-			add_action( THEMEDOMAIN . '-after_article', [ $this, 'close_wrap' ] );
-			add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'author' ] );
+			add_action( THEMEDOMAIN . '-loop',                  [ $this, 'background' ], 5 );
+			add_action( THEMEDOMAIN . '-before_article',        [ $this, 'metas' ] );
+			add_action( THEMEDOMAIN . '-before_article',        [ $this, 'open_wrap' ] );
+			add_action( THEMEDOMAIN . '-after_article',         [ $this, 'close_wrap' ] );
+			add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'author' ] );
 			add_action( THEMEDOMAIN . '-after_article_content', [ $this, 'sidebar' ] );
+			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'about' ] );
 		}
 	}
 
@@ -170,6 +171,49 @@ class Book {
 			'class' => 'items-list',
 			'title' => __( 'Categories', Main::TEXT_DOMAIN ),
 			'list'  => $items,
+		] );
+	}
+
+	public function about() {
+		ob_start();
+
+			$this->get_press();
+			$this->get_author_bio();
+
+		$content = ob_get_clean();
+
+		Main::get_template_part( 'partials/section.html', [
+			'class'   => 'about',
+			'content' => $content,
+		] );
+	}
+
+	public function get_press() {
+		$reviews = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'reviews_group', TRUE );
+
+		ob_start();
+			foreach ( $reviews as $review ) {
+				Main::get_template_part( 'partials/quote.html', [
+					'quote'  => $review['quote'],
+					'source' => $review['source'],
+				] );
+			}
+		$quotes = ob_get_clean();
+
+		Main::get_template_part( 'partials/block.html', [
+			'class'   => 'reviews',
+			'content' => $quotes,
+		] );
+	}
+
+	public function get_author_bio() {
+		$author = $this->get_author();
+
+		Main::get_template_part( 'partials/block.html', [
+			'class'   => 'author-bio',
+			'title'   => $author->post_title,
+			'content' => wpautop( get_the_excerpt( $author->ID ) ),
+			'more'    => sprintf( '<a href="%s">%s</a>', get_permalink( $author->ID ), __( 'Read more', Main::TEXT_DOMAIN ) ),
 		] );
 	}
 }
