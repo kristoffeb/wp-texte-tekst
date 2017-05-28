@@ -16,15 +16,19 @@
 			</a>
 		</div>
 
-		<div class="author">
-			<a href="<?php echo $author_url; ?>">
-				<?php echo $author; ?>
-			</a>
-		</div>
+		<?php if ( isset( $author ) ) : ?>
+			<div class="author">
+				<a href="<?php echo $author_url; ?>">
+					<?php echo $author; ?>
+				</a>
+			</div>
+		<?php endif; ?>
 
-		<div class="excerpt">
-			<?php echo $excerpt; ?>
-		</div>
+		<?php if ( isset( $excerpt ) ) : ?>
+			<div class="excerpt">
+				<?php echo $excerpt; ?>
+			</div>
+		<?php endif; ?>
 
 	</div>
 

@@ -22,6 +22,7 @@ class Book {
 			add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'author' ] );
 			add_action( THEMEDOMAIN . '-after_article_content', [ $this, 'sidebar' ] );
 			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'about' ] );
+			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'related' ] );
 		}
 	}
 
@@ -221,6 +222,51 @@ class Book {
 			'title'   => __( 'Author', Main::TEXT_DOMAIN ),
 			'content' => $author_link . $excerpt,
 			'more'    => $link,
+		] );
+	}
+
+	public function related() {
+		ob_start();
+
+			$this->get_books();
+
+		$content = ob_get_clean();
+
+		Main::get_template_part( 'partials/section.html', [
+			'class'    => 'related',
+			'content'  => $content,
+		] );
+	}
+
+	public function get_books() {
+		$args = [
+			'connected_type'  => 'book_to_book',
+			'connected_items' => get_the_ID(),
+			'posts_per_page'  => 5,
+		];
+
+		$books = new WP_Query( $args );
+
+		$list = '';
+		foreach ( $books->posts as $book ) {
+			ob_start();
+				$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+
+				Main::get_template_part( 'partials/book-loop.html', [
+					'title'     => $book->post_title,
+					'size'      => 'small',
+					'permalink' => get_permalink( $book->ID ),
+					'cover'     => isset( $source ) ? $source[0] : '',
+				] );
+			$block = ob_get_clean();
+
+			$list .= sprintf( '<li>%s</li>', $block );
+		}
+
+		Main::get_template_part( 'partials/block-list.html', [
+			'class' => 'related',
+			'title' => __( 'Related books', Main::TEXT_DOMAIN ),
+			'list'  => $list,
 		] );
 	}
 }
