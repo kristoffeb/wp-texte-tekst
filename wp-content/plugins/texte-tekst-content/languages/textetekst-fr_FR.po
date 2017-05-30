@@ -1,0 +1,673 @@
+# Copyright (C) 2015 WebDevStudios
+# This file is distributed under the same license as the CMB2 package.
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: TexteTekst\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
+"POT-Creation-Date: 2017-05-28 21:28+0200\n"
+"PO-Revision-Date: 2017-05-28 21:44+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/includes/featured-book.php:33
+msgid "Options"
+msgstr "Options"
+
+#: admin/includes/featured-book.php:34
+msgid "Featured books"
+msgstr "Livres à l’affiche"
+
+#: admin/includes/featured-book.php:70 frontend/types/frontpage.php:66
+msgid "Featured book"
+msgstr "Livre à l’affiche"
+
+#: admin/includes/featured-book.php:82 admin/includes/partners.php:100
+msgid "Settings updated."
+msgstr "Options mises à jour."
+
+#: admin/includes/partners.php:33 admin/includes/partners.php:34
+#: frontend/types/frontpage.php:109
+msgid "Partners"
+msgstr "Partenaires"
+
+#: admin/includes/partners.php:71
+msgid "Partner {#}"
+msgstr "Partenaire {#}"
+
+#: admin/includes/partners.php:72
+msgid "Add Partner"
+msgstr "Ajouter un partenaire"
+
+#: admin/includes/partners.php:73
+msgid "Remove Partner"
+msgstr "Supprimer le partenaire"
+
+#: admin/includes/partners.php:78
+msgid "Name"
+msgstr "Nom"
+
+#: admin/includes/partners.php:84
+msgid "URL"
+msgstr "Lien URL"
+
+#: admin/includes/partners.php:90
+msgid "Logo"
+msgstr "Logo"
+
+#: core/abstracts/widget.php:224
+msgid "All exhibitions"
+msgstr ""
+
+#: core/types/author.php:21 frontend/types/book.php:234
+msgid "Author"
+msgstr "Auteur"
+
+#: core/types/author.php:22
+msgid "Authors"
+msgstr "Auteurs"
+
+#: core/types/author.php:23 core/types/author.php:32
+msgid "author"
+msgstr ""
+
+#: core/types/book.php:21
+msgid "Book"
+msgstr "Livre"
+
+#: core/types/book.php:22 core/types/meta/author.php:37
+#: frontend/types/frontpage.php:199
+msgid "Books"
+msgstr "Livres"
+
+#: core/types/book.php:23 core/types/book.php:32
+msgid "book"
+msgstr ""
+
+#: core/types/meta/author.php:29
+msgid "Bibliography"
+msgstr "Bibliographie"
+
+#: core/types/meta/book.php:31
+msgid "Information"
+msgstr "Informations"
+
+#: core/types/meta/book.php:39 frontend/types/book.php:69
+msgid "Publisher"
+msgstr "Éditeur"
+
+#: core/types/meta/book.php:45 frontend/types/book.php:77
+msgid "ISBN"
+msgstr "ISBN"
+
+#: core/types/meta/book.php:51
+msgid "Year of publication"
+msgstr "Année de publication"
+
+#: core/types/meta/book.php:62
+msgid "First Chapters"
+msgstr "1ères Pages"
+
+#: core/types/meta/book.php:73
+msgid "Document {#}"
+msgstr "Document {#}"
+
+#: core/types/meta/book.php:74
+msgid "Add Another Document"
+msgstr "Ajouter un nouveau document"
+
+#: core/types/meta/book.php:75
+msgid "Remove Document"
+msgstr "Supprimer un document"
+
+#: core/types/meta/book.php:80
+msgid "Upload PDF"
+msgstr "Uploader un PDF"
+
+#: core/types/meta/book.php:86 frontend/types/search.php:68
+msgid "Language"
+msgstr "Langue"
+
+#: core/types/meta/book.php:97
+msgid "Press Reviews"
+msgstr "Revues de presse"
+
+#: core/types/meta/book.php:108
+msgid "Review {#}"
+msgstr "Revue de presse {#}"
+
+#: core/types/meta/book.php:109
+msgid "Add Another Review"
+msgstr "Ajouter une nouvelle revue"
+
+#: core/types/meta/book.php:110
+msgid "Remove Review"
+msgstr "Supprimer la revue"
+
+#: core/types/meta/book.php:115
+msgid "Quote"
+msgstr "Citation"
+
+#: core/types/meta/book.php:121
+msgid "Source"
+msgstr "Source"
+
+#: core/types/meta/page.php:29
+msgid "Call-to-action"
+msgstr "Call-to-action"
+
+#: core/types/meta/page.php:38
+msgid "Page to link to"
+msgstr "Lier vers la page"
+
+#: core/types/meta/page.php:45
+msgid "Text"
+msgstr "Texte"
+
+#: core/types/p2p/book.php:17
+msgid "Book Author"
+msgstr "Auteur du livre"
+
+#: core/types/p2p/book.php:18
+msgid "Written Books"
+msgstr "Livres écrits"
+
+#: core/types/p2p/book.php:30
+msgid "Related Books"
+msgstr "Livres liés"
+
+#: core/types/taxonomy/book-category.php:22
+#: core/types/taxonomy/page-category.php:22
+msgctxt "taxonomy general name"
+msgid "Category"
+msgstr "Catégorie"
+
+#: core/types/taxonomy/book-category.php:23
+#: core/types/taxonomy/page-category.php:23
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "Catégorie"
+
+#: core/types/taxonomy/book-category.php:24
+#: core/types/taxonomy/page-category.php:24
+msgid "Search Categories"
+msgstr "Chercher la catégorie"
+
+#: core/types/taxonomy/book-category.php:25
+#: core/types/taxonomy/page-category.php:25
+msgid "All Categories"
+msgstr "Toutes les catégories"
+
+#: core/types/taxonomy/book-category.php:26
+#: core/types/taxonomy/page-category.php:26
+msgid "Parent Category"
+msgstr "Catégorie parente"
+
+#: core/types/taxonomy/book-category.php:27
+#: core/types/taxonomy/page-category.php:27
+msgid "Parent Category:"
+msgstr "Catégorie parente:"
+
+#: core/types/taxonomy/book-category.php:28
+#: core/types/taxonomy/page-category.php:28
+msgid "Edit Category"
+msgstr "Modifier la catégorie"
+
+#: core/types/taxonomy/book-category.php:29
+#: core/types/taxonomy/page-category.php:29
+msgid "Update Category"
+msgstr "Mettre à jour la catégorie"
+
+#: core/types/taxonomy/book-category.php:30
+#: core/types/taxonomy/page-category.php:30
+msgid "Add New Category"
+msgstr "Ajouter une nouvelle catégorie"
+
+#: core/types/taxonomy/book-category.php:31
+#: core/types/taxonomy/page-category.php:31
+msgid "New Category Name"
+msgstr "Nouveau nom de catégorie"
+
+#: core/types/taxonomy/book-category.php:32
+#: core/types/taxonomy/page-category.php:32 frontend/types/book.php:182
+msgid "Categories"
+msgstr "Catégories"
+
+#: frontend/types/book.php:73 frontend/types/search.php:59
+msgid "Year"
+msgstr "Année"
+
+#: frontend/types/book.php:151
+msgid "Read"
+msgstr "Lire"
+
+#: frontend/types/book.php:160
+msgid "First pages"
+msgstr "1ères pages"
+
+#: frontend/types/book.php:219
+msgid "Press"
+msgstr "Presse"
+
+#: frontend/types/book.php:227
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: frontend/types/book.php:282
+msgid "Related books"
+msgstr "Livres liés"
+
+#: frontend/types/frontpage.php:195
+msgid "See all books"
+msgstr "Tous les livres"
+
+#: frontend/types/frontpage.php:233
+msgid "Grants"
+msgstr "Bourses"
+
+#: frontend/types/search.php:20
+msgid "Find books"
+msgstr "Recherche"
+
+#: frontend/types/search.php:82
+msgid "Category"
+msgstr "Catégorie"
+
+#: includes/class-custom-post-type.php:399
+#: includes/class-custom-post-type.php:400
+#: includes/class-custom-post-type.php:401
+#: includes/class-custom-post-type.php:402
+#: includes/class-custom-post-type.php:497
+#: includes/class-custom-post-type.php:498
+#: includes/class-custom-post-type.php:499
+#: includes/class-custom-post-type.php:626
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:403
+msgid "Add New"
+msgstr "Ajouter"
+
+#: includes/class-custom-post-type.php:404
+#: includes/class-custom-post-type.php:504
+#, php-format
+msgid "Add New %s"
+msgstr "Ajouter un nouveau %s"
+
+#: includes/class-custom-post-type.php:405
+#: includes/class-custom-post-type.php:501
+#, php-format
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+#: includes/class-custom-post-type.php:406
+#, php-format
+msgid "New %s"
+msgstr "Nouveau %s"
+
+#: includes/class-custom-post-type.php:407
+#: includes/class-custom-post-type.php:502
+#, php-format
+msgid "View %s"
+msgstr "Voir %s"
+
+#: includes/class-custom-post-type.php:408
+#: includes/class-custom-post-type.php:508
+#, php-format
+msgid "Search %s"
+msgstr "Chercher %s"
+
+#: includes/class-custom-post-type.php:409
+#: includes/class-custom-post-type.php:513
+#, php-format
+msgid "No %s found"
+msgstr "Aucun résultat pour %s"
+
+#: includes/class-custom-post-type.php:410
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Aucun résultat pour %s dans la corbeille"
+
+#: includes/class-custom-post-type.php:411
+#: includes/class-custom-post-type.php:507
+#, php-format
+msgid "Parent %s:"
+msgstr "%s parent:"
+
+#: includes/class-custom-post-type.php:500
+#, php-format
+msgid "All %s"
+msgstr "Tous les %s"
+
+#: includes/class-custom-post-type.php:503
+#, php-format
+msgid "Update %s"
+msgstr "Modifier %s"
+
+#: includes/class-custom-post-type.php:505
+#, php-format
+msgid "New %s Name"
+msgstr "Nouveau nom pour %s"
+
+#: includes/class-custom-post-type.php:506
+#, php-format
+msgid "Parent %s"
+msgstr "%s parent"
+
+#: includes/class-custom-post-type.php:509
+#, php-format
+msgid "Popular %s"
+msgstr "%s populaires"
+
+#: includes/class-custom-post-type.php:510
+#, php-format
+msgid "Seperate %s with commas"
+msgstr ""
+
+#: includes/class-custom-post-type.php:511
+#, php-format
+msgid "Add or remove %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:512
+#, php-format
+msgid "Choose from most used %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:700
+#, php-format
+msgid "No %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:826
+#, php-format
+msgid "Show all %s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:1044
+#: includes/class-custom-post-type.php:1047
+#: includes/class-custom-post-type.php:1049
+#, php-format
+msgid "%s updated."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1045
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1046
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1048
+#, php-format
+msgid "%2$s restored to revision from %1$s"
+msgstr ""
+
+#: includes/class-custom-post-type.php:1050
+#, php-format
+msgid "%s saved."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1051
+#, php-format
+msgid "%s submitted."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1053
+#, php-format
+msgid "%2$s scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1054
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: includes/class-custom-post-type.php:1057
+#, php-format
+msgid "%s draft updated."
+msgstr ""
+
+#: includes/class-custom-post-type.php:1076
+#: includes/class-custom-post-type.php:1077
+#: includes/class-custom-post-type.php:1078
+#: includes/class-custom-post-type.php:1079
+#: includes/class-custom-post-type.php:1080
+#, php-format
+msgid "%s "
+msgid_plural "%s "
+msgstr[0] ""
+msgstr[1] ""
+
+#~ msgid "Artist"
+#~ msgstr "Artist"
+
+#~ msgid "Artists"
+#~ msgstr "Artistes"
+
+#~ msgid "artist"
+#~ msgstr "artiste"
+
+#~ msgid "artists"
+#~ msgstr "artistes"
+
+#~ msgid "Event"
+#~ msgstr "Événement"
+
+#~ msgid "Events"
+#~ msgstr "Événements"
+
+#~ msgid "event"
+#~ msgstr "événement"
+
+#~ msgid "Artist Information"
+#~ msgstr "Informations sur l’artiste"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Artist Portfolio"
+#~ msgstr "Portfolio de l’artiste"
+
+#~ msgid "Videos"
+#~ msgstr "Vidéos"
+
+#~ msgid "Insert youtube or vimeo link"
+#~ msgstr "Entrez le lien Youtube ou Vimeo"
+
+#~ msgid "Pictures"
+#~ msgstr "Photos"
+
+#~ msgid "Artist Links"
+#~ msgstr "Liens de l’artiste"
+
+#~ msgid "Link {#}"
+#~ msgstr "Lien {#}"
+
+#~ msgid "Label"
+#~ msgstr "Label"
+
+#~ msgid "Background image"
+#~ msgstr "Image background"
+
+#~ msgid "Event Information"
+#~ msgstr "Informations sur l’événement"
+
+#~ msgid "Location"
+#~ msgstr "Lieu"
+
+#~ msgid "Start date"
+#~ msgstr "Date d’ouverture"
+
+#~ msgid "End date"
+#~ msgstr "Date de fermeture"
+
+#~ msgid "Event description"
+#~ msgstr "Description de l’événement"
+
+#~ msgid "Tickets"
+#~ msgstr "Billets"
+
+#~ msgid "Link to ticket sales"
+#~ msgstr "Lien vers la billetterie"
+
+#~ msgid "Event Portfolio"
+#~ msgstr "Portfolio de l’événement"
+
+#~ msgid "Schedule Slots"
+#~ msgstr "Créneaux"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Work / Artist"
+#~ msgstr "Œuvre / Artiste"
+
+#~ msgid "Tickets link"
+#~ msgstr "Lien vers la billetterie"
+
+#~ msgid "Sponsors List"
+#~ msgstr "Liste des sponsors"
+
+#~ msgid "Add Another Sponsor"
+#~ msgstr "Ajouter un nouveau sponsor"
+
+#~ msgid "Link"
+#~ msgstr "Lien"
+
+#~ msgid "Team Member Information"
+#~ msgstr "Information sur le membre"
+
+#~ msgid "Role"
+#~ msgstr "Rôle"
+
+#~ msgid "Team Member Links"
+#~ msgstr "Liens du membre"
+
+#~ msgid "work Information"
+#~ msgstr "Information sur l’œuvre"
+
+#~ msgid "Work Portfolio"
+#~ msgstr "Portfolio de l’œuvre"
+
+#~ msgid "Schedule"
+#~ msgstr "Programme"
+
+#~ msgid "Schedules"
+#~ msgstr "Programmes"
+
+#~ msgid "schedule"
+#~ msgstr "programme"
+
+#~ msgid "Sponsor Type"
+#~ msgstr "Type de sponsor"
+
+#~ msgid "Sponsor Types"
+#~ msgstr "Types de sponsor"
+
+#~ msgid "Cities"
+#~ msgstr "Villes"
+
+#~ msgid "Search Countries"
+#~ msgstr "Chercher le pays"
+
+#~ msgid "All Countries"
+#~ msgstr "Tous les pays"
+
+#~ msgid "Parent Country"
+#~ msgstr "Pays parent"
+
+#~ msgid "Parent Country:"
+#~ msgstr "Pays parent:"
+
+#~ msgid "Edit Country"
+#~ msgstr "Modifier le pays"
+
+#~ msgid "Update Country"
+#~ msgstr "Mettre à jour le pays"
+
+#~ msgid "Add New Country"
+#~ msgstr "Ajouter un nouveau pays"
+
+#~ msgid "New Country Name"
+#~ msgstr "Nouveau nom de pays"
+
+#~ msgid "Search Genres"
+#~ msgstr "Chercher le genre"
+
+#~ msgid "All Genres"
+#~ msgstr "Tous les genres"
+
+#~ msgid "Parent Genre"
+#~ msgstr "Genre parent"
+
+#~ msgid "Parent Genre:"
+#~ msgstr "Genre parent:"
+
+#~ msgid "Edit Genre"
+#~ msgstr "Modifier le genre"
+
+#~ msgid "Update Genre"
+#~ msgstr "Mettre à jour le genre"
+
+#~ msgid "Add New Genre"
+#~ msgstr "Ajouter un nouveau genre"
+
+#~ msgid "New Genre Name"
+#~ msgstr "Nouveau nom de genre"
+
+#~ msgid "Team member"
+#~ msgstr "Collaborateur"
+
+#~ msgid "Team members"
+#~ msgstr "Collaborateurs"
+
+#~ msgid "team"
+#~ msgstr "collaborateur"
+
+#~ msgid "Work"
+#~ msgstr "Œuvre"
+
+#~ msgid "Works"
+#~ msgstr "Œuvres"
+
+#~ msgid "work"
+#~ msgstr "œuvre"
+
+#~ msgid "Upcoming events"
+#~ msgstr "Événements à venir"
+
+#~ msgid "More info"
+#~ msgstr "Informations"
+
+#~ msgid "More artists"
+#~ msgstr "Artistes"
+
+#~ msgid "Contact us"
+#~ msgstr "Contactez-nous"
+
+#~ msgid "More about"
+#~ msgstr "En savoir plus"
+
+#~ msgid "Buy tickets"
+#~ msgstr "Billets"
+
+#~ msgid "Find our events in Europe & in the Philippines"
+#~ msgstr "Trouvez nos événements en Europe et aux Philippines"
+
+#~ msgid "Past events"
+#~ msgstr "Événements passés"

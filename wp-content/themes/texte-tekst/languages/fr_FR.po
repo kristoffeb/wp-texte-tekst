@@ -1,0 +1,701 @@
+# Copyright (C) 2015 WebDevStudios
+# This file is distributed under the same license as the CMB2 package.
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: TexteTekst\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
+"POT-Creation-Date: 2017-05-28 23:49+0200\n"
+"PO-Revision-Date: 2017-05-28 23:49+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bower_components\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: 404.php:19
+msgid "404 - Not Found"
+msgstr ""
+
+#: 404.php:23
+msgid "The content you were looking for may have been moved or unpublished"
+msgstr ""
+
+#: archive.php:21
+#, fuzzy
+#| msgid "Category"
+msgid "Category:"
+msgstr "Catégorie"
+
+#: archive.php:24
+msgid "Tag:"
+msgstr ""
+
+#: archive.php:43
+#, fuzzy
+#| msgid "Author"
+msgid "Author:"
+msgstr "Auteur"
+
+#: attachment.php:37 includes/functions-helpers.php:29
+#: includes/functions-helpers.php:31 includes/functions-helpers.php:33
+#: includes/functions-helpers.php:35 includes/functions-helpers.php:69
+#, fuzzy
+#| msgid "Read more"
+msgid "Read more &raquo;"
+msgstr "En savoir plus"
+
+#: attachment.php:55
+msgid "Sorry, no attachments matched your criteria."
+msgstr ""
+
+#: comments.php:28 optional/comments.php:21
+msgid "<span>No</span> Responses"
+msgstr ""
+
+#: comments.php:28 optional/comments.php:21
+msgid "<span>One</span> Response"
+msgstr ""
+
+#: comments.php:28 optional/comments.php:21
+msgid "<span>%</span> Responses"
+msgstr ""
+
+#: comments.php:35 optional/comments.php:28
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:75 includes/functions-menus.php:8
+msgid "Main Navigation"
+msgstr ""
+
+#: functions.php:76 includes/functions-menus.php:9
+msgid "Top Navigation"
+msgstr ""
+
+#: header.php:32
+msgid "Skip to content"
+msgstr ""
+
+#: includes/functions-customizer.php:18
+msgid "Visual Settings"
+msgstr ""
+
+#: includes/functions-customizer.php:19
+msgid "Theme settings or logo, colors etc."
+msgstr ""
+
+#: includes/functions-customizer.php:29
+msgid "Logo"
+msgstr "Logo"
+
+#: includes/functions-customizer.php:30
+msgid "Logo will be resized at 60px height"
+msgstr ""
+
+#: includes/functions-customizer.php:40
+msgid "Base Accent Color"
+msgstr ""
+
+#: includes/functions-customizer.php:41
+msgid "The main color, with enough contrast for white text on top."
+msgstr ""
+
+#: includes/functions-customizer.php:52
+msgid "Base Accent Color Variant"
+msgstr ""
+
+#: includes/functions-customizer.php:53
+msgid ""
+"Used as a hover color for some elements. Typically a darker or lighter "
+"version of the base accent color."
+msgstr ""
+
+#: includes/functions-customizer.php:64
+msgid "Body Background Color"
+msgstr ""
+
+#: includes/functions-customizer.php:65
+msgid "Used as a background color on the body"
+msgstr ""
+
+#: includes/functions-customizer.php:76
+msgid "Footer Background Color"
+msgstr ""
+
+#: includes/functions-customizer.php:77
+msgid "Used as a background color on the footer"
+msgstr ""
+
+#: includes/functions-customizer.php:88
+msgid "Footer Text Color"
+msgstr ""
+
+#: includes/functions-customizer.php:89
+msgid "Used as a color for the text in the footer"
+msgstr ""
+
+#: includes/functions-customizer.php:101
+msgid "Header Font Type"
+msgstr ""
+
+#: includes/functions-customizer.php:102
+msgid "Define the header font type"
+msgstr ""
+
+#: includes/functions-customizer.php:115
+msgid "Body Font Type"
+msgstr ""
+
+#: includes/functions-customizer.php:116
+msgid "Define the body font type"
+msgstr ""
+
+#: includes/functions-customizer.php:128
+msgid "Mobile Menu Breakpoint"
+msgstr ""
+
+#: includes/functions-customizer.php:129
+msgid ""
+"Set a width in ems where the mobile menu switches to the full horizontal "
+"menu."
+msgstr ""
+
+#: includes/functions-customizer.php:141
+#, fuzzy
+#| msgid "Author"
+msgid "Hide Author"
+msgstr "Auteur"
+
+#: includes/functions-customizer.php:142
+msgid "Check to hide authors on posts and news list"
+msgstr ""
+
+#: includes/functions-customizer.php:154
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/functions-customizer.php:155
+msgid "Adds small custom CSS in the header"
+msgstr ""
+
+#: includes/functions-menus.php:13
+msgid "Subsite Navigation"
+msgstr ""
+
+#: includes/functions-setup-sidebars.php:15
+#, fuzzy
+#| msgid "First pages"
+msgid "Frontpage"
+msgstr "1ères pages"
+
+#: includes/functions-setup-sidebars.php:17
+msgid "Top widget area on the front page. Display widgets before the posts."
+msgstr ""
+
+#: includes/functions-setup-sidebars.php:26
+msgid "Sidebar"
+msgstr ""
+
+#: includes/functions-setup-sidebars.php:28
+msgid "This is the primary sidebar. Shows up on all pages."
+msgstr ""
+
+#: includes/functions-setup-sidebars.php:37
+msgid "Footer - Main area"
+msgstr ""
+
+#: includes/functions-setup-sidebars.php:39
+msgid "This is the primary area in the footer."
+msgstr ""
+
+#: optional/author.php:18
+msgid "Posts By:"
+msgstr ""
+
+#: optional/search.php:18 search.php:22
+msgid "Search Results for:"
+msgstr ""
+
+#: optional/searchform.php:13 partial/search-form.php:20 searchform.php:13
+#, fuzzy
+#| msgid "Search %s"
+msgid "Search for"
+msgstr "Chercher %s"
+
+#: optional/searchform.php:14 searchform.php:14
+#, fuzzy
+#| msgid "Search %s"
+msgid "Search..."
+msgstr "Chercher %s"
+
+#: optional/searchform.php:15 partial/search-form.php:26 searchform.php:16
+#, fuzzy
+#| msgid "Search %s"
+msgid "Search"
+msgstr "Chercher %s"
+
+#: partial/navigation-main.php:18
+msgid "Menu"
+msgstr "Menu"
+
+#: partial/post-terms.php:5 template-part/content-single.php:42
+msgid "Categories"
+msgstr "Catégories"
+
+#: partial/post-terms.php:12 template-part/content-single.php:49
+msgid "Tags"
+msgstr ""
+
+#: partial/search-form.php:21
+msgid "Keywords"
+msgstr ""
+
+#: template-part/content-404.php:10
+msgid "Nothing Found"
+msgstr ""
+
+#: template-part/content-404.php:13
+msgid "Sorry. There are no posts to show."
+msgstr ""
+
+#: template-part/content-single.php:23
+msgid "by"
+msgstr ""
+
+#: template-part/content-single.php:33
+msgid "Pages:"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "Options:"
+#~ msgstr "Options"
+
+#~ msgid "Featured books"
+#~ msgstr "Livres à l’affiche"
+
+#~ msgid "Featured book"
+#~ msgstr "Livre à l’affiche"
+
+#~ msgid "Settings updated."
+#~ msgstr "Options mises à jour."
+
+#~ msgid "Partners"
+#~ msgstr "Partenaires"
+
+#~ msgid "Partner {#}"
+#~ msgstr "Partenaire {#}"
+
+#~ msgid "Add Partner"
+#~ msgstr "Ajouter un partenaire"
+
+#~ msgid "Remove Partner"
+#~ msgstr "Supprimer le partenaire"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "URL"
+#~ msgstr "Lien URL"
+
+#~ msgid "Authors"
+#~ msgstr "Auteurs"
+
+#~ msgid "Book"
+#~ msgstr "Livre"
+
+#~ msgid "Books"
+#~ msgstr "Livres"
+
+#~ msgid "Bibliography"
+#~ msgstr "Bibliographie"
+
+#~ msgid "Information"
+#~ msgstr "Informations"
+
+#~ msgid "Publisher"
+#~ msgstr "Éditeur"
+
+#~ msgid "ISBN"
+#~ msgstr "ISBN"
+
+#~ msgid "Year of publication"
+#~ msgstr "Année de publication"
+
+#~ msgid "First Chapters"
+#~ msgstr "1ères Pages"
+
+#~ msgid "Document {#}"
+#~ msgstr "Document {#}"
+
+#~ msgid "Add Another Document"
+#~ msgstr "Ajouter un nouveau document"
+
+#~ msgid "Remove Document"
+#~ msgstr "Supprimer un document"
+
+#~ msgid "Upload PDF"
+#~ msgstr "Uploader un PDF"
+
+#~ msgid "Language"
+#~ msgstr "Langue"
+
+#~ msgid "Press Reviews"
+#~ msgstr "Revues de presse"
+
+#~ msgid "Review {#}"
+#~ msgstr "Revue de presse {#}"
+
+#~ msgid "Add Another Review"
+#~ msgstr "Ajouter une nouvelle revue"
+
+#~ msgid "Remove Review"
+#~ msgstr "Supprimer la revue"
+
+#~ msgid "Quote"
+#~ msgstr "Citation"
+
+#~ msgid "Source"
+#~ msgstr "Source"
+
+#~ msgid "Call-to-action"
+#~ msgstr "Call-to-action"
+
+#~ msgid "Page to link to"
+#~ msgstr "Lier vers la page"
+
+#~ msgid "Text"
+#~ msgstr "Texte"
+
+#~ msgid "Book Author"
+#~ msgstr "Auteur du livre"
+
+#~ msgid "Written Books"
+#~ msgstr "Livres écrits"
+
+#~ msgid "Related Books"
+#~ msgstr "Livres liés"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Category"
+#~ msgstr "Catégorie"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Category"
+#~ msgstr "Catégorie"
+
+#~ msgid "Search Categories"
+#~ msgstr "Chercher la catégorie"
+
+#~ msgid "All Categories"
+#~ msgstr "Toutes les catégories"
+
+#~ msgid "Parent Category"
+#~ msgstr "Catégorie parente"
+
+#~ msgid "Parent Category:"
+#~ msgstr "Catégorie parente:"
+
+#~ msgid "Edit Category"
+#~ msgstr "Modifier la catégorie"
+
+#~ msgid "Update Category"
+#~ msgstr "Mettre à jour la catégorie"
+
+#~ msgid "Add New Category"
+#~ msgstr "Ajouter une nouvelle catégorie"
+
+#~ msgid "New Category Name"
+#~ msgstr "Nouveau nom de catégorie"
+
+#~ msgid "Year"
+#~ msgstr "Année"
+
+#~ msgid "Read"
+#~ msgstr "Lire"
+
+#~ msgid "Press"
+#~ msgstr "Presse"
+
+#~ msgid "Related books"
+#~ msgstr "Livres liés"
+
+#~ msgid "See all books"
+#~ msgstr "Tous les livres"
+
+#~ msgid "Grants"
+#~ msgstr "Bourses"
+
+#~ msgid "Find books"
+#~ msgstr "Recherche"
+
+#~ msgid "Add New"
+#~ msgstr "Ajouter"
+
+#~ msgid "Add New %s"
+#~ msgstr "Ajouter un nouveau %s"
+
+#~ msgid "Edit %s"
+#~ msgstr "Modifier %s"
+
+#~ msgid "New %s"
+#~ msgstr "Nouveau %s"
+
+#~ msgid "View %s"
+#~ msgstr "Voir %s"
+
+#~ msgid "No %s found"
+#~ msgstr "Aucun résultat pour %s"
+
+#~ msgid "No %s found in Trash"
+#~ msgstr "Aucun résultat pour %s dans la corbeille"
+
+#~ msgid "Parent %s:"
+#~ msgstr "%s parent:"
+
+#~ msgid "All %s"
+#~ msgstr "Tous les %s"
+
+#~ msgid "Update %s"
+#~ msgstr "Modifier %s"
+
+#~ msgid "New %s Name"
+#~ msgstr "Nouveau nom pour %s"
+
+#~ msgid "Parent %s"
+#~ msgstr "%s parent"
+
+#~ msgid "Popular %s"
+#~ msgstr "%s populaires"
+
+#~ msgid "Artist"
+#~ msgstr "Artist"
+
+#~ msgid "Artists"
+#~ msgstr "Artistes"
+
+#~ msgid "artist"
+#~ msgstr "artiste"
+
+#~ msgid "artists"
+#~ msgstr "artistes"
+
+#~ msgid "Event"
+#~ msgstr "Événement"
+
+#~ msgid "Events"
+#~ msgstr "Événements"
+
+#~ msgid "event"
+#~ msgstr "événement"
+
+#~ msgid "Artist Information"
+#~ msgstr "Informations sur l’artiste"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Artist Portfolio"
+#~ msgstr "Portfolio de l’artiste"
+
+#~ msgid "Videos"
+#~ msgstr "Vidéos"
+
+#~ msgid "Insert youtube or vimeo link"
+#~ msgstr "Entrez le lien Youtube ou Vimeo"
+
+#~ msgid "Pictures"
+#~ msgstr "Photos"
+
+#~ msgid "Artist Links"
+#~ msgstr "Liens de l’artiste"
+
+#~ msgid "Link {#}"
+#~ msgstr "Lien {#}"
+
+#~ msgid "Label"
+#~ msgstr "Label"
+
+#~ msgid "Background image"
+#~ msgstr "Image background"
+
+#~ msgid "Event Information"
+#~ msgstr "Informations sur l’événement"
+
+#~ msgid "Location"
+#~ msgstr "Lieu"
+
+#~ msgid "Start date"
+#~ msgstr "Date d’ouverture"
+
+#~ msgid "End date"
+#~ msgstr "Date de fermeture"
+
+#~ msgid "Event description"
+#~ msgstr "Description de l’événement"
+
+#~ msgid "Tickets"
+#~ msgstr "Billets"
+
+#~ msgid "Link to ticket sales"
+#~ msgstr "Lien vers la billetterie"
+
+#~ msgid "Event Portfolio"
+#~ msgstr "Portfolio de l’événement"
+
+#~ msgid "Schedule Slots"
+#~ msgstr "Créneaux"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Work / Artist"
+#~ msgstr "Œuvre / Artiste"
+
+#~ msgid "Tickets link"
+#~ msgstr "Lien vers la billetterie"
+
+#~ msgid "Sponsors List"
+#~ msgstr "Liste des sponsors"
+
+#~ msgid "Add Another Sponsor"
+#~ msgstr "Ajouter un nouveau sponsor"
+
+#~ msgid "Link"
+#~ msgstr "Lien"
+
+#~ msgid "Team Member Information"
+#~ msgstr "Information sur le membre"
+
+#~ msgid "Role"
+#~ msgstr "Rôle"
+
+#~ msgid "Team Member Links"
+#~ msgstr "Liens du membre"
+
+#~ msgid "work Information"
+#~ msgstr "Information sur l’œuvre"
+
+#~ msgid "Work Portfolio"
+#~ msgstr "Portfolio de l’œuvre"
+
+#~ msgid "Schedule"
+#~ msgstr "Programme"
+
+#~ msgid "Schedules"
+#~ msgstr "Programmes"
+
+#~ msgid "schedule"
+#~ msgstr "programme"
+
+#~ msgid "Sponsor Type"
+#~ msgstr "Type de sponsor"
+
+#~ msgid "Sponsor Types"
+#~ msgstr "Types de sponsor"
+
+#~ msgid "Cities"
+#~ msgstr "Villes"
+
+#~ msgid "Search Countries"
+#~ msgstr "Chercher le pays"
+
+#~ msgid "All Countries"
+#~ msgstr "Tous les pays"
+
+#~ msgid "Parent Country"
+#~ msgstr "Pays parent"
+
+#~ msgid "Parent Country:"
+#~ msgstr "Pays parent:"
+
+#~ msgid "Edit Country"
+#~ msgstr "Modifier le pays"
+
+#~ msgid "Update Country"
+#~ msgstr "Mettre à jour le pays"
+
+#~ msgid "Add New Country"
+#~ msgstr "Ajouter un nouveau pays"
+
+#~ msgid "New Country Name"
+#~ msgstr "Nouveau nom de pays"
+
+#~ msgid "Search Genres"
+#~ msgstr "Chercher le genre"
+
+#~ msgid "All Genres"
+#~ msgstr "Tous les genres"
+
+#~ msgid "Parent Genre"
+#~ msgstr "Genre parent"
+
+#~ msgid "Parent Genre:"
+#~ msgstr "Genre parent:"
+
+#~ msgid "Edit Genre"
+#~ msgstr "Modifier le genre"
+
+#~ msgid "Update Genre"
+#~ msgstr "Mettre à jour le genre"
+
+#~ msgid "Add New Genre"
+#~ msgstr "Ajouter un nouveau genre"
+
+#~ msgid "New Genre Name"
+#~ msgstr "Nouveau nom de genre"
+
+#~ msgid "Team member"
+#~ msgstr "Collaborateur"
+
+#~ msgid "Team members"
+#~ msgstr "Collaborateurs"
+
+#~ msgid "team"
+#~ msgstr "collaborateur"
+
+#~ msgid "Work"
+#~ msgstr "Œuvre"
+
+#~ msgid "Works"
+#~ msgstr "Œuvres"
+
+#~ msgid "work"
+#~ msgstr "œuvre"
+
+#~ msgid "Upcoming events"
+#~ msgstr "Événements à venir"
+
+#~ msgid "More info"
+#~ msgstr "Informations"
+
+#~ msgid "More artists"
+#~ msgstr "Artistes"
+
+#~ msgid "Contact us"
+#~ msgstr "Contactez-nous"
+
+#~ msgid "More about"
+#~ msgstr "En savoir plus"
+
+#~ msgid "Buy tickets"
+#~ msgstr "Billets"
+
+#~ msgid "Find our events in Europe & in the Philippines"
+#~ msgstr "Trouvez nos événements en Europe et aux Philippines"
+
+#~ msgid "Past events"
+#~ msgstr "Événements passés"

@@ -34,16 +34,8 @@ function theme_setup() {
 	// Include function files
 	get_template_part( 'includes/functions-helpers' );
 	get_template_part( 'includes/foundation/class-menu-walker' );
-	// get_template_part( 'includes/functions-menus' );
 	get_template_part( 'includes/functions-hooks' );
 	get_template_part( 'includes/functions-setup-sidebars' );
-
-	// get_template_part( 'includes/functions-owl-carousel' );
-	// get_template_part( 'includes/functions-setup-frontpage' );
-
-	// get_template_part( 'includes/functions-mesa-employees' );
-	// get_template_part( 'includes/functions-woocommerce' );
-	// get_template_part( 'includes/functions-isotope' );
 
 	// Include on admin and login page
 	if ( is_admin() ) {
