@@ -1,0 +1,26 @@
+.menu-open {
+	.megamenu {
+		display: block;
+	}
+
+	.header {
+		z-index: 99;
+		position: fixed;
+		width: 100%;
+
+		#languages .lang-item {
+			a {
+				color: $navy;
+			}
+
+			&.current-lang a {
+				color: $white;
+			}
+		}
+
+		#menu .burger {
+			color: $white;
+			@include icons( $symbol: '\e870', $place: 'after', $margin: '0' );
+		}
+	}
+}

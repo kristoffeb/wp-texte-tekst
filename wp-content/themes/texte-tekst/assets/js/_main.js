@@ -3,6 +3,9 @@
  */
 
 // Foundation
-jQuery( document ).ready(function() {
+jQuery( window ).on( 'load', function( $ ) {
 	'use strict';
+
+	// Bootstrap
+	megaMenu.init();
 } );

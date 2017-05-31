@@ -8,6 +8,23 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
  */
 
 // Foundation
-jQuery( document ).ready(function() {
+jQuery( window ).on( 'load', function( $ ) {
 	'use strict';
+
+	// Bootstrap
+	megaMenu.init();
 } );
+
+( function( megaMenu, $, undefined ) {
+	'use strict';
+
+	megaMenu.init = function() {
+		var burger = $('#menu .burger');
+		var body = $('body');
+
+		burger.click(function() {
+			body.toggleClass('menu-open');
+		});
+	};
+
+} ( window.megaMenu = window.megaMenu || {}, jQuery ) );

@@ -35,6 +35,7 @@ function theme_setup() {
 	get_template_part( 'includes/functions-helpers' );
 	get_template_part( 'includes/foundation/class-menu-walker' );
 	get_template_part( 'includes/functions-hooks' );
+	get_template_part( 'includes/functions-menus' );
 	get_template_part( 'includes/functions-setup-sidebars' );
 
 	// Include on admin and login page

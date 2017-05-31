@@ -161,6 +161,7 @@ class Frontpage {
 		$args = [
 			'post_type'      => Type\Book::POST_TYPE,
 			'posts_per_page' => 4,
+			'orderby'        => 'rand',
 			'lang'           => pll_current_language( 'slug' ),
 			'post__not_in'   => [ $this->get_featured_id() ],
 		];

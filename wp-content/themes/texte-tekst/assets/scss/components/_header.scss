@@ -61,6 +61,10 @@
 				top: - rem(7);
 				right: 0;
 			}
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 }
