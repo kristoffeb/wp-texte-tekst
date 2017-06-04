@@ -20,6 +20,7 @@ class Bootstrap {
 		Main::require_file( 'frontend/types/frontpage.php' );
 		Main::require_file( 'frontend/types/menu.php' );
 		Main::require_file( 'frontend/types/search.php' );
+		Main::require_file( 'frontend/types/writer.php' );
 	}
 
 	/**
@@ -31,5 +32,6 @@ class Bootstrap {
 		$frontpage = new Type\Frontpage();
 		$menu      = new Type\Menu();
 		$search    = new Type\Search();
+		$writer    = new Type\Writer();
 	}
 }

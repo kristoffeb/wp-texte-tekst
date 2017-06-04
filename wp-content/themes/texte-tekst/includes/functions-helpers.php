@@ -121,3 +121,12 @@ function textetekst_get_post_thumbnail( $post_id, $size = 'full' ) {
 function textetekst_get_default_image_url( $type = '' ) {
 	return get_template_directory_uri() . '/img/default-image.png';
 }
+
+/**
+ * Add post type to main class
+ */
+function main_class( $classes ) {
+	$classes[] = 'type-' . get_post_type();
+
+	echo implode( ' ', $classes );
+}

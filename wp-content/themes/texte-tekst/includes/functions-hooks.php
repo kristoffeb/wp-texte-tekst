@@ -76,6 +76,7 @@ function body_classes( $classes ) {
 
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
+
 /**
  * Deregister unused scripts.
  */

@@ -263,7 +263,7 @@ class Book {
 		if ( $books->have_posts() ) {
 			foreach ( $books->posts as $book ) {
 				ob_start();
-					$source = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+					$source = wp_get_attachment_image_src( get_post_thumbnail_id( $book->ID ), 'medium' );
 
 					Main::get_template_part( 'partials/book-loop.html', [
 						'title'     => $book->post_title,

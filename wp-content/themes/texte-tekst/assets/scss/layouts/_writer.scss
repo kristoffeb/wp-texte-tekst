@@ -1,4 +1,4 @@
-main.type-book {
+main.type-writer {
 	position: relative;
 
 	.bg-lines {
@@ -20,11 +20,11 @@ main.type-book {
 		}
 
 		.meta {
-			width: 33.3333%;
+			width: 20%;
 		}
 
 		.content-wrap {
-			width: 66.6666%;
+			width: 80%;
 			padding-left: rem(80);
 
 			.content {
@@ -32,19 +32,19 @@ main.type-book {
 			}
 		}
 
-		.infos {
-			margin-top: 3.5rem;
-			padding-left: 0.8rem;
-			font-style: italic;
-			font-size: 0.8rem;
-			color: $navy;
-
-			strong {
-				font-weight: 800;
-			}
+		.bibliography {
+			color: $darkgray;
 
 			li {
-				margin-bottom: 0.5rem;
+				font-size: 0.8rem;
+				line-height: 1.2rem;
+				font-weight: 400;
+				margin-bottom: 0.4rem;
+			}
+
+			a {
+				@include main-color;
+				font-weight: 400;
 			}
 		}
 	}

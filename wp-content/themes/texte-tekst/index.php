@@ -14,7 +14,7 @@ namespace TexteTekst;
 
 	<?php do_action( THEMEDOMAIN . '-before_main_content' ); ?>
 
-	<main class="main" role="main">
+	<main class="<?php echo main_class( [ 'main' ] ); ?>" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
