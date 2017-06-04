@@ -30,6 +30,12 @@
 			right: rem(18);
 			top: 1.25rem;
 		}
+
+		.menu-open & {
+			&::before {
+				color: $sky;
+			}
+		}
 	}
 
 	input.button {
