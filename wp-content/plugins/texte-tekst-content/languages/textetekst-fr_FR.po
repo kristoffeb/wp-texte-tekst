@@ -72,23 +72,23 @@ msgstr "Logo"
 msgid "All exhibitions"
 msgstr ""
 
-#: core/types/author.php:21 frontend/types/book.php:234
-msgid "Author"
+#: core/types/writer.php:21 frontend/types/book.php:234
+msgid "Writer"
 msgstr "Auteur"
 
-#: core/types/author.php:22
-msgid "Authors"
+#: core/types/writer.php:22
+msgid "Writers"
 msgstr "Auteurs"
 
-#: core/types/author.php:23 core/types/author.php:32
-msgid "author"
+#: core/types/writer.php:23 core/types/writer.php:32
+msgid "writer"
 msgstr ""
 
 #: core/types/book.php:21
 msgid "Book"
 msgstr "Livre"
 
-#: core/types/book.php:22 core/types/meta/author.php:37
+#: core/types/book.php:22 core/types/meta/writer.php:37
 #: frontend/types/frontpage.php:199
 msgid "Books"
 msgstr "Livres"
@@ -97,7 +97,7 @@ msgstr "Livres"
 msgid "book"
 msgstr ""
 
-#: core/types/meta/author.php:29
+#: core/types/meta/writer.php:29
 msgid "Bibliography"
 msgstr "Bibliographie"
 
@@ -178,7 +178,7 @@ msgid "Text"
 msgstr "Texte"
 
 #: core/types/p2p/book.php:17
-msgid "Book Author"
+msgid "Book Writer"
 msgstr "Auteur du livre"
 
 #: core/types/p2p/book.php:18

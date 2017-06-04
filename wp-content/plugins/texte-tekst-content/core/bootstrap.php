@@ -25,11 +25,11 @@ class Bootstrap {
 		}
 
 		// Type
-		Main::require_file( 'core/types/author.php' );
+		Main::require_file( 'core/types/writer.php' );
 		Main::require_file( 'core/types/book.php' );
 
 		// Meta
-		Main::require_file( 'core/types/meta/author.php' );
+		Main::require_file( 'core/types/meta/writer.php' );
 		Main::require_file( 'core/types/meta/book.php' );
 		Main::require_file( 'core/types/meta/page.php' );
 
@@ -54,9 +54,9 @@ class Bootstrap {
 		$book_category = new Type\Taxonomy\Book_Category();
 		$book_p2p      = new Type\P2P\Book();
 
-		// Author
-		$author        = new Type\Author();
-		$author_meta   = new Type\Meta\Author();
+		// Writer
+		$writer        = new Type\Writer();
+		$writer_meta   = new Type\Meta\Writer();
 
 		// Page
 		$page_meta     = new Type\Meta\Page();

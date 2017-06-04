@@ -19,7 +19,7 @@ class Book {
 			add_action( THEMEDOMAIN . '-before_article',        [ $this, 'metas' ] );
 			add_action( THEMEDOMAIN . '-before_article',        [ $this, 'open_wrap' ] );
 			add_action( THEMEDOMAIN . '-after_article',         [ $this, 'close_wrap' ] );
-			add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'author' ] );
+			add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'writer' ] );
 			add_action( THEMEDOMAIN . '-after_article_content', [ $this, 'sidebar' ] );
 			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'about' ] );
 			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'related' ] );
@@ -94,7 +94,7 @@ class Book {
 		$title = sprintf(
 			'<li><strong>%s</strong>, %s</li>',
 			get_the_title(),
-			$this->get_author()->post_title
+			$this->get_writer()->post_title
 		);
 
 		Main::get_template_part( 'partials/block-list.html', [
@@ -103,24 +103,24 @@ class Book {
 		] );
 	}
 
-	public function author() {
-		$post = $this->get_author();
+	public function writer() {
+		$post = $this->get_writer();
 
-		$author = sprintf( '<a href="%s">%s</a>', get_permalink( $post->ID ), $post->post_title );
+		$writer = sprintf( '<a href="%s">%s</a>', get_permalink( $post->ID ), $post->post_title );
 
-		echo $author;
+		echo $writer;
 	}
 
-	public function get_author() {
+	public function get_writer() {
 		$args = [
-			'connected_type'  => 'book_to_author',
+			'connected_type'  => 'book_to_writer',
 			'connected_items' => get_the_ID(),
 			'posts_per_page'  => 1,
 		];
 
-		$author = new WP_Query( $args );
+		$writer = new WP_Query( $args );
 
-		return $author->post;
+		return $writer->post;
 	}
 
 	public function sidebar() {
@@ -189,7 +189,7 @@ class Book {
 		ob_start();
 
 			$this->get_press();
-			$this->get_author_bio();
+			$this->get_writer_bio();
 
 		$content = ob_get_clean();
 
@@ -221,18 +221,18 @@ class Book {
 		] );
 	}
 
-	public function get_author_bio() {
-		$author = $this->get_author();
+	public function get_writer_bio() {
+		$writer = $this->get_writer();
 
-		$link = sprintf( '<a href="%s" class="button">%s</a>', get_permalink( $author->ID ), __( 'Read more', Main::TEXT_DOMAIN ) );
+		$link = sprintf( '<a href="%s" class="button">%s</a>', get_permalink( $writer->ID ), __( 'Read more', Main::TEXT_DOMAIN ) );
 
-		$excerpt = wpautop( get_the_excerpt( $author->ID ) );
-		$author_link = sprintf( '<a href="%s" class="author-link">%s</a>', get_permalink( $author->ID ), $author->post_title );
+		$excerpt = wpautop( get_the_excerpt( $writer->ID ) );
+		$writer_link = sprintf( '<a href="%s" class="writer-link">%s</a>', get_permalink( $writer->ID ), $writer->post_title );
 
 		Main::get_template_part( 'partials/block.html', [
-			'class'   => 'author-bio',
-			'title'   => __( 'Author', Main::TEXT_DOMAIN ),
-			'content' => $author_link . $excerpt,
+			'class'   => 'writer-bio',
+			'title'   => __( 'Writer', Main::TEXT_DOMAIN ),
+			'content' => $writer_link . $excerpt,
 			'more'    => $link,
 		] );
 	}

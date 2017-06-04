@@ -14,12 +14,12 @@ class Book {
 	public function connection() {
 		p2p_register_connection_type( [
 			'title'    =>  [
-				'from' => __( 'Book Author', Main::TEXT_DOMAIN ),
+				'from' => __( 'Book Writer', Main::TEXT_DOMAIN ),
 				'to'   => __( 'Written Books', Main::TEXT_DOMAIN ),
 			],
-			'name'     => 'book_to_author',
+			'name'     => 'book_to_writer',
 			'from'     => Type\Book::POST_TYPE,
-			'to'       => Type\Author::POST_TYPE,
+			'to'       => Type\Writer::POST_TYPE,
 			'sortable' => 'any',
 			/*'admin_box' => array(
 				'show' => 'from',

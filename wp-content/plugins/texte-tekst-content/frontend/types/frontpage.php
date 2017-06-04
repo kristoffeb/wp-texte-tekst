@@ -65,15 +65,15 @@ class Frontpage {
 			'<strong>%s</strong> <em>%s</em>, %s',
 			__( 'Featured book', Main::TEXT_DOMAIN ),
 			get_the_title( $featured_id ),
-			$this->get_author( $featured_id )->post_title
+			$this->get_writer( $featured_id )->post_title
 		);
 
 		Main::get_template_part( 'partials/book-loop.html', [
 			'cover'      => isset( $image ) ? $image[0] : '',
 			'title'      => $title,
 			'permalink'  => get_permalink( $featured_id ),
-			'author'     => '',
-			'author_url' => '',
+			'writer'     => '',
+			'writer_url' => '',
 			'excerpt'    => '',
 			'size'       => 'normal',
 		] );
@@ -85,16 +85,16 @@ class Frontpage {
 		return $post_id;
 	}
 
-	public function get_author( $post_id ) {
+	public function get_writer( $post_id ) {
 		$args = [
-			'connected_type'  => 'book_to_author',
+			'connected_type'  => 'book_to_writer',
 			'connected_items' => $post_id,
 			'posts_per_page'  => 1,
 		];
 
-		$author = new WP_Query( $args );
+		$writer = new WP_Query( $args );
 
-		return $author->post;
+		return $writer->post;
 	}
 
 	public function partners() {
@@ -181,8 +181,8 @@ class Frontpage {
 						'size'       => 'small',
 						'title'      => $post->post_title,
 						'permalink'  => get_permalink( $post->ID ),
-						'author'     => $this->get_author( $post->ID )->post_title,
-						'author_url' => get_permalink( $this->get_author( $post->ID )->ID ),
+						'writer'     => $this->get_writer( $post->ID )->post_title,
+						'writer_url' => get_permalink( $this->get_writer( $post->ID )->ID ),
 						'excerpt'    => get_the_excerpt( $post->ID ),
 					] );
 				}

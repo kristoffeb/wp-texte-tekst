@@ -4,9 +4,9 @@ namespace TexteTekst\Content\Core\Type\Meta;
 
 use TexteTekst\Content\Main;
 use TexteTekst\Content\Core\Utility;
-use TexteTekst\Content\Core\Type\Author as Post_Type;
+use TexteTekst\Content\Core\Type\Writer as Post_Type;
 
-class Author {
+class Writer {
 
 	const PREFIX = 'textetekst_';
 
@@ -25,7 +25,7 @@ class Author {
 	public function bibliography() {
 		$metabox_args = array_merge(
 			[
-				'id'    => self::PREFIX . 'author_bibliography',
+				'id'    => self::PREFIX . 'writer_bibliography',
 				'title' => __( 'Bibliography', Main::TEXT_DOMAIN ),
 	   		],
 			$this->default_metabox_args
@@ -35,7 +35,7 @@ class Author {
 
 		$metabox->add_field( [
 			'name'    => __( 'Books', Main::TEXT_DOMAIN ),
-			'id'      => self::PREFIX . 'author_books',
+			'id'      => self::PREFIX . 'writer_books',
 			'type'    => 'wysiwyg',
 			'options' => [
 				'media_buttons' => false,

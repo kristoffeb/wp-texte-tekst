@@ -5,7 +5,7 @@
  * Used to help create custom post types for Wordpress.
  * @link http://github.com/jjgrainger/wp-custom-post-type-class/
  *
- * @author  jjgrainger
+ * @writer  jjgrainger
  * @link    http://jjgrainger.co.uk
  * @version 1.4
  * @license http://www.opensource.org/licenses/mit-license.html MIT License
@@ -596,8 +596,8 @@ class Type {
                 $after = 'tags';
             } elseif( is_array( $this->taxonomies ) && in_array( 'category', $this->taxonomies ) || $this->post_type_name === 'post' ) {
                 $after = 'categories';
-            } elseif( post_type_supports( $this->post_type_name, 'author' ) ) {
-                $after = 'author';
+            } elseif( post_type_supports( $this->post_type_name, 'writer' ) ) {
+                $after = 'writer';
             } else {
                 $after = 'title';
             }
@@ -712,7 +712,7 @@ class Type {
             // if the column is prepended with 'meta_', this will automagically retrieve the meta values and display them.
             case ( preg_match( '/^meta_/', $column ) ? true : false ) :
 
-                // meta_book_author (meta key = book_author)
+                // meta_book_writer (meta key = book_writer)
                 $x = substr( $column, 5 );
 
                 $meta = get_post_meta( $post->ID, $x );

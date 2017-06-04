@@ -10,8 +10,8 @@
  * Plugin URI:
  * Description: Content for Texte / Tekst
  * Version:     1.0.0
- * Author:      Kristoffe Biglete
- * Author URI:
+ * Writer:      Kristoffe Biglete
+ * Writer URI:
  * Text Domain: textetekst
  * Domain Path: /languages
  */

@@ -43,15 +43,16 @@ class Utility {
 	}
 
 	public static function get_languages( $type = 'select' ) {
-		$languages = PLL()->model->get_languages_list();
-
 		$list = [];
 
-		foreach ( $languages as $language ) {
-			if ( $type === 'slug' ) {
-				$list[] = $language->slug;
-			} else {
-				$list[ $language->slug ] = $language->name;
+		if ( class_exists( 'PLL' ) ) {
+			$languages = PLL()->model->get_languages_list();
+			foreach ( $languages as $language ) {
+				if ( $type === 'slug' ) {
+					$list[] = $language->slug;
+				} else {
+					$list[ $language->slug ] = $language->name;
+				}
 			}
 		}
 
@@ -59,7 +60,11 @@ class Utility {
 	}
 
 	public static function get_post_language() {
-		$language = PLL()->curlang;
+		$language = new \stdClass();
+
+		if ( class_exists( 'PLL' ) ) {
+			$language = PLL()->curlang;
+		}
 
 		return $language;
 	}

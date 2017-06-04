@@ -65,6 +65,10 @@ class Search {
 	}
 
 	public function get_languages() {
+		if ( ! function_exists( 'pll_the_languages' ) ) {
+			return;
+		}
+
 		$default   = [ '' => __( 'Language', Main::TEXT_DOMAIN ) ];
 		$languages = pll_the_languages( [ 'raw' => TRUE ] );
 

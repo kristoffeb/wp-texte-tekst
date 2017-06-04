@@ -10,7 +10,9 @@ namespace TexteTekst;
 		</a>
 
 		<ul id="languages">
-			<?php pll_the_languages(); ?>
+			<?php if ( function_exists( 'pll_the_languages' ) ) : ?>
+				<?php pll_the_languages(); ?>
+			<?php endif; ?>
 		</ul>
 
 		<div id="menu">
