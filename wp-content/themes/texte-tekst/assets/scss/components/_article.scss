@@ -25,6 +25,10 @@
 			width: 70%;
 			font-size: 0.9rem;
 			line-height: 1.6rem;
+
+			a {
+				@include main-color;
+			}
 		}
 
 		.sidebar {

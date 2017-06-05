@@ -3,14 +3,17 @@
 		@include block-title;
 	}
 
-	.item {
+	li {
 		margin-bottom: rem(35);
 		padding-left: rem(80);
 		position: relative;
-		font-style: italic;
-		font-family: 'Lora';
-		font-size: 1.75rem;
-		font-weight: 700;
+
+		&, * {
+			font-style: italic;
+			font-family: 'Lora';
+			font-size: 1.75rem;
+			font-weight: 700;
+		}
 
 		a {
 			@include main-color;
@@ -31,10 +34,9 @@
 		.sidebar & {
 			padding-left: rem(50);
 			margin-bottom: rem(15);
-			font-size: 1.1rem;
 
-			a {
-
+			&, * {
+				font-size: 1.1rem;
 			}
 
 			&::before {

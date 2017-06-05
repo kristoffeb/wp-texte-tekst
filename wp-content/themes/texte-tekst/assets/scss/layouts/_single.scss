@@ -1,0 +1,39 @@
+main.type-post {
+	position: relative;
+
+	.article {
+		position: relative;
+		z-index: 2;
+		margin-bottom: rem(70);
+
+		.inner-grid {
+			@include flex;
+			align-items: flex-start;
+		}
+
+		.article-header,
+		.article-content {
+			width: 100%;
+		}
+
+		.content {
+			width: 80%;
+			padding-right: rem(60);
+		}
+
+		.sidebar {
+			width: 20%;
+		}
+
+		&.has-post-thumbnail {
+			.wp-post-image-wrap {
+				width: 20%;
+			}
+
+			.content {
+				width: 60%;
+				padding: 0 rem(60);
+			}
+		}
+	}
+}

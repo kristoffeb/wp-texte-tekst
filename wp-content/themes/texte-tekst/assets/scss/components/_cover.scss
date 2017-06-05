@@ -1,6 +1,8 @@
-.cover {
+.cover,
+.wp-post-image-wrap {
 	img {
 		width: 100%;
+		height: auto;
 	}
 
 	.lang-fr & {
