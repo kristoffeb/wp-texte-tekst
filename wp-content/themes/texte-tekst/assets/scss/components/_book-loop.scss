@@ -48,25 +48,19 @@
 			.title {
 				text-align: left;
 				margin-bottom: rem(8);
-
-				a {
-					font-family: 'Lora';
-					font-weight: 700;
-					font-style: italic;
-					font-size: 1.75rem;
-					@include main-color;
-					text-transform: none;
-				}
+				font-family: 'Lora';
+				font-weight: 700;
+				font-style: italic;
+				font-size: 1.75rem;
+				@include main-color;
+				text-transform: none;
 			}
 
 			.writer {
 				margin-bottom: rem(15);
-
-				a {
-					@include main-color;
-					font-weight: 700;
-					font-size: 0.9rem;
-				}
+				@include main-color;
+				font-weight: 700;
+				font-size: 0.9rem;
 			}
 
 			.excerpt {

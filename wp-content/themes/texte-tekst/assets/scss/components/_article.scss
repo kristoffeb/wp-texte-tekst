@@ -46,4 +46,21 @@
 			}
 		}
 	}
+
+	.article-footer {
+		.type-post & {
+			margin-top: rem(40);
+
+			* {
+				font-family: 'Lora';
+				font-size: 1rem;
+				font-style: italic;
+				font-weight: 900;
+			}
+
+			a {
+				@include main-color;
+			}
+		}
+	}
 }

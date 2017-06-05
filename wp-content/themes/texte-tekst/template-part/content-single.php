@@ -16,16 +16,6 @@
 
 			<h1 class="article-title" itemprop="name headline"><?php the_title(); ?></h1>
 
-			<?php if ( $subtitle = get_post_meta( get_the_ID(), '_textetekst_subtitle', true ) ) : ?>
-				<?php echo wpautop( $subtitle ); ?>
-			<?php endif; ?>
-
-			<?php if ( is_home() ) : ?>
-				<p class="meta article-meta">
-					<time class="date" datetime="<?php echo the_time( 'Y-m-d' ); ?>" itemprop="datePublished"><?php the_time( 'j. F Y' ); ?></time><span class="sep">, </span><?php _e( 'by', THEMEDOMAIN ); ?> <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><span itemprop="name" class="fn"><?php the_author_posts_link(); ?></span></span>
-				</p>
-			<?php endif; ?>
-
 		</header>
 
 		<div class="article-content" itemprop="articleBody">
@@ -57,6 +47,9 @@
 		</div>
 
 		<footer class="article-footer">
+			<p class="meta article-meta">
+				<time class="date" datetime="<?php echo the_time( 'Y-m-d' ); ?>" itemprop="datePublished"><?php the_time( 'j. F Y' ); ?></time><span class="sep">, </span><?php _e( 'by', THEMEDOMAIN ); ?> <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><span itemprop="name" class="fn"><?php the_author_posts_link(); ?></span></span>
+			</p>
 		</footer>
 
 		<?php if ( comments_open() || '0' != get_comments_number() ) : ?>

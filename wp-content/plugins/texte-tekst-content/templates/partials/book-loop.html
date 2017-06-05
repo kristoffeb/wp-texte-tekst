@@ -10,19 +10,17 @@
 
 	<div class="content">
 
-		<div class="title">
-			<a href="<?php echo $permalink; ?>">
+		<a href="<?php echo $permalink; ?>">
+			<div class="title">
 				<?php echo $title; ?>
-			</a>
-		</div>
-
-		<?php if ( isset( $writer ) ) : ?>
-			<div class="writer">
-				<a href="<?php echo $writer_url; ?>">
-					<?php echo $writer; ?>
-				</a>
 			</div>
-		<?php endif; ?>
+
+			<?php if ( isset( $writer ) ) : ?>
+				<div class="writer">
+					<?php echo $writer; ?>
+				</div>
+			<?php endif; ?>
+		</a>
 
 		<?php if ( isset( $excerpt ) ) : ?>
 			<div class="excerpt">
