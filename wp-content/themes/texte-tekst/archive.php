@@ -12,11 +12,13 @@ namespace TexteTekst;
 
 <?php get_header(); ?>
 
-<main class="<?php echo main_class( [ 'main', 'archive' ] ); ?>" role="main"  itemscope="itemscope" itemtype="http://schema.org/Blog">
+<main class="<?php echo main_class( [ 'main' ] ); ?>" role="main"  itemscope="itemscope" itemtype="http://schema.org/Blog">
 
-	<header class="archive-header">
+	<?php do_action( THEMEDOMAIN . '-before_main_content' ); ?>
 
-		<div class="inner-grid">
+	<div class="inner-grid">
+
+		<header class="archive-header">
 
 			<h1 class="archive-title">
 				<?php if ( is_category() ) : ?>
@@ -56,35 +58,38 @@ namespace TexteTekst;
 				<?php endif; ?>
 			<?php endif; ?>
 
+		</header>
+
+		<div class="archive-content">
+
+			<?php do_action( THEMEDOMAIN . '-before_archive' ); ?>
+
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+				<?php do_action( THEMEDOMAIN . '-loop' ); ?>
+
+				<?php endwhile; ?>
+
+			<?php else : ?>
+
+				<?php get_template_part( 'template-part/content', '404' ); ?>
+
+			<?php endif; ?>
+
+			<?php do_action( THEMEDOMAIN . '-after_archive' ); ?>
+
 		</div>
 
-	</header>
+		<footer class="archive-footer">
 
-	<div class="archive-content">
+			<?php do_action( THEMEDOMAIN . '-archive_footer' ); ?>
 
-		<?php do_action( THEMEDOMAIN . '-before_archive' ); ?>
+		</footer>
 
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	</div>
 
-			<?php get_template_part( 'template-part/content', 'loop' ); ?>
+	<?php do_action( THEMEDOMAIN . '-after_main_content' ); ?>
 
-			<?php endwhile; ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'template-part/content', '404' ); ?>
-
-		<?php endif; ?>
-
-		<?php do_action( THEMEDOMAIN . '-after_archive' ); ?>
-
-	</div> <!-- .archive-content -->
-
-	<footer class="archive-footer">
-	</footer>
-
-	</main>
-
-</div> <!-- .inner-grid -->
+</main>
 
 <?php get_footer(); ?>

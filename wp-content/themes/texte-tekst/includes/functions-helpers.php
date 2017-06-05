@@ -94,7 +94,8 @@ function textetekst_get_default_image_url( $type = '' ) {
  * Add post type to main class
  */
 function main_class( $classes ) {
-	$classes[] = 'type-' . get_post_type();
+	$prefix = is_singular() ? 'type-' : 'archive-';
+	$classes[] = $prefix . get_post_type();
 
 	echo implode( ' ', $classes );
 }

@@ -1,0 +1,83 @@
+.main[class^="archive"],
+.main[class*="archive"] {
+	position: relative;
+	margin-bottom: rem(70);
+
+	> .inner-grid {
+		@include flex;
+		align-items: flex-start;
+	}
+
+	.archive-header {
+		width: 100%;
+		margin: rem(50) 0 rem(25);
+
+		.archive-title {
+			@include block-title;
+		}
+	}
+
+	.archive-content {
+		width: 70%;
+		padding-right: rem(60);
+
+		.inner-grid {
+			width: 100%;
+			@include flex;
+			align-items: flex-start;
+		}
+
+		.wp-post-image-wrap {
+			width: rem(100);
+			margin-bottom: rem(65);
+		}
+
+		.content-wrap {
+			width: calc(100% - #{rem(100)});
+			text-align: left;
+			padding-left: rem(40);
+		}
+
+		.article-header {
+			margin: 0;
+			margin-bottom: 0.5rem;
+
+			h2,
+			h2 a {
+				margin-bottom: rem(8);
+				font-family: 'Lora';
+				font-weight: 700;
+				font-style: italic;
+				font-size: 1.75rem;
+				@include main-color;
+				text-transform: none;
+			}
+
+			.writer {
+				display: block;
+				margin-bottom: rem(15);
+				@include main-color;
+				font-weight: 700;
+				font-size: 0.9rem;
+			}
+		}
+
+		.content {
+			font-size: 0.9rem;
+			font-weight: 400;
+			line-height: 1.5rem;
+			width: 100%;
+		}
+	}
+
+	.archive-footer {
+		width: 30%;
+
+		h2 {
+			@include block-title;
+			color: $darkgray;
+			font-size: rem(25);
+			margin-bottom: rem(30);
+		}
+	}
+}

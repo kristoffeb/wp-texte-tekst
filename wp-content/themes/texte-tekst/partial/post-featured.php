@@ -9,6 +9,7 @@
 <?php $image_id = apply_filters( THEMEDOMAIN . '-post_featured', get_post_thumbnail_id(), 10 ); ?>
 <?php $embed_type = apply_filters( THEMEDOMAIN . '-post_featured_type', true, 10 ); ?>
 <?php $size_type = apply_filters( THEMEDOMAIN . '-post_featured_size', $post->thumbnail_size, 10 ); ?>
+<?php $classes = apply_filters( THEMEDOMAIN . '-post_featured_class', 'wp-post-image-wrap', 10 ); ?>
 
 <?php if ( ! empty( $image_id ) ) : ?>
 
@@ -16,7 +17,7 @@
 	<?php $image = wp_get_attachment_image_src( $image_id, $size ); ?>
 	<?php $caption = get_posts( [ 'p' => $image_id, 'post_type' => 'attachment' ] ); ?>
 
-	<div class="wp-post-image-wrap">
+	<div class="<?php echo $classes; ?>">
 
 		<?php if ( $embed_type ) : ?>
 			<div class="post-image wp-images">

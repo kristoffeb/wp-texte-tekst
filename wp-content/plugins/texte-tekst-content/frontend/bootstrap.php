@@ -15,6 +15,7 @@ class Bootstrap {
 	 * Include files.
 	 */
 	private function includes() {
+		Main::require_file( 'frontend/types/archive.php' );
 		Main::require_file( 'frontend/types/book.php' );
 		Main::require_file( 'frontend/types/frontpage.php' );
 		Main::require_file( 'frontend/types/menu.php' );
@@ -27,6 +28,7 @@ class Bootstrap {
 	 * Run core bootstrap hooks.
 	 */
 	public function init() {
+		$archive   = new Type\Archive();
 		$book      = new Type\Book();
 		$frontpage = new Type\Frontpage();
 		$menu      = new Type\Menu();

@@ -1,29 +1,37 @@
 <article id="article-<?php the_ID(); ?>" <?php post_class( 'article' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-	<header class="article-header">
+	<div class="inner-grid">
 
-		<a href="<?php the_permalink() ?>" rel="bookmark">
-			<?php get_template_part( 'partial/post', 'featured' ); ?>
-		</a>
+		<?php get_template_part( 'partial/post', 'featured' ); ?>
 
-	</header> <!-- .article-header -->
+		<div class="content-wrap">
 
-	<div class="article-content">
+			<header class="article-header">
 
-		<div class="article-content-inner">
+				<?php do_action( THEMEDOMAIN . '-before_article_header' ); ?>
 
-			<h2>
-				<?php echo apply_filters( THEMEDOMAIN . '-post_loop_title', sprintf( '<a href="%s" rel="bookmark">%s</a>',  get_the_permalink(), get_the_title() ) ); ?>
-			</h2>
+				<h2>
+					<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+				</h2>
 
-			<p class="meta">
-				<time datetime="<?php the_time( 'Y-m-d' ); ?>" class="date updated"><?php the_time( 'j. F Y' ); ?></time>
-			</p>
+				<?php do_action( THEMEDOMAIN . '-after_article_header' ); ?>
 
-			<?php get_template_part( 'partial/post', 'excerpt' ); ?>
+			</header>
 
-		</div> <!-- .article-content-inner -->
+			<div class="article-content">
 
-	</div> <!-- .article-content -->
+				<?php do_action( THEMEDOMAIN . '-before_article_content' ); ?>
 
-</article> <!-- .article -->
+					<div class="content">
+						<?php echo TexteTekst\get_excerpt(); ?>
+					</div>
+
+				<?php do_action( THEMEDOMAIN . '-after_article_content' ); ?>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</article>

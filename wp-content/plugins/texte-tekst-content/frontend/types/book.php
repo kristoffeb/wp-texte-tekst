@@ -15,14 +15,16 @@ class Book {
 
 	public function init() {
 		if ( get_post_type() === Type\Book::POST_TYPE ) {
-			add_action( THEMEDOMAIN . '-loop',                  [ $this, 'background' ], 5 );
-			add_action( THEMEDOMAIN . '-before_article',        [ $this, 'metas' ] );
-			add_action( THEMEDOMAIN . '-before_article',        [ $this, 'open_wrap' ] );
-			add_action( THEMEDOMAIN . '-after_article',         [ $this, 'close_wrap' ] );
-			add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'writer' ] );
-			add_action( THEMEDOMAIN . '-after_article_content', [ $this, 'sidebar' ] );
-			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'about' ] );
-			add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'related' ] );
+			if ( is_singular() ) {
+				add_action( THEMEDOMAIN . '-loop',                  [ $this, 'background' ], 5 );
+				add_action( THEMEDOMAIN . '-before_article',        [ $this, 'metas' ] );
+				add_action( THEMEDOMAIN . '-before_article',        [ $this, 'open_wrap' ] );
+				add_action( THEMEDOMAIN . '-after_article',         [ $this, 'close_wrap' ] );
+				add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'writer' ] );
+				add_action( THEMEDOMAIN . '-after_article_content', [ $this, 'sidebar' ] );
+				add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'about' ] );
+				add_action( THEMEDOMAIN . '-after_main_content',    [ $this, 'related' ] );
+			}
 		}
 	}
 
@@ -111,7 +113,7 @@ class Book {
 		echo $writer;
 	}
 
-	public function get_writer() {
+	public static function get_writer() {
 		$args = [
 			'connected_type'  => 'book_to_writer',
 			'connected_items' => get_the_ID(),

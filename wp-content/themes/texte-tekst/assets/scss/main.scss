@@ -20,12 +20,14 @@
 @import 'components/intro';
 @import 'components/items-list';
 @import 'components/megamenu';
-@import 'components/pdf';
+@import 'components/pagination';
 @import 'components/partners';
+@import 'components/pdf';
 @import 'components/related';
 @import 'components/search-form';
 
 /* Layouts */
+@import 'layouts/archive';
 @import 'layouts/book';
 @import 'layouts/frontpage';
 @import 'layouts/global';
