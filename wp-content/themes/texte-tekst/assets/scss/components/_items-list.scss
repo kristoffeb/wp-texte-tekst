@@ -31,7 +31,8 @@
 			box-shadow: -1.1rem 0 $navy, 1.1rem 0 $black;
 		}
 
-		.sidebar & {
+		.sidebar &,
+		.type-page & {
 			padding-left: rem(50);
 			margin-bottom: rem(15);
 

@@ -27,7 +27,7 @@ class Single {
 		$content = ob_get_clean();
 
 		Main::get_template_part( 'partials/block.html', [
-			'class'   => 'sidebar breadcrumbs',
+			'class'   => 'sidebar breadcrumbs items-list',
 			'content' => $content,
 		] );
 	}

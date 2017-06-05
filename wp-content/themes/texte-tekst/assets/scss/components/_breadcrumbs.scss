@@ -1,27 +1,61 @@
 .breadcrumbs {
 	.menu {
-		> .menu-item > a {
-			@include block-title;
-			color: $darkgray;
-			font-size: 1.1rem;
-			margin-bottom: 0.25rem;
-			display: block;
+		> .menu-item {
+			margin-bottom: 1.8rem;
+
+			> a {
+				@include block-title;
+				font-family: 'Open Sans';
+				font-style: normal;
+				color: $darkgray;
+				font-size: 1.1rem;
+				margin-bottom: 1rem;
+				display: block;
+			}
+
+			&::before,
+			&::after {
+				display: none;
+			}
 		}
 	}
 
 	.sub-menu {
-		margin-bottom: 0.75rem;
+		> .menu-item {
+			margin-bottom: 0.5rem;
+			padding-left: rem(38);
 
-		> .menu-item > a {
-			color: $darkgray;
-			font-weight: 400;
-			font-size: 0.8rem;
-			line-height: 1.2rem;
-			font-weight: 400;
+			> a {
+				font-size: 0.9rem;
+				color: $darkgray;
+				font-weight: 400;
+			}
+
+			&::before {
+				height: rem(7);
+				width: rem(7);
+				box-shadow: -0.6rem 0 $navy, 0.6rem 0 $black;
+				top: rem(6);
+				left: rem(10);
+			}
 		}
 
 		> .current-menu-item a {
 			@include main-color;
+		}
+	}
+
+	.menu-item:not(.current-menu-ancestor) {
+		.sub-menu {
+			display: none;
+		}
+	}
+
+	&.items-list {
+		margin: 0;
+
+		.menu > .menu-item {
+			padding: 0;
 		}
 	}
 }
