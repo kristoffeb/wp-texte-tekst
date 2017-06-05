@@ -1,0 +1,27 @@
+.breadcrumbs {
+	.menu {
+		> .menu-item > a {
+			@include block-title;
+			color: $darkgray;
+			font-size: 1.1rem;
+			margin-bottom: 0.25rem;
+			display: block;
+		}
+	}
+
+	.sub-menu {
+		margin-bottom: 0.75rem;
+
+		> .menu-item > a {
+			color: $darkgray;
+			font-weight: 400;
+			font-size: 0.8rem;
+			line-height: 1.2rem;
+			font-weight: 400;
+		}
+
+		> .current-menu-item a {
+			@include main-color;
+		}
+	}
+}

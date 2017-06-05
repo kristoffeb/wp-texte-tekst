@@ -14,17 +14,25 @@ class Single {
 	}
 
 	public function init() {
-		if ( is_singular( 'post' ) ) {
-			add_action( THEMEDOMAIN . '-before_article', [ $this, 'open_wrap' ] );
-			add_action( THEMEDOMAIN . '-after_article',  [ $this, 'close_wrap' ] );
+		if ( is_page() && ! is_front_page() ) {
+			add_action( THEMEDOMAIN . '-after_article_content',  [ $this, 'sidebar' ] );
 		}
 	}
 
-	public function open_wrap() {
-		echo '<div class="content-wrap">';
+	public function sidebar() {
+		ob_start();
+
+			$this->get_breadcrumbs();
+
+		$content = ob_get_clean();
+
+		Main::get_template_part( 'partials/block.html', [
+			'class'   => 'sidebar breadcrumbs',
+			'content' => $content,
+		] );
 	}
 
-	public function close_wrap() {
-		echo '</div>';
+	public function get_breadcrumbs() {
+		\TexteTekst\main_menu();
 	}
 }
