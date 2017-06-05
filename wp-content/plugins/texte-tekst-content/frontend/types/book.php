@@ -211,6 +211,8 @@ class Book {
 						'source' => $review['source'],
 					] );
 				}
+			} else {
+				echo __( 'No press reviews yet.', Main::TEXT_DOMAIN );
 			}
 		$quotes = ob_get_clean();
 

@@ -6,11 +6,13 @@
  * @package WordPress
  *
  */
+
+namespace TexteTekst;
 ?>
 
 <?php get_header(); ?>
 
-<main class="main" role="main"  itemscope="itemscope" itemtype="http://schema.org/Blog">
+<main class="<?php echo main_class( [ 'main', 'archive' ] ); ?>" role="main"  itemscope="itemscope" itemtype="http://schema.org/Blog">
 
 	<header class="archive-header">
 

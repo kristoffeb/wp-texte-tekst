@@ -183,10 +183,12 @@ class Frontpage {
 						'permalink'  => get_permalink( $post->ID ),
 						'writer'     => $this->get_writer( $post->ID )->post_title,
 						'writer_url' => get_permalink( $this->get_writer( $post->ID )->ID ),
-						'excerpt'    => get_the_excerpt( $post->ID ),
+						'excerpt'    => \TexteTekst\get_excerpt( $post->ID ),
 					] );
 				}
 			}
+
+			wp_reset_postdata();
 
 		$content = ob_get_clean();
 

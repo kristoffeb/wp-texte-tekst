@@ -3,5 +3,5 @@ namespace TexteTekst;
 ?>
 
 <div class="article-excerpt">
-	<?php excerpt(); ?>
+	<?php echo get_excerpt(); ?>
 </div> <!-- .article-excerpt -->

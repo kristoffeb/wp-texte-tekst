@@ -17,59 +17,27 @@ namespace TexteTekst;
  * else use auto excerpt
  * @param int $post_id The id of the post
  */
-function excerpt( $post_id = false ) {
+function get_excerpt( $post_id = false ) {
 	if( ! $post_id ) {
 		global $post;
 		$post_id = $post->ID;
 	}
 
-	$excerpt = get_post_meta( get_the_ID(), '_textetekst_excerpt', true );
-
-	if ( $excerpt ) {
-		$excerpt = $excerpt . ' <span class="read-more"><a href="' . get_permalink( $post_id ) . '">' . __( 'Read more &raquo;', THEMEDOMAIN ) . '</a></span>';
-	} elseif ( has_excerpt( $post_id ) ) {
-		$excerpt = get_the_excerpt() . ' <span class="read-more"><a href="' . get_permalink( $post_id ) . '">' . __( 'Read more &raquo;', THEMEDOMAIN ) . '</a></span>';
-	} elseif( textetekst_has_more() ) {
-		$excerpt = get_the_content( '<span class="read-more">' . __( 'Read more &raquo;', THEMEDOMAIN ) . '</span>' );
+	if ( has_excerpt( $post_id ) ) {
+		$excerpt = wp_trim_words( get_the_excerpt( $post_id ), 28, new_excerpt_more() );
 	} else {
-		$excerpt = textetekst_get_first_paragraph( get_the_content() ) . ' <span class="read-more"><a href="' . get_permalink( $post_id ) . '">' . __( 'Read more &raquo;', THEMEDOMAIN ) . '</a></span>';
+		$excerpt = wp_trim_words( get_post_field( 'post_content', $post_id ), 28, new_excerpt_more() );
 	}
 
-	echo wpautop( $excerpt );
+	return wpautop( $excerpt );
 }
 
-function textetekst_get_first_paragraph( $content ) {
-	$content = wpautop( $content );
-
-	$start = strpos( $content, '<p>' );
-	$end = strpos( $content, '</p>', $start );
-
-	return wp_strip_all_tags( substr( $content, $start, $end - $start + 4 ) );
+// Replaces the excerpt "more" text by llipsis
+function new_excerpt_more() {
+    return ' <span class="read-more">[...]</span>';
 }
 
-/**
- * Checks a post to see if it has a read more tag
- */
-function textetekst_has_more() {
-	global $post;
-
-	// Check we're in the right context
-	if ( empty( $post ) ) {
-		return;
-	}
-
-	// Parse the post content for a more tag
-	return ( bool ) preg_match( '/<!--more(.*?)?-->/', $post->post_content );
-}
-
-// Replaces the excerpt "more" text by a link
-function new_excerpt_more( $more ) {
-    global $post;
-
-	return '<span class="read-more"><a href="' . get_permalink( $post->ID ) . '">' . __( 'Read more &raquo;', THEMEDOMAIN ) . '</a></span>';
-}
-
-// add_filter( 'excerpt_more', __NAMESPACE__ . '\new_excerpt_more' );
+add_filter( 'excerpt_more', __NAMESPACE__ . '\new_excerpt_more' );
 
 /**
  * Get taxonomies terms links

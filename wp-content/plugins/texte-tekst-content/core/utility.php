@@ -45,7 +45,7 @@ class Utility {
 	public static function get_languages( $type = 'select' ) {
 		$list = [];
 
-		if ( class_exists( 'PLL' ) ) {
+		if ( function_exists( 'PLL' ) ) {
 			$languages = PLL()->model->get_languages_list();
 			foreach ( $languages as $language ) {
 				if ( $type === 'slug' ) {
