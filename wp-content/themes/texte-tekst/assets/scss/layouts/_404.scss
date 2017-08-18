@@ -1,0 +1,23 @@
+#article-not-found {
+	text-align: center;
+	padding: rem(80) 0;
+	background-color: $lightgray;
+
+	h1 {
+		font-family: Lora;
+		font-weight: 700;
+		font-style: italic;
+		font-size: rem(80);
+		margin-bottom: rem(20);
+	}
+
+	.article-content {
+		font-size: 0.9rem;
+		font-weight: 400;
+		line-height: 1.5rem;
+
+		a {
+			@include main-color;
+		}
+	}
+}

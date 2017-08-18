@@ -13,7 +13,9 @@
 
 	<footer class="footer" role="content-info">
 
-		<?php do_action( THEMEDOMAIN . '-footer' ); ?>
+		<div class="inner-grid">
+			<?php echo _e( '&copy; 2017 Texte | Tekst', THEMEDOMAIN ); ?>
+		</div>
 
 	</footer>
 

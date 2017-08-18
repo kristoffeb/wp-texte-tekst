@@ -10,26 +10,22 @@
 
 <?php get_header(); ?>
 
-	<div class="inner-grid">
+	<main class="main" role="main">
 
-		<main class="main" role="main">
+		<article id="article-not-found">
 
-			<article id="article-not-found">
+			<h1><?php echo apply_filters( THEMEDOMAIN . '404_title', __( '404', THEMEDOMAIN ) ); ?></h1>
 
-				<h1><?php echo apply_filters( THEMEDOMAIN . '404_title', __( '404 - Not Found', THEMEDOMAIN ) ); ?></h1>
+			<div class="article-content">
 
-				<div class="article-content">
+				<p><?php echo apply_filters( THEMEDOMAIN . '404_content', __( 'The content you were looking for may have been moved or unpublished.', THEMEDOMAIN ) ); ?></p>
 
-					<p><?php echo apply_filters( THEMEDOMAIN . '404_content', __( 'The content you were looking for may have been moved or unpublished', THEMEDOMAIN ) ); ?></p>
+				<p><?php echo sprintf( '<a href="%s">%s</a>', get_home_url(), __( 'Go to the homepage.', THEMEDOMAIN ) ); ?></p>
 
-				</div> <!-- .article-content -->
+			</div> <!-- .article-content -->
 
-			</article>
+		</article>
 
-		</main>
-
-		<?php get_sidebar(); ?>
-
-	</div> <!-- .inner-grid -->
+	</main>
 
 <?php get_footer(); ?>

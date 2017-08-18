@@ -15,6 +15,7 @@
 @import 'components/breadcrumbs';
 @import 'components/buttons';
 @import 'components/cover';
+@import 'components/footer';
 @import 'components/header';
 @import 'components/inline';
 @import 'components/intro';
@@ -27,6 +28,7 @@
 @import 'components/search-form';
 
 /* Layouts */
+@import 'layouts/404';
 @import 'layouts/archive';
 @import 'layouts/blog';
 @import 'layouts/book';
