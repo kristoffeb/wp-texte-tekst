@@ -19,15 +19,15 @@
 	],
 	"require": {
 		"php": ">=5.4",
-		"johnpbloch/wordpress": "4.7.*",
+		"johnpbloch/wordpress": "4.8.*",
 		"composer/installers": "~1.0",
 		"grappler/polylang-slug": "0.2.1",
-		"wpackagist-plugin/cmb2": "2.2.4",
+		"wpackagist-plugin/cmb2": "2.2.5.2",
 		"wpackagist-plugin/duplicate-page": "2.3",
 		"wpackagist-plugin/hyperdb": "1.1",
-		"wpackagist-plugin/polylang": "2.1.5",
+		"wpackagist-plugin/polylang": "2.2",
 		"wpackagist-plugin/posts-to-posts": "1.6.5",
-		"wpackagist-plugin/wordpress-seo": "4.8.*"
+		"wpackagist-plugin/wordpress-seo": "5.2.*"
 	},
 	"require-dev": {
 		"wpackagist-plugin/pco-kint": "1.*",

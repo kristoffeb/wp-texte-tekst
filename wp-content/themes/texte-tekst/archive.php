@@ -21,7 +21,10 @@ namespace TexteTekst;
 		<header class="archive-header">
 
 			<h1 class="archive-title">
-				<?php if ( is_category() ) : ?>
+				<?php if ( is_home() ) : ?>
+					<?php _e( 'Blog', THEMEDOMAIN ); ?>
+
+				<?php elseif ( is_category() ) : ?>
 					<span><?php _e( 'Category:', THEMEDOMAIN ); ?></span> <?php single_cat_title(); ?>
 
 				<?php elseif ( is_tag() ) : ?>

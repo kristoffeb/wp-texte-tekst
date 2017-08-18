@@ -23,6 +23,12 @@ class Archive {
 				add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'writer' ] );
 			}
 		}
+
+		if ( is_home() || is_tax() ) {
+			add_filter( THEMEDOMAIN . '-post_featured_class', [ $this, 'thumbnail_classes' ] );
+			add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
+			add_filter( 'template_include', [ $this, 'page_template' ], 99 );
+		}
 	}
 
 	public function writer() {
@@ -77,5 +83,9 @@ class Archive {
 			'class'   => 'pagination inner-grid',
 			'content' => $pagination,
 		] );
+	}
+
+	public function page_template() {
+		get_template_part( 'archive' );
 	}
 }
