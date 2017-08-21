@@ -18,11 +18,8 @@ body {
     width: $grid-width;
     margin: 0 auto;
 
-    @include media($desktop) {
+    @include media($tablet) {
         width: 100%;
-    }
-
-    @include media($mobile) {
         padding: 0 rem(20);
     }
 }

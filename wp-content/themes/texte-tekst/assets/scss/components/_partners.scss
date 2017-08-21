@@ -9,7 +9,7 @@
 		padding: rem(100) 0;
 		justify-content: center;
 
-		@include media($mobile) {
+		@include media($tablet) {
 			padding: rem(40) 0;
 		}
 	}
@@ -35,9 +35,11 @@
 			}
 		}
 
-		@include media($mobile) {
+		@include media($tablet) {
 			text-align: center;
+		}
 
+		@include media($mobile) {
 			.logo img {
 				width: rem(100);
 			}

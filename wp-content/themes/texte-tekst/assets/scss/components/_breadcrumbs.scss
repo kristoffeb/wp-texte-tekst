@@ -11,6 +11,11 @@
 				font-size: 1.1rem;
 				margin-bottom: 1rem;
 				display: block;
+
+				@include media($mobile) {
+					font-size: 1.1rem;
+					margin-bottom: 0.5rem;
+				}
 			}
 
 			&::before,

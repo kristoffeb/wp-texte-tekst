@@ -7,6 +7,10 @@ main.type-page {
 		z-index: 2;
 		margin-bottom: rem(70);
 
+		@include media($mobile) {
+			margin-bottom: 0;
+		}
+
 		.inner-grid {
 			@include flex;
 			align-items: flex-start;
@@ -20,10 +24,19 @@ main.type-page {
 		.content {
 			width: 80%;
 			padding-right: rem(60);
+
+			@include media($mobile) {
+				width: 100%;
+				padding-right: 0;
+			}
 		}
 
 		.sidebar {
 			width: 20%;
+
+			@include media($mobile) {
+				width: 100%;
+			}
 		}
 
 		&.has-post-thumbnail {

@@ -68,6 +68,7 @@
 
 			@include media($mobile) {
 				padding-right: 0;
+				margin-bottom: rem(30);
 
 				.title {
 					font-size: 1.25rem;

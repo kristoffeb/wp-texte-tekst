@@ -14,6 +14,14 @@
 		.search {
 			margin-bottom: rem(40);
 		}
+
+		@include media($mobile) {
+			padding-top: rem(100);
+
+			.search {
+				display: none;
+			}
+		}
 	}
 
 	.bg-lines .column {
@@ -51,6 +59,10 @@
 			top: rem(40);
 			left: 82%;
 		}
+
+		@include media($mobile) {
+			display: none;
+		}
 	}
 
 	.menu.dropdown {
@@ -66,6 +78,17 @@
 				font-size: 1.8rem;
 				margin-bottom: rem(30);
 				display: block;
+			}
+
+			@include media($mobile) {
+				width: 50%;
+				padding-right: rem(10);
+				margin-bottom: rem(20);
+
+				> a {
+					font-size: 1.2rem;
+					margin-bottom: rem(15);
+				}
 			}
 		}
 
@@ -92,6 +115,21 @@
 					top: rem(8);
 					left: 0;
 					border-radius: 50%;
+				}
+
+				@include media($mobile) {
+					margin-bottom: 0.3rem;
+					padding-left: rem(15);
+
+					a {
+						font-size: 1rem;
+						line-height: 1.6rem;
+					}
+
+					&::before {
+						height: rem(7);
+						width: rem(7);
+					}
 				}
 			}
 		}
