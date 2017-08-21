@@ -15,12 +15,14 @@
 			margin-bottom: rem(40);
 		}
 
-		@include media($mobile) {
-			padding-top: rem(100);
-
+		@include media($tablet) {
 			.search {
 				display: none;
 			}
+		}
+
+		@include media($mobile) {
+			padding-top: rem(100);
 		}
 	}
 
