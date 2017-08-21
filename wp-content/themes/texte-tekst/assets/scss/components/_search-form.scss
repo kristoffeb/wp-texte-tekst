@@ -1,6 +1,10 @@
 .search {
 	.home & {
 		margin-bottom: rem(80);
+
+		@include media($mobile) {
+			margin-bottom: rem(50);
+		}
 	}
 
 	h2 {
@@ -14,6 +18,11 @@
 		height: rem(45);
 		margin-bottom: rem(35);
 		box-shadow: (- rem(7)) rem(8) $navy;
+
+		@include media($mobile) {
+			margin-bottom: rem(20);
+			height: rem(35);
+		}
 	}
 
 	input,

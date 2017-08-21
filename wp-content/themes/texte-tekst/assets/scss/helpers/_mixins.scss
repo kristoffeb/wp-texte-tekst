@@ -102,6 +102,11 @@
 	option {
 		text-transform: none;
 	}
+
+    @include media($mobile) {
+        height: rem(35);
+        line-height: rem(35);
+    }
 }
 
 @mixin block-title() {
@@ -110,4 +115,9 @@
     font-size: rem(40);
     letter-spacing: -0.03rem;
     margin-bottom: rem(40);
+
+    @include media($mobile) {
+        font-size: rem(30);
+        margin-bottom: rem(20);
+    }
 }

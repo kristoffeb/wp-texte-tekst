@@ -8,6 +8,10 @@
 		@include flex;
 		padding: rem(100) 0;
 		justify-content: center;
+
+		@include media($mobile) {
+			padding: rem(40) 0;
+		}
 	}
 
 	h2 {
@@ -19,7 +23,7 @@
 	}
 
 	.partner-loop {
-		width: 24%;
+		width: 33%;
 
 		.title {
 			display: none;
@@ -28,6 +32,14 @@
 		.logo {
 			img {
 				width: rem(165);
+			}
+		}
+
+		@include media($mobile) {
+			text-align: center;
+
+			.logo img {
+				width: rem(100);
 			}
 		}
 	}

@@ -2,6 +2,10 @@
 	.columns {
 		margin: rem(70) 0;
 
+		@include media($mobile) {
+			margin: rem(50) 0;
+		}
+
 		.inner-grid {
 			@include flex;
 			align-items: flex-start;
@@ -10,10 +14,19 @@
 		.column {
 			&:first-child {
 				width: 66.6666%;
+
+				@include media($mobile) {
+					width: 100%;
+					margin-bottom: rem(50);
+				}
 			}
 
 			&:last-child {
 				width: 33.3333%;
+
+				@include media($mobile) {
+					width: 100%;
+				}
 			}
 		}
 	}

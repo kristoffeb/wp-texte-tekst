@@ -21,6 +21,10 @@ body {
     @include media($desktop) {
         width: 100%;
     }
+
+    @include media($mobile) {
+        padding: 0 rem(20);
+    }
 }
 
 .screen-reader-text{

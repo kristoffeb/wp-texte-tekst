@@ -5,6 +5,10 @@
 		@include flex;
 	}
 
+	@include media($mobile) {
+		margin-bottom: rem(50);
+	}
+
 	.article,
 	.book-loop {
 		position: relative;
@@ -16,6 +20,19 @@
 
 	.article {
 		width: 55%;
+
+		@include media($mobile) {
+			width: 100%;
+			margin-bottom: rem(25);
+
+			.inner-grid {
+				padding: 0;
+			}
+
+			.article-header {
+				margin: rem(20) 0 rem(10);
+			}
+		}
 
 		h1 {
 			color: $black;
@@ -30,6 +47,11 @@
 				font-style: italic;
 				@include main-color;
 			}
+
+			@include media($mobile) {
+				font-size: rem(30);
+				margin-bottom: rem(15);
+			}
 		}
 
 		.article-content {
@@ -38,6 +60,14 @@
 			line-height: 1.8rem;
 			font-weight: 300;
 			margin-bottom: rem(35);
+
+			@include media($mobile) {
+				margin-bottom: rem(15);
+
+				.content {
+					width: 100%;
+				}
+			}
 		}
 	}
 
@@ -47,6 +77,25 @@
 		.excerpt,
 		.writer {
 			display: none;
+		}
+
+		@include media($mobile) {
+			width: 100%;
+
+			.cover {
+				width: 40%;
+				margin-bottom: rem(35);
+			}
+
+			.content {
+				width: 60%;
+				margin: 0 auto;
+			}
+
+			.title strong {
+				display: block;
+				margin: 0 0 rem(4);
+			}
 		}
 	}
 }

@@ -5,4 +5,9 @@
 	font-size: 1rem;
 	padding: rem(15) rem(40);
 	display: inline-block;
+
+	@include media($mobile) {
+		font-size: 0.8rem;
+		padding: rem(12) rem(20);
+	}
 }

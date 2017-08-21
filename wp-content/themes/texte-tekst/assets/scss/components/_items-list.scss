@@ -31,6 +31,23 @@
 			box-shadow: -1.1rem 0 $navy, 1.1rem 0 $black;
 		}
 
+		@include media($mobile) {
+			margin-bottom: rem(15);
+			padding-left: rem(55);
+
+			&, * {
+				font-size: 1.4rem;
+			}
+
+			&::before {
+				height: rem(12);
+				width: rem(12);
+				box-shadow: -0.9rem 0 $navy, 0.9rem 0 $black;
+				top: rem(6);
+				left: rem(15);
+			}
+		}
+
 		.sidebar &,
 		.type-page & {
 			padding-left: rem(50);

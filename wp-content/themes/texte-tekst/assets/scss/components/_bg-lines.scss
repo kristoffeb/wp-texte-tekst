@@ -9,6 +9,10 @@
 		margin: 0 auto;
 		height: 100%;
 		@include flex;
+
+		@include media($mobile) {
+			width: 100%;
+		}
 	}
 
 	.column {

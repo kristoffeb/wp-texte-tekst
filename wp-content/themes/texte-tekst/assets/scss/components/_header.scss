@@ -4,6 +4,10 @@
 	#main-nav {
 		@include flex;
 		padding: rem(30) 0;
+
+		@include media($mobile) {
+			padding: rem(10) 0;
+		}
 	}
 
 	#logo {
@@ -22,6 +26,11 @@
 		}
 		.menu-open & {
 			background-image: url('../img/logo-navy-white.png');
+		}
+
+		@include media($mobile) {
+			height: rem(56);
+			width: rem(110);
 		}
 	}
 
@@ -43,6 +52,10 @@
 			&.current-lang a {
 				@include main-color;
 			}
+		}
+
+		@include media($mobile) {
+			display: none;
 		}
 	}
 
@@ -68,6 +81,12 @@
 			&:hover {
 				cursor: pointer;
 			}
+		}
+
+		@include media($mobile) {
+			width: auto;
+			position: absolute;
+			right: rem(20);
 		}
 	}
 }
