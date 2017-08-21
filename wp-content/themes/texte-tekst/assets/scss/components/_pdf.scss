@@ -6,6 +6,11 @@
 		margin-bottom: rem(35);
 		box-shadow: (- rem(7)) rem(8) $navy;
 
+		@include media($mobile) {
+			height: rem(35);
+			margin-bottom: rem(20);
+		}
+
 		a {
 			color: $white;
 			font-weight: 400;

@@ -21,6 +21,22 @@ main.type-book {
 
 		.meta {
 			width: 33.3333%;
+
+			@include media($mobile) {
+				width: 100%;
+				order: 2;
+
+				.cover {
+					width: 40%;
+					margin: 0 auto;
+					margin-bottom: rem(35);
+				}
+
+				.infos {
+					width: 60%;
+					margin: 0 auto;
+				}
+			}
 		}
 
 		.content-wrap {
@@ -29,6 +45,16 @@ main.type-book {
 
 			.content {
 				padding-right: rem(60);
+			}
+
+			@include media($mobile) {
+				width: 100%;
+				padding-left: 0;
+				order: 1;
+
+				.content {
+					padding-right: 0;
+				}
 			}
 		}
 
@@ -45,6 +71,12 @@ main.type-book {
 
 			li {
 				margin-bottom: 0.5rem;
+			}
+
+			@include media($mobile) {
+				li {
+					text-align: center;
+				}
 			}
 		}
 	}

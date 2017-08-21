@@ -7,6 +7,10 @@
 		padding: rem(70) 0;
 		@include flex;
 		align-items: flex-start;
+
+		@include media($mobile) {
+			padding: rem(50) rem(20);
+		}
 	}
 
 	.bg-lines .column {
@@ -17,6 +21,12 @@
 		width: 66.6666%;
 		padding-right: rem(80);
 		z-index: 2;
+
+		@include media($mobile) {
+			width: 100%;
+			padding: 0;
+			padding-bottom: rem(30);
+		}
 	}
 
 	h2 {
@@ -24,6 +34,11 @@
 		color: $white;
 		font-size: rem(25);
 		margin-bottom: rem(30);
+
+		@include media($mobile) {
+			font-size: rem(20);
+			margin-bottom: rem(15);
+		}
 	}
 
 	blockquote {
@@ -40,6 +55,13 @@
 			font-family: 'Lora';
 			font-weight: 300;
 			font-style: italic;
+		}
+
+		@include media($mobile) {
+			* {
+				font-size: 1rem;
+				line-height: 1.5rem;
+			}
 		}
 	}
 
@@ -58,6 +80,15 @@
 			background-color: $black;
 			font-size: 0.85rem;
 			padding: rem(10) rem(20);
+		}
+
+		@include media($mobile) {
+			width: 100%;
+
+			p {
+				font-size: 0.9rem;
+				line-height: 1.5rem;
+			}
 		}
 	}
 
