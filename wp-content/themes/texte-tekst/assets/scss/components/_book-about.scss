@@ -7,6 +7,7 @@
 		padding: rem(70) 0;
 		@include flex;
 		align-items: flex-start;
+		justify-content: flex-end;
 
 		@include media($tablet) {
 			padding: rem(50) rem(20);
@@ -48,6 +49,10 @@
 			margin-bottom: 0;
 		}
 
+		a {
+			@include main-color;
+		}
+
 		* {
 			color: $lightgray;
 			font-size: 1.2rem;
@@ -68,6 +73,11 @@
 	.writer-bio {
 		width: 33.3333%;
 		z-index: 2;
+		margin-bottom: rem(30);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 
 		p {
 			font-size: 0.8rem;

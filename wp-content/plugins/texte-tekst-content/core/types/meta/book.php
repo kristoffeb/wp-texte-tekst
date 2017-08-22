@@ -36,6 +36,12 @@ class Book {
 		$metabox = new_cmb2_box( $metabox_args );
 
 		$metabox->add_field( [
+			'name' => __( 'Original title', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_original_title',
+			'type' => 'text',
+		] );
+
+		$metabox->add_field( [
 			'name' => __( 'Publisher', Main::TEXT_DOMAIN ),
 			'id'   => self::PREFIX . 'book_publisher',
 			'type' => 'text_medium',
@@ -52,6 +58,42 @@ class Book {
 			'id'      => self::PREFIX . 'book_year',
 			'type'    => 'select',
 			'options' => array_combine( range( date('Y'), 1900 ), range( date('Y'), 1900 ) ),
+		] );
+
+		$metabox->add_field( [
+			'name' => __( 'Amount of pages', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_pages',
+			'type' => 'text_small',
+		] );
+
+		$metabox->add_field( [
+			'name' => __( 'More information (link)', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_link',
+			'type' => 'text_url',
+		] );
+
+		$metabox->add_field( [
+			'name' => __( 'Foreign rights sold to', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_foreign_rights',
+			'type' => 'text_medium',
+		] );
+
+		$metabox->add_field( [
+			'name' => __( 'Foreign rights (contact)', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_foreign_rights_contact',
+			'type' => 'text_medium',
+		] );
+
+		$metabox->add_field( [
+			'name' => __( 'Foreign rights (email)', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_foreign_rights_email',
+			'type' => 'text_medium',
+		] );
+
+		$metabox->add_field( [
+			'name' => __( 'Rights sold to following countries', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_foreign_rights_countries',
+			'type' => 'text',
 		] );
 	}
 
@@ -121,6 +163,12 @@ class Book {
 			'name' => __( 'Source', Main::TEXT_DOMAIN ),
 			'id'   => 'source',
 			'type' => 'text_medium',
+		] );
+
+		$metabox->add_group_field( $group_id, [
+			'name' => __( 'URL', Main::TEXT_DOMAIN ),
+			'id'   => 'url',
+			'type' => 'text_url',
 		] );
 	}
 }

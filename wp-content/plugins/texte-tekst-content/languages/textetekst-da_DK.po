@@ -5,9 +5,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TexteTekst\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
-"POT-Creation-Date: 2017-05-28 21:45+0200\n"
-"PO-Revision-Date: 2017-05-28 22:25+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2017-08-22 02:10+0200\n"
+"PO-Revision-Date: 2017-08-22 02:14+0200\n"
+"Last-Translator: Kristoffe Biglete <kristoffe@coloursmove.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -72,96 +72,104 @@ msgstr "Logo"
 msgid "All exhibitions"
 msgstr ""
 
-#: core/types/writer.php:21 frontend/types/book.php:234
-msgid "Writer"
-msgstr "Forfatter"
-
-#: core/types/writer.php:22
-msgid "Writers"
-msgstr "Forfattere"
-
-#: core/types/writer.php:23 core/types/writer.php:32
-msgid "writer"
-msgstr ""
-
-#: core/types/book.php:21
+#: core/types/book.php:19
 msgid "Book"
 msgstr "Bog"
 
-#: core/types/book.php:22 core/types/meta/writer.php:37
-#: frontend/types/frontpage.php:199
+#: core/types/book.php:20 core/types/meta/writer.php:37
+#: frontend/types/frontpage.php:202
 msgid "Books"
 msgstr "Bøger"
-
-#: core/types/book.php:23 core/types/book.php:32
-msgid "book"
-msgstr ""
-
-#: core/types/meta/writer.php:29
-msgid "Bibliography"
-msgstr "Bibliografi"
 
 #: core/types/meta/book.php:31
 msgid "Information"
 msgstr "Information"
 
-#: core/types/meta/book.php:39 frontend/types/book.php:69
-msgid "Publisher"
-msgstr "Forlægger"
+#: core/types/meta/book.php:39 frontend/types/book.php:71
+msgid "Original title"
+msgstr "Original titel"
 
-#: core/types/meta/book.php:45 frontend/types/book.php:77
+#: core/types/meta/book.php:45 frontend/types/book.php:75
+msgid "Publisher"
+msgstr "Forlag"
+
+#: core/types/meta/book.php:51 frontend/types/book.php:83
 msgid "ISBN"
 msgstr "ISBN"
 
-#: core/types/meta/book.php:51
+#: core/types/meta/book.php:57
 msgid "Year of publication"
 msgstr "Udgivelsesdato"
 
-#: core/types/meta/book.php:62
+#: core/types/meta/book.php:64
+msgid "Amount of pages"
+msgstr ""
+
+#: core/types/meta/book.php:70
+msgid "More information (link)"
+msgstr ""
+
+#: core/types/meta/book.php:76
+msgid "Foreign rights sold to"
+msgstr ""
+
+#: core/types/meta/book.php:82
+msgid "Foreign rights (contact)"
+msgstr ""
+
+#: core/types/meta/book.php:88
+msgid "Foreign rights (email)"
+msgstr ""
+
+#: core/types/meta/book.php:94
+msgid "Rights sold to following countries"
+msgstr "Rettighederne er solgt til følgende lande"
+
+#: core/types/meta/book.php:104
 msgid "First Chapters"
 msgstr "Første kapitler"
 
-#: core/types/meta/book.php:73
+#: core/types/meta/book.php:115
 msgid "Document {#}"
 msgstr "Dokument {#}"
 
-#: core/types/meta/book.php:74
+#: core/types/meta/book.php:116
 msgid "Add Another Document"
 msgstr "Tilføj dokument"
 
-#: core/types/meta/book.php:75
+#: core/types/meta/book.php:117
 msgid "Remove Document"
 msgstr "Fjern dokument"
 
-#: core/types/meta/book.php:80
+#: core/types/meta/book.php:122
 msgid "Upload PDF"
 msgstr ""
 
-#: core/types/meta/book.php:86 frontend/types/search.php:68
+#: core/types/meta/book.php:128 frontend/types/search.php:72
 msgid "Language"
 msgstr "Sprog"
 
-#: core/types/meta/book.php:97
+#: core/types/meta/book.php:139
 msgid "Press Reviews"
 msgstr "Pressemeddelelse"
 
-#: core/types/meta/book.php:108
+#: core/types/meta/book.php:150
 msgid "Review {#}"
 msgstr "Anmeldelse {#}"
 
-#: core/types/meta/book.php:109
+#: core/types/meta/book.php:151
 msgid "Add Another Review"
 msgstr "Tilføj anmeldelse"
 
-#: core/types/meta/book.php:110
+#: core/types/meta/book.php:152
 msgid "Remove Review"
 msgstr "Fjern anmeldelse"
 
-#: core/types/meta/book.php:115
+#: core/types/meta/book.php:157
 msgid "Quote"
 msgstr "Citat"
 
-#: core/types/meta/book.php:121
+#: core/types/meta/book.php:163
 msgid "Source"
 msgstr "Source"
 
@@ -177,15 +185,31 @@ msgstr "Tilknyttet side"
 msgid "Text"
 msgstr "Tekst"
 
+#: core/types/meta/writer.php:29 frontend/types/writer.php:81
+msgid "Bibliography"
+msgstr "Bibliografi"
+
 #: core/types/p2p/book.php:17
 msgid "Book Writer"
 msgstr "Forfatter"
 
-#: core/types/p2p/book.php:18
+#: core/types/p2p/book.php:18 frontend/types/writer.php:129
 msgid "Written Books"
 msgstr "Skriftlige Bøger"
 
-#: core/types/p2p/book.php:30
+#: core/types/p2p/book.php:31
+#, fuzzy
+#| msgid "Book Writer"
+msgid "Book Translator"
+msgstr "Forfatter"
+
+#: core/types/p2p/book.php:32
+#, fuzzy
+#| msgid "Related Books"
+msgid "Translated Books"
+msgstr "Beslægtede Bøger"
+
+#: core/types/p2p/book.php:44
 msgid "Related Books"
 msgstr "Beslægtede Bøger"
 
@@ -242,39 +266,73 @@ msgid "New Category Name"
 msgstr "Ny kategori nan"
 
 #: core/types/taxonomy/book-category.php:32
-#: core/types/taxonomy/page-category.php:32 frontend/types/book.php:182
+#: core/types/taxonomy/page-category.php:32 frontend/types/book.php:217
 msgid "Categories"
 msgstr "Kategorier"
 
-#: frontend/types/book.php:73 frontend/types/search.php:59
+#: core/types/writer.php:19 frontend/types/book.php:227
+msgid "Writer"
+msgstr "Forfatter"
+
+#: core/types/writer.php:20
+msgid "Writers"
+msgstr "Forfattere"
+
+#: frontend/types/archive.php:80 frontend/types/book.php:87
+msgid "Pages"
+msgstr "Omfang"
+
+#: frontend/types/book.php:79 frontend/types/search.php:59
 msgid "Year"
-msgstr "År"
+msgstr "Udgivelsesår"
 
-#: frontend/types/book.php:151
+#: frontend/types/book.php:91
+msgid "More information"
+msgstr "Flere oplysninger"
+
+#: frontend/types/book.php:95
+msgid "Foreign rights"
+msgstr "Udenlandske rettigheder"
+
+#: frontend/types/book.php:99
+msgid "Foreign rights sold to following countries"
+msgstr "Rettighederne er solgt til følgende lande"
+
+#: frontend/types/book.php:108
+msgid "Link"
+msgstr "Lien"
+
+#: frontend/types/book.php:186
 msgid "Read"
-msgstr "Les"
+msgstr "Læs"
 
-#: frontend/types/book.php:160
+#: frontend/types/book.php:195
 msgid "First pages"
-msgstr "Læs første capituler"
+msgstr "Læs første sider"
 
-#: frontend/types/book.php:219
+#: frontend/types/book.php:228
+msgid "Translator"
+msgstr "Oversætter"
+
+#: frontend/types/book.php:251
+#, fuzzy
+#| msgid "Press Reviews"
+msgid "No press reviews yet."
+msgstr "Pressemeddelelse"
+
+#: frontend/types/book.php:257
 msgid "Press"
 msgstr "Press"
 
-#: frontend/types/book.php:227
-msgid "Read more"
-msgstr "Læs mere"
-
-#: frontend/types/book.php:282
+#: frontend/types/book.php:318
 msgid "Related books"
 msgstr "Relaterede bøger"
 
-#: frontend/types/frontpage.php:195
+#: frontend/types/frontpage.php:198
 msgid "See all books"
 msgstr "Se alle bøger"
 
-#: frontend/types/frontpage.php:233
+#: frontend/types/frontpage.php:236
 msgid "Grants"
 msgstr "Støtter"
 
@@ -282,7 +340,7 @@ msgstr "Støtter"
 msgid "Find books"
 msgstr "Find bøger"
 
-#: frontend/types/search.php:82
+#: frontend/types/search.php:86
 msgid "Category"
 msgstr "Kategori"
 
@@ -453,6 +511,9 @@ msgid_plural "%s "
 msgstr[0] ""
 msgstr[1] ""
 
+#~ msgid "Read more"
+#~ msgstr "Læs mere"
+
 #~ msgid "Artist"
 #~ msgstr "Artist"
 
@@ -546,9 +607,6 @@ msgstr[1] ""
 #~ msgid "Add Another Sponsor"
 #~ msgstr "Ajouter un nouveau sponsor"
 
-#~ msgid "Link"
-#~ msgstr "Lien"
-
 #~ msgid "Team Member Information"
 #~ msgstr "Information sur le membre"
 
@@ -557,9 +615,6 @@ msgstr[1] ""
 
 #~ msgid "Team Member Links"
 #~ msgstr "Liens du membre"
-
-#~ msgid "work Information"
-#~ msgstr "Information sur l’œuvre"
 
 #~ msgid "Work Portfolio"
 #~ msgstr "Portfolio de l’œuvre"

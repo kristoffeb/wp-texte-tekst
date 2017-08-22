@@ -1,6 +1,12 @@
 <blockquote>
 
 	<p>&laquo; <?php echo $quote; ?> &raquo;</p>
-	<footer><cite><?php echo $source; ?></cite></footer>
+	<footer>
+		<?php if ( ! empty( $url ) ) : ?>
+			<cite><a href="<?php echo $url; ?>"><?php echo $source; ?></a></cite>
+		<?php else : ?>
+			<cite><?php echo $source; ?></cite>
+		<?php endif; ?>
+	</footer>
 
 </blockquote>

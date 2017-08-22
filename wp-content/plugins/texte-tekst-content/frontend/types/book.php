@@ -67,6 +67,10 @@ class Book {
 	public function get_infos() {
 		$meta_ids = [
 			[
+				'id'    => 'original_title',
+				'label' => __( 'Original title', Main::TEXT_DOMAIN ),
+			],
+			[
 				'id'    => 'publisher',
 				'label' => __( 'Publisher', Main::TEXT_DOMAIN ),
 			],
@@ -78,11 +82,40 @@ class Book {
 				'id'    => 'isbn',
 				'label' => __( 'ISBN', Main::TEXT_DOMAIN ),
 			],
+			[
+				'id'    => 'pages',
+				'label' => __( 'Pages', Main::TEXT_DOMAIN ),
+			],
+			[
+				'id'    => 'link',
+				'label' => __( 'More information', Main::TEXT_DOMAIN ),
+			],
+			[
+				'id'    => 'foreign_rights',
+				'label' => __( 'Foreign rights', Main::TEXT_DOMAIN ),
+			],
+			[
+				'id'    => 'foreign_rights_countries',
+				'label' => __( 'Foreign rights sold to following countries', Main::TEXT_DOMAIN ),
+			],
 		];
 
 		$content = '';
 		foreach ( $meta_ids as $meta ) {
 			$value = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_' . $meta['id'], TRUE );
+
+			if ( $meta['id'] === 'link' ) {
+				$value = sprintf( '<a href="%s">%s</a>', $value, __( 'Link', Main::TEXT_DOMAIN ) );
+			}
+
+			if ( $meta['id'] === 'foreign_rights' ) {
+				$contact = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_foreign_rights_contact', TRUE );
+				$email = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_foreign_rights_email', TRUE );
+
+				if ( ! empty( $contact ) && ! empty( $email ) ) {
+					$value .= sprintf( ' (<a href="%s">%s</a>)', $email, $contact );
+				}
+			}
 
 			if ( ! empty( $value ) ) {
 				$content .= sprintf(
@@ -113,9 +146,9 @@ class Book {
 		echo $writer;
 	}
 
-	public static function get_writer() {
+	public static function get_writer( $connection = 'book_to_writer' ) {
 		$args = [
-			'connected_type'  => 'book_to_writer',
+			'connected_type'  => $connection,
 			'connected_items' => get_the_ID(),
 			'posts_per_page'  => 1,
 		];
@@ -191,7 +224,8 @@ class Book {
 		ob_start();
 
 			$this->get_press();
-			$this->get_writer_bio();
+			$this->get_writer_bio( 'book_to_writer', __( 'Writer', Main::TEXT_DOMAIN ) );
+			$this->get_writer_bio( 'book_to_translator', __( 'Translator', Main::TEXT_DOMAIN ) );
 
 		$content = ob_get_clean();
 
@@ -211,6 +245,7 @@ class Book {
 					Main::get_template_part( 'partials/quote.html', [
 						'quote'  => $review['quote'],
 						'source' => $review['source'],
+						'url'    => $review['url'],
 					] );
 				}
 			} else {
@@ -225,19 +260,17 @@ class Book {
 		] );
 	}
 
-	public function get_writer_bio() {
-		$writer = $this->get_writer();
+	public function get_writer_bio( $connection, $label ) {
+		$writer = $this->get_writer( $connection );
 
-		$link = sprintf( '<a href="%s" class="button">%s</a>', get_permalink( $writer->ID ), __( 'Read more', Main::TEXT_DOMAIN ) );
-
-		$excerpt = wpautop( get_the_excerpt( $writer->ID ) );
+		$excerpt = wpautop( wp_trim_words( $writer->post_content, 30 ) );
 		$writer_link = sprintf( '<a href="%s" class="writer-link">%s</a>', get_permalink( $writer->ID ), $writer->post_title );
 
 		Main::get_template_part( 'partials/block.html', [
 			'class'   => 'writer-bio',
-			'title'   => __( 'Writer', Main::TEXT_DOMAIN ),
+			'title'   => $label,
 			'content' => $writer_link . $excerpt,
-			'more'    => $link,
+			'more'    => '',
 		] );
 	}
 

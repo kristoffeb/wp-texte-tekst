@@ -22,6 +22,10 @@ main.type-book {
 		.meta {
 			width: 33.3333%;
 
+			a {
+				@include main-color;
+			}
+
 			@include media($mobile) {
 				width: 100%;
 				order: 2;
@@ -63,6 +67,7 @@ main.type-book {
 			padding-left: 0.8rem;
 			font-style: italic;
 			font-size: 0.8rem;
+			line-height: 1.1rem;
 			color: $navy;
 
 			strong {
@@ -70,7 +75,7 @@ main.type-book {
 			}
 
 			li {
-				margin-bottom: 0.5rem;
+				margin-bottom: 0.2rem;
 			}
 
 			@include media($mobile) {

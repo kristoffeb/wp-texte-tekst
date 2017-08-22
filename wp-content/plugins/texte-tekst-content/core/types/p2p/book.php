@@ -27,6 +27,20 @@ class Book {
 		] );
 
 		p2p_register_connection_type( [
+			'title'    =>  [
+				'from' => __( 'Book Translator', Main::TEXT_DOMAIN ),
+				'to'   => __( 'Translated Books', Main::TEXT_DOMAIN ),
+			],
+			'name'     => 'book_to_translator',
+			'from'     => Type\Book::POST_TYPE,
+			'to'       => Type\Writer::POST_TYPE,
+			'sortable' => 'any',
+			/*'admin_box' => array(
+				'show' => 'from',
+			),*/
+		] );
+
+		p2p_register_connection_type( [
 			'title'      => __( 'Related Books', Main::TEXT_DOMAIN ),
 			'name'       => 'book_to_book',
 			'from'       => Type\Book::POST_TYPE,
