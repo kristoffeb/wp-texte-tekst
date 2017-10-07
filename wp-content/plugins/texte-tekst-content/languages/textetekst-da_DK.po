@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: TexteTekst\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
 "POT-Creation-Date: 2017-08-22 02:10+0200\n"
-"PO-Revision-Date: 2017-08-22 02:14+0200\n"
+"PO-Revision-Date: 2017-08-30 22:27+0200\n"
 "Last-Translator: Kristoffe Biglete <kristoffe@coloursmove.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -103,7 +103,7 @@ msgstr "Udgivelsesdato"
 
 #: core/types/meta/book.php:64
 msgid "Amount of pages"
-msgstr ""
+msgstr "Omfang"
 
 #: core/types/meta/book.php:70
 msgid "More information (link)"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: core/types/meta/book.php:128 frontend/types/search.php:72
 msgid "Language"
-msgstr "Sprog"
+msgstr "Originalsprog"
 
 #: core/types/meta/book.php:139
 msgid "Press Reviews"
@@ -300,7 +300,7 @@ msgstr "Rettighederne er solgt til følgende lande"
 
 #: frontend/types/book.php:108
 msgid "Link"
-msgstr "Lien"
+msgstr "Link"
 
 #: frontend/types/book.php:186
 msgid "Read"
