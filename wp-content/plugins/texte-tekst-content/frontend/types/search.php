@@ -57,7 +57,7 @@ class Search {
 
 	public function get_years() {
 		$default = [ '' => __( 'Year', Main::TEXT_DOMAIN ) ];
-		$years   = array_combine( range( date('Y'), 2000 ), range( date( 'Y' ), 2000 ) );
+		$years   = array_combine( range( date('Y'), 2016 ), range( date( 'Y' ), 2016 ) );
 
 		$options = array_merge( $default, $years );
 

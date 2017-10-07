@@ -57,7 +57,7 @@ class Book {
 			'name'    => __( 'Year of publication', Main::TEXT_DOMAIN ),
 			'id'      => self::PREFIX . 'book_year',
 			'type'    => 'select',
-			'options' => array_combine( range( date('Y'), 1900 ), range( date('Y'), 1900 ) ),
+			'options' => array_combine( range( date('Y'), 2016 ), range( date('Y'), 2016 ) ),
 		] );
 
 		$metabox->add_field( [
