@@ -163,6 +163,7 @@ class Book {
 
 			$this->get_pdf();
 			$this->get_categories();
+			$this->get_share_button();
 
 		$content = ob_get_clean();
 
@@ -218,6 +219,20 @@ class Book {
 				'list'  => $items,
 			] );
 		}
+	}
+
+	public function get_share_button() {
+		$button = sprintf(
+			'<div class="fb-share-button" data-href=%s" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="%s">%s</a></div>',
+			get_permalink(),
+			get_permalink(),
+			__( 'Share', Main::TEXT_DOMAIN )
+		);
+
+		Main::get_template_part( 'partials/block.html', [
+			'class'   => 'share',
+			'content' => $button,
+		] );
 	}
 
 	public function about() {

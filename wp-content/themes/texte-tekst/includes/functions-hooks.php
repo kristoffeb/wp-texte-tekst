@@ -107,3 +107,21 @@ function bg_lines() {
 }
 
 add_action( THEMEDOMAIN . '-before_header', __NAMESPACE__ . '\bg_lines' );
+
+/**
+ * Facebook Script
+ */
+function header_fb_script() {
+	?>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=158338760929078";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<?php
+}
+
+add_action( 'wp_head', __NAMESPACE__ . '\header_fb_script' );

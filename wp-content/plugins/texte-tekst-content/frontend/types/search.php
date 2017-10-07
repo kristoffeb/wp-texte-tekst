@@ -79,7 +79,22 @@ class Search {
 
 		$options = array_merge( $default, $options );
 
-		return $options;
+		return $this->get_filtered_languages( $options );
+	}
+
+	public function get_filtered_languages( $languages ) {
+		switch( pll_current_language() ) {
+			case 'da' :
+				unset( $languages['da'] );
+				break;
+			case 'fr' :
+			case 'de' :
+				unset( $languages['fr'] );
+				unset( $languages['de'] );
+				break;
+		}
+
+		return $languages;
 	}
 
 	public function get_categories() {

@@ -20,7 +20,7 @@ class Archive {
 			add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
 
 			if ( get_post_type() === Type\Book::POST_TYPE ) {
-				add_action( THEMEDOMAIN . '-after_article_header',  [ $this, 'writer' ] );
+				add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'writer' ] );
 			}
 		}
 
@@ -33,8 +33,14 @@ class Archive {
 
 	public function writer() {
 		$post = $this->get_writer();
+		$nationality = get_post_meta( $post->ID, Type\Meta\Writer::PREFIX . 'writer_nationality', TRUE );
 
-		$writer = sprintf( '<a href="%s" class="writer">%s</a>', get_permalink( $post->ID ), $post->post_title );
+		$writer = sprintf(
+			'<a href="%s" class="writer">%s (%s)</a>',
+			get_permalink( $post->ID ),
+			$post->post_title,
+			strtoupper( $nationality )
+		);
 
 		echo $writer;
 	}

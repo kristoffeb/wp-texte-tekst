@@ -43,5 +43,12 @@ class Writer {
 				'teeny'         => true,
 			],
 		] );
+
+		$metabox->add_field( [
+			'name'    => __( 'Nationality', Main::TEXT_DOMAIN ),
+			'id'      => self::PREFIX . 'writer_nationality',
+			'type'    => 'select',
+			'options' => Utility::get_languages(),
+		] );
 	}
 }
