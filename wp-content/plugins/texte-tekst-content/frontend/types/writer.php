@@ -79,7 +79,7 @@ class Writer {
 			Main::get_template_part( 'partials/block.html', [
 				'class'   => 'bibliography',
 				'title'   => __( 'Bibliography', Main::TEXT_DOMAIN ),
-				'content' => $books,
+				'content' => apply_filters( 'the_content', $books ),
 			] );
 		}
 	}

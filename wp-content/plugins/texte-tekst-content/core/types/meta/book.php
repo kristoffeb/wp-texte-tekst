@@ -48,6 +48,12 @@ class Book {
 		] );
 
 		$metabox->add_field( [
+			'name' => __( 'Publisher Link', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_publisher_link',
+			'type' => 'text_url',
+		] );
+
+		$metabox->add_field( [
 			'name' => __( 'ISBN', Main::TEXT_DOMAIN ),
 			'id'   => self::PREFIX . 'book_isbn',
 			'type' => 'text_medium',

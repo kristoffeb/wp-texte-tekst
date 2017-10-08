@@ -17,16 +17,19 @@ class Archive {
 		if ( is_archive() ) {
 			add_filter( THEMEDOMAIN . '-post_featured_class', [ $this, 'thumbnail_classes' ] );
 			add_action( THEMEDOMAIN . '-archive_footer', [ $this, 'sidebar' ] );
-			add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
 
 			if ( get_post_type() === Type\Book::POST_TYPE ) {
 				add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'writer' ] );
+				add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
+			}
+
+			if ( ! is_tax( Type\Taxonomy\Page_Category::TERM ) ) {
+				add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
 			}
 		}
 
 		if ( is_home() || is_tax() ) {
 			add_filter( THEMEDOMAIN . '-post_featured_class', [ $this, 'thumbnail_classes' ] );
-			add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
 			add_filter( 'template_include', [ $this, 'page_template' ], 99 );
 		}
 	}

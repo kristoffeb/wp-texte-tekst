@@ -71,35 +71,38 @@ class Book {
 				'label' => __( 'Original title', Main::TEXT_DOMAIN ),
 			],
 			[
-				'id'    => 'publisher',
-				'label' => __( 'Publisher', Main::TEXT_DOMAIN ),
+				'id'    => 'pages',
+				'label' => __( 'Pages', Main::TEXT_DOMAIN ),
 			],
 			[
 				'id'    => 'year',
 				'label' => __( 'Year', Main::TEXT_DOMAIN ),
 			],
 			[
+				'id'    => 'publisher',
+				'label' => __( 'Publisher', Main::TEXT_DOMAIN ),
+			],
+			[
 				'id'    => 'isbn',
 				'label' => __( 'ISBN', Main::TEXT_DOMAIN ),
 			],
-			[
-				'id'    => 'pages',
-				'label' => __( 'Pages', Main::TEXT_DOMAIN ),
-			],
-			[
-				'id'    => 'link',
-				'label' => __( 'More information', Main::TEXT_DOMAIN ),
-			],
-			[
-				'id'    => 'foreign_rights',
-				'label' => __( 'Foreign rights', Main::TEXT_DOMAIN ),
-			],
-			[
-				'id'    => 'foreign_rights_countries',
-				'label' => __( 'Foreign rights sold to following countries', Main::TEXT_DOMAIN ),
-			],
 		];
 
+		$content = $this->get_metas( $meta_ids );
+
+		$title = sprintf(
+			'<li><strong>%s</strong>, %s</li>',
+			$this->get_writer()->post_title,
+			get_the_title()
+		);
+
+		Main::get_template_part( 'partials/block-list.html', [
+			'class' => 'infos',
+			'list'  => $title . $content,
+		] );
+	}
+
+	public function get_metas( $meta_ids ) {
 		$content = '';
 		foreach ( $meta_ids as $meta ) {
 			$value = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_' . $meta['id'], TRUE );
@@ -108,12 +111,20 @@ class Book {
 				$value = sprintf( '<a href="%s">%s</a>', $value, __( 'Link', Main::TEXT_DOMAIN ) );
 			}
 
+			if ( $meta['id'] === 'publisher' ) {
+				$link = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_publisher_link', TRUE );
+
+				if ( ! empty( $link ) ) {
+					$value = sprintf( '<a href="%s">%s</a>', $link, $value );
+				}
+			}
+
 			if ( $meta['id'] === 'foreign_rights' ) {
 				$contact = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_foreign_rights_contact', TRUE );
 				$email = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_foreign_rights_email', TRUE );
 
 				if ( ! empty( $contact ) && ! empty( $email ) ) {
-					$value .= sprintf( ' (<a href="%s">%s</a>)', $email, $contact );
+					$value .= sprintf( ' (<a href="mailto:%s">%s</a>)', $email, $contact );
 				}
 			}
 
@@ -126,16 +137,7 @@ class Book {
 			}
 		}
 
-		$title = sprintf(
-			'<li><strong>%s</strong>, %s</li>',
-			get_the_title(),
-			$this->get_writer()->post_title
-		);
-
-		Main::get_template_part( 'partials/block-list.html', [
-			'class' => 'infos',
-			'list'  => $title . $content,
-		] );
+		return $content;
 	}
 
 	public function writer() {
@@ -237,16 +239,24 @@ class Book {
 
 	public function about() {
 		ob_start();
-
 			$this->get_press();
+		$press = ob_get_clean();
+
+		ob_start();
 			$this->get_writer_bio( 'book_to_writer', __( 'Writer', Main::TEXT_DOMAIN ) );
 			$this->get_writer_bio( 'book_to_translator', __( 'Translator', Main::TEXT_DOMAIN ) );
+		$writers = ob_get_clean();
 
-		$content = ob_get_clean();
+		ob_start();
+			Main::get_template_part( 'partials/block.html', [
+				'class'   => 'writers',
+				'content' => $writers,
+			] );
+		$writers_block = ob_get_clean();
 
 		Main::get_template_part( 'partials/section.html', [
 			'class'    => 'about',
-			'content'  => $content,
+			'content'  => $press . $writers_block,
 			'bg_lines' => Utility::get_bg_lines(),
 		] );
 	}
@@ -268,11 +278,43 @@ class Book {
 			}
 		$quotes = ob_get_clean();
 
+		$metas = $this->get_press_meta();
+
 		Main::get_template_part( 'partials/block.html', [
 			'class'   => 'reviews',
 			'title'   => __( 'Press', Main::TEXT_DOMAIN ),
-			'content' => $quotes,
+			'content' => $quotes . $metas,
 		] );
+	}
+
+	public function get_press_meta() {
+		$meta_ids = [
+			[
+				'id'    => 'link',
+				'label' => __( 'More information', Main::TEXT_DOMAIN ),
+			],
+			[
+				'id'    => 'foreign_rights',
+				'label' => __( 'Foreign rights', Main::TEXT_DOMAIN ),
+			],
+			[
+				'id'    => 'foreign_rights_countries',
+				'label' => __( 'Foreign rights sold to following countries', Main::TEXT_DOMAIN ),
+			],
+		];
+
+		$metas = $this->get_metas( $meta_ids );
+
+		ob_start();
+			$title = sprintf( '<h2>%s</h2>', __( 'Foreign Rights', Main::TEXT_DOMAIN ) );
+
+			Main::get_template_part( 'partials/block-list.html', [
+				'class' => 'infos',
+				'list'  => $title . $metas,
+			] );
+		$metas = ob_get_clean();
+
+		return $metas;
 	}
 
 	public function get_writer_bio( $connection, $label ) {
