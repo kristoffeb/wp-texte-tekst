@@ -33,6 +33,8 @@ class Template {
 			$context = 'loop';
 		} elseif ( is_tax() ) {
 			$context = 'loop';
+		} elseif ( is_search() ) {
+			$context = 'loop';
 		} else {
 			$context = 'page';
 		}

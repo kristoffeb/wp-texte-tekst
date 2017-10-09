@@ -42,6 +42,13 @@ class Book {
 		] );
 
 		$metabox->add_field( [
+			'name' => __( 'Original language', Main::TEXT_DOMAIN ),
+			'id'   => self::PREFIX . 'book_original_language',
+			'type' => 'select',
+			'options' => Utility::get_languages(),
+		] );
+
+		$metabox->add_field( [
 			'name' => __( 'Publisher', Main::TEXT_DOMAIN ),
 			'id'   => self::PREFIX . 'book_publisher',
 			'type' => 'text_medium',

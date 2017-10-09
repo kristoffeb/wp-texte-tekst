@@ -11,6 +11,7 @@ class Archive {
 
 	public function __construct() {
 		add_action( 'wp', [ $this, 'init' ], 10 );
+		add_action( 'pre_get_posts', [ $this, 'query' ], 9999 );
 	}
 
 	public function init() {
@@ -31,6 +32,13 @@ class Archive {
 		if ( is_home() || is_tax() ) {
 			add_filter( THEMEDOMAIN . '-post_featured_class', [ $this, 'thumbnail_classes' ] );
 			add_filter( 'template_include', [ $this, 'page_template' ], 99 );
+		}
+
+		if ( is_search() ) {
+			add_filter( THEMEDOMAIN . '-post_featured_class', [ $this, 'thumbnail_classes' ] );
+			add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'writer' ] );
+			add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
+			add_action( THEMEDOMAIN . '-archive_footer', [ $this, 'sidebar' ] );
 		}
 	}
 
@@ -96,5 +104,46 @@ class Archive {
 
 	public function page_template() {
 		get_template_part( 'archive' );
+		ddd(get_template_part( 'archive' ));
+	}
+
+	public function query( $query ) {
+		$year = intval( $_GET['publication'] );
+		$language = htmlspecialchars( $_GET['languages'] );
+		$categories = htmlspecialchars( $_GET['categories'] );
+
+		if ( ! is_admin() && is_search() ) {
+			$meta_query = [];
+			$tax_query = [];
+
+			if ( ! empty( $year ) ) {
+				$meta_query[] = [
+					'key'     => Type\Meta\Book::PREFIX . 'book_year',
+					'value'   => $year,
+					'compare' => '=',
+				];
+			}
+
+			if ( ! empty( $language ) ) {
+				$meta_query[] = [
+					'key'     => Type\Meta\Book::PREFIX . 'book_original_language',
+					'value'   => $language,
+					'compare' => '=',
+				];
+			}
+
+			if ( ! empty( $categories ) ) {
+				$tax_query[] = [
+					'taxonomy' => Type\Taxonomy\Book_Category::TERM,
+					'field'    => 'term_id',
+					'terms'    => $categories,
+				];
+			}
+
+			$query->set( 'post_type', Type\Book::POST_TYPE );
+			$query->set( 'meta_query', $meta_query );
+			$query->set( 'tax_query', $tax_query );
+			$query->set( 's', '' );
+		}
 	}
 }

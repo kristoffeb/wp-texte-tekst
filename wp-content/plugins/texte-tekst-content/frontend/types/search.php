@@ -24,7 +24,7 @@ class Search {
 		ob_start();
 
 			$this->get_select_field( [
-				'name'    => 'year',
+				'name'    => 'publication',
 				'options' => $this->get_years(),
 			] );
 
@@ -56,10 +56,10 @@ class Search {
 	}
 
 	public function get_years() {
-		$default = [ '' => __( 'Year', Main::TEXT_DOMAIN ) ];
+		$default = [ null => __( 'Year', Main::TEXT_DOMAIN ) ];
 		$years   = array_combine( range( date('Y'), 2016 ), range( date( 'Y' ), 2016 ) );
 
-		$options = array_merge( $default, $years );
+		$options = $default + $years;
 
 		return $options;
 	}
@@ -77,7 +77,7 @@ class Search {
 			$options[ $key ] = $language['name'];
 		}
 
-		$options = array_merge( $default, $options );
+		$options = $default + $options;
 
 		return $this->get_filtered_languages( $options );
 	}
@@ -106,7 +106,7 @@ class Search {
 			$options[ $category->term_id ] = $category->name;
 		}
 
-		$options = array_merge( $default, $options );
+		$options = $default + $options;
 
 		return $options;
 	}

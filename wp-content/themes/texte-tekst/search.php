@@ -6,53 +6,55 @@
  * @package WordPress
  *
  */
-?>
+ namespace TexteTekst;
+ ?>
 
 <?php get_header(); ?>
 
-<div class="inner-grid">
+<main class="<?php echo main_class( [ 'main' ] ); ?>" role="main"  itemscope="itemscope" itemtype="http://schema.org/Blog">
 
-	<main class="main" role="main"  itemscope="itemscope" itemtype="http://schema.org/Blog">
+	<?php do_action( THEMEDOMAIN . '-before_main_content' ); ?>
+
+	<div class="inner-grid">
 
 		<header class="archive-header">
 
-			<div class="fullwidth">
-
-				<h1 class="archive-title">
-					<span><?php _e( 'Search Results for:', THEMEDOMAIN ); ?></span> <?php echo esc_attr(get_search_query()); ?>
-				</h1>
-
-			</div> <!-- .fullwidth -->
+			<h1 class="archive-title">
+				<?php _e( 'Books', THEMEDOMAIN ); ?>
+			</h1>
 
 		</header>
 
 		<div class="archive-content">
 
+			<?php do_action( THEMEDOMAIN . '-before_archive' ); ?>
+
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'partials/content', 'loop' ); ?>
+				<?php do_action( THEMEDOMAIN . '-loop' ); ?>
 
 				<?php endwhile; ?>
 
 			<?php else : ?>
 
-				<?php get_template_part( 'partials/post', 'not-found' ); ?>
+				<?php get_template_part( 'template-part/content', '404' ); ?>
 
 			<?php endif; ?>
 
+			<?php do_action( THEMEDOMAIN . '-after_archive' ); ?>
 
-		</div> <!-- .archive-content -->
+		</div>
 
 		<footer class="archive-footer">
 
-			<?php get_search_form(); ?>
+			<?php do_action( THEMEDOMAIN . '-archive_footer' ); ?>
 
 		</footer>
 
-	</main>
+	</div>
 
-	<?php get_sidebar(); ?>
+	<?php do_action( THEMEDOMAIN . '-after_main_content' ); ?>
 
-</div> <!-- .inner-grid -->
+</main>
 
 <?php get_footer(); ?>

@@ -25,6 +25,10 @@
 		}
 	}
 
+	.input-wrap {
+		display: none !important;
+	}
+
 	input,
     select {
 		@include styled-input;
