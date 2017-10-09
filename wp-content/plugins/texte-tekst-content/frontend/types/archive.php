@@ -36,7 +36,7 @@ class Archive {
 
 		if ( is_search() ) {
 			add_filter( THEMEDOMAIN . '-post_featured_class', [ $this, 'thumbnail_classes' ] );
-			add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'writer' ] );
+			//add_action( THEMEDOMAIN . '-after_article_header', [ $this, 'writer' ] );
 			add_action( THEMEDOMAIN . '-after_main_content', [ $this, 'pagination' ] );
 			add_action( THEMEDOMAIN . '-archive_footer', [ $this, 'sidebar' ] );
 		}
