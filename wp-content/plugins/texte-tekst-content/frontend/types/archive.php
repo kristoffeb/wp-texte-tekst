@@ -104,7 +104,6 @@ class Archive {
 
 	public function page_template() {
 		get_template_part( 'archive' );
-		ddd(get_template_part( 'archive' ));
 	}
 
 	public function query( $query ) {
