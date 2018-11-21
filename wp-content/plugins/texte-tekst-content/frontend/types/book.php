@@ -108,7 +108,9 @@ class Book {
 			$value = get_post_meta( get_the_ID(), Type\Meta\Book::PREFIX . 'book_' . $meta['id'], TRUE );
 
 			if ( $meta['id'] === 'link' ) {
-				$value = sprintf( '<a href="%s">%s</a>', $value, __( 'Link', Main::TEXT_DOMAIN ) );
+				if ( ! empty( $value ) ) {
+					$value = sprintf( '<a href="%s">%s</a>', $value, __( 'Link', Main::TEXT_DOMAIN ) );
+				}
 			}
 
 			if ( $meta['id'] === 'publisher' ) {
