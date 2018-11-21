@@ -217,7 +217,7 @@ class Frontpage {
 				[
 					'taxonomy' => Type\Taxonomy\Page_Category::TERM,
 					'field' => 'slug',
-					'terms' => 'grants',
+					'terms' => [ 'bourses', 'stoetter', 'stipendien' ],
 				],
 			],
 		];

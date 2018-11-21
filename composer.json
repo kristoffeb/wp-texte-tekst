@@ -19,19 +19,19 @@
 	],
 	"require": {
 		"php": ">=5.4",
-		"johnpbloch/wordpress": "4.8.*",
+		"johnpbloch/wordpress": "4.9.*",
 		"composer/installers": "~1.0",
 		"grappler/polylang-slug": "0.2.1",
-		"wpackagist-plugin/cmb2": "2.2.5.3",
-		"wpackagist-plugin/duplicate-page": "2.3",
+		"wpackagist-plugin/cmb2": "2.4.2",
+		"wpackagist-plugin/duplicate-page": "2.9",
 		"wpackagist-plugin/hyperdb": "1.1",
-		"wpackagist-plugin/polylang": "2.2.3",
+		"wpackagist-plugin/polylang": "2.4",
 		"wpackagist-plugin/posts-to-posts": "1.6.5",
-		"wpackagist-plugin/wordpress-seo": "5.5.1"
+		"wpackagist-plugin/wordpress-seo": "9.2.1"
 	},
 	"require-dev": {
 		"wpackagist-plugin/pco-kint": "1.*",
-		"wpackagist-plugin/query-monitor": "2.*"
+		"wpackagist-plugin/query-monitor": "3.*"
 	},
 	"extra": {
 		"installer-paths": {

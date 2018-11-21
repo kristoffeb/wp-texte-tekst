@@ -1,60 +1,58 @@
 var gulp 		= require( 'gulp' );				// Gulp!
-var sass 		= require( 'gulp-ruby-sass' );		// Sass
+var sass        = require( 'gulp-sass' );           // Sass
 var sourcemaps 	= require( 'gulp-sourcemaps' );		// Sourcemaps
-var prefix 		= require( 'gulp-autoprefixer' );	// Autoprefixr
-var minifycss 	= require( 'gulp-minify-css' );		// Minify CSS
+// var prefix 		= require( 'gulp-autoprefixer' );	// Autoprefixr
+// var minifycss 	= require( 'gulp-minify-css' );		// Minify CSS
+var cleancss    = require( 'gulp-clean-css' );      // Minify CSS
 var concat 		= require( 'gulp-concat' );			// Concat files
 var uglify 		= require( 'gulp-uglify' );			// Uglify javascript
 var rename 		= require( 'gulp-rename' );			// Rename files
 var util 		= require( 'gulp-util' );			// Writing stuff
 var livereload 	= require( 'gulp-livereload' );		// LiveReload
-var browserSync = require('browser-sync').create();
+// var browserSync = require('browser-sync').create();
 var server 		= require( 'tiny-lr' );
 var jshint 		= require( 'gulp-jshint' );			// jshint
 var del 		= require( 'del' );
 
+sass.compiler = require('node-sass');
+
 /**
- * Compile all CSS for the site
+ * Compile Main CSS
  */
 gulp.task( 'theme-style', function() {
-	return sass( 'assets/scss/main.scss', { // Compile sass
-			sourcemap: true
-			// loadPath: process.cwd()
-		} ) // Compile sass
-		.on( 'error', function ( err ) {
-			console.error( 'Error!', err.message );
-		} )
-		.pipe( sourcemaps.write() )				// Generate sourcemaps
-		.pipe( concat( 'main.css' ) )         	// Concat all css
-		.pipe( gulp.dest( 'assets/dist/' ) )   	// Set the destination to assets/css
-		.pipe( rename( { suffix: '.min' } ) )   // Rename
-		.pipe( minifycss( { 'keepSpecialComments' : 0 } ) ) // Minify
-		.pipe( gulp.dest( 'assets/dist/' ) );	// Save again
-		//.pipe( browserSync.stream( { match: 'assets/dist/*.css' } ) );
+    return gulp.src('assets/scss/main.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe( sourcemaps.write() )                               // Generate sourcemaps
+        .pipe( concat( 'main.css' ) )                             // Concat all css
+        .pipe( gulp.dest( 'assets/dist/' ) )                     // Set the destination to assets/css
+        .pipe( rename( { suffix: '.min' } ) )                     // Rename
+        .pipe( cleancss( { 'keepSpecialComments' : 0 } ) )        // Minify
+        .pipe( gulp.dest( 'assets/dist/' ) );	                  // Save again
 
-	util.log( util.colors.yellow( 'Sass compiled & minified' ) ); // Output to terminal
+    util.log( util.colors.yellow( 'Sass compiled & minified' ) ); // Output to terminal
 } );
 
 /**
  * Compile all CSS for the site
  */
-gulp.task( 'admin-style', function() {
-	return sass( 'assets/scss/admin.scss', { // Compile sass
-			sourcemap: true
-			// loadPath: process.cwd()
-		} ) // Compile sass
-		.on( 'error', function ( err ) {
-			console.error( 'Error!', err.message );
-		} )
-		.pipe( sourcemaps.write() )				// Generate sourcemaps
-		.pipe( concat( 'admin.css' ) )         	// Concat all css
-		.pipe( gulp.dest( 'assets/dist/' ) )   	// Set the destination to assets/css
-		.pipe( rename( { suffix: '.min' } ) )   	// Rename
-		.pipe( minifycss() )                  	// Minify
-		.pipe( gulp.dest( 'assets/dist/' ) ); 	// Save again
-
-	util.log( util.colors.yellow( 'Sass compiled & minified' ) ); // Output to terminal
-} );
+// gulp.task( 'admin-style', function() {
+// 	return sass( 'assets/scss/admin.scss', { // Compile sass
+// 			sourcemap: true
+// 			// loadPath: process.cwd()
+// 		} ) // Compile sass
+// 		.on( 'error', function ( err ) {
+// 			console.error( 'Error!', err.message );
+// 		} )
+// 		.pipe( sourcemaps.write() )				// Generate sourcemaps
+// 		.pipe( concat( 'admin.css' ) )         	// Concat all css
+// 		.pipe( gulp.dest( 'assets/dist/' ) )   	// Set the destination to assets/css
+// 		.pipe( rename( { suffix: '.min' } ) )   	// Rename
+// 		.pipe( minifycss() )                  	// Minify
+// 		.pipe( gulp.dest( 'assets/dist/' ) ); 	// Save again
+//
+// 	util.log( util.colors.yellow( 'Sass compiled & minified' ) ); // Output to terminal
+// } );
 
 /**
  * Get all the JS, concat and uglify

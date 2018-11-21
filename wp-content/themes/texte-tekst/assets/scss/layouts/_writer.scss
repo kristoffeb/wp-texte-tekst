@@ -54,6 +54,18 @@ main.type-writer {
 				@include main-color;
 				font-weight: 400;
 			}
+
+			strong {
+				&, * {
+					font-weight: bold;
+				}
+			}
+
+			em {
+				&, * {
+					font-style: italic;
+				}
+			}
 		}
 	}
 }

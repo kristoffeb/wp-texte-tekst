@@ -107,9 +107,9 @@ class Archive {
 	}
 
 	public function query( $query ) {
-		$year = intval( $_GET['publication'] );
-		$language = htmlspecialchars( $_GET['languages'] );
-		$categories = htmlspecialchars( $_GET['categories'] );
+		$year = intval( isset( $_GET['publication'] ) ? $_GET['publication'] : '' );
+		$language = htmlspecialchars( isset( $_GET['languages'] ) ? $_GET['languages'] : '' );
+		$categories = htmlspecialchars( isset( $_GET['categories'] ) ? $_GET['categories'] : '' );
 
 		if ( ! is_admin() && is_search() ) {
 			$meta_query = [];
