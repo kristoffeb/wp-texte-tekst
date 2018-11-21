@@ -338,10 +338,12 @@ class Book {
 
 		$content = ob_get_clean();
 
-		Main::get_template_part( 'partials/section.html', [
-			'class'    => 'related',
-			'content'  => $content,
-		] );
+		if ( $content ) {
+			Main::get_template_part( 'partials/section.html', [
+				'class'    => 'related',
+				'content'  => $content,
+			] );
+		}
 	}
 
 	public function get_books() {
@@ -352,6 +354,10 @@ class Book {
 		];
 
 		$books = new WP_Query( $args );
+
+		if ( ! $books->post_count ) {
+			return;
+		}
 
 		$list = '';
 		if ( $books->have_posts() ) {

@@ -106,6 +106,16 @@ class Writer {
 
 		$books = new WP_Query( $args );
 
+		if ( ! $books->post_count ) {
+			$args = [
+				'connected_type'  => 'book_to_translator',
+				'connected_items' => get_the_ID(),
+				'posts_per_page'  => 5,
+			];
+
+			$books = new WP_Query( $args );
+		}
+
 		$list = '';
 		if ( $books->have_posts() ) {
 			foreach ( $books->posts as $book ) {
