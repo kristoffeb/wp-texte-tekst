@@ -5,16 +5,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TexteTekst\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
-"POT-Creation-Date: 2017-05-28 21:28+0200\n"
-"PO-Revision-Date: 2017-05-28 21:44+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2018-11-21 20:53+0100\n"
+"PO-Revision-Date: 2018-11-21 20:57+0100\n"
+"Last-Translator: Kristoffe Biglete <kristoffe@coloursmove.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -60,7 +60,7 @@ msgstr "Supprimer le partenaire"
 msgid "Name"
 msgstr "Nom"
 
-#: admin/includes/partners.php:84
+#: admin/includes/partners.php:84 core/types/meta/book.php:182
 msgid "URL"
 msgstr "Lien URL"
 
@@ -72,96 +72,116 @@ msgstr "Logo"
 msgid "All exhibitions"
 msgstr ""
 
-#: core/types/writer.php:21 frontend/types/book.php:234
-msgid "Writer"
-msgstr "Auteur"
-
-#: core/types/writer.php:22
-msgid "Writers"
-msgstr "Auteurs"
-
-#: core/types/writer.php:23 core/types/writer.php:32
-msgid "writer"
-msgstr ""
-
-#: core/types/book.php:21
+#: core/types/book.php:19
 msgid "Book"
 msgstr "Livre"
 
-#: core/types/book.php:22 core/types/meta/writer.php:37
-#: frontend/types/frontpage.php:199
+#: core/types/book.php:20 core/types/meta/writer.php:37
+#: frontend/types/frontpage.php:202
 msgid "Books"
 msgstr "Livres"
-
-#: core/types/book.php:23 core/types/book.php:32
-msgid "book"
-msgstr ""
-
-#: core/types/meta/writer.php:29
-msgid "Bibliography"
-msgstr "Bibliographie"
 
 #: core/types/meta/book.php:31
 msgid "Information"
 msgstr "Informations"
 
-#: core/types/meta/book.php:39 frontend/types/book.php:69
+#: core/types/meta/book.php:39 frontend/types/book.php:71
+msgid "Original title"
+msgstr ""
+
+#: core/types/meta/book.php:45
+msgid "Original language"
+msgstr ""
+
+#: core/types/meta/book.php:52 frontend/types/book.php:83
 msgid "Publisher"
 msgstr "Éditeur"
 
-#: core/types/meta/book.php:45 frontend/types/book.php:77
+#: core/types/meta/book.php:58
+#, fuzzy
+#| msgid "Publisher"
+msgid "Publisher Link"
+msgstr "Éditeur"
+
+#: core/types/meta/book.php:64 frontend/types/book.php:87
 msgid "ISBN"
 msgstr "ISBN"
 
-#: core/types/meta/book.php:51
+#: core/types/meta/book.php:70
 msgid "Year of publication"
 msgstr "Année de publication"
 
-#: core/types/meta/book.php:62
+#: core/types/meta/book.php:77
+msgid "Amount of pages"
+msgstr ""
+
+#: core/types/meta/book.php:83
+#, fuzzy
+#| msgid "work Information"
+msgid "More information (link)"
+msgstr "Information sur l’œuvre"
+
+#: core/types/meta/book.php:89
+msgid "Foreign rights sold to"
+msgstr ""
+
+#: core/types/meta/book.php:95
+msgid "Foreign rights (contact)"
+msgstr ""
+
+#: core/types/meta/book.php:101
+msgid "Foreign rights (email)"
+msgstr ""
+
+#: core/types/meta/book.php:107
+msgid "Rights sold to following countries"
+msgstr ""
+
+#: core/types/meta/book.php:117
 msgid "First Chapters"
 msgstr "1ères Pages"
 
-#: core/types/meta/book.php:73
+#: core/types/meta/book.php:128
 msgid "Document {#}"
 msgstr "Document {#}"
 
-#: core/types/meta/book.php:74
+#: core/types/meta/book.php:129
 msgid "Add Another Document"
 msgstr "Ajouter un nouveau document"
 
-#: core/types/meta/book.php:75
+#: core/types/meta/book.php:130
 msgid "Remove Document"
 msgstr "Supprimer un document"
 
-#: core/types/meta/book.php:80
+#: core/types/meta/book.php:135
 msgid "Upload PDF"
 msgstr "Uploader un PDF"
 
-#: core/types/meta/book.php:86 frontend/types/search.php:68
+#: core/types/meta/book.php:141 frontend/types/search.php:72
 msgid "Language"
 msgstr "Langue"
 
-#: core/types/meta/book.php:97
+#: core/types/meta/book.php:152
 msgid "Press Reviews"
 msgstr "Revues de presse"
 
-#: core/types/meta/book.php:108
+#: core/types/meta/book.php:163
 msgid "Review {#}"
 msgstr "Revue de presse {#}"
 
-#: core/types/meta/book.php:109
+#: core/types/meta/book.php:164
 msgid "Add Another Review"
 msgstr "Ajouter une nouvelle revue"
 
-#: core/types/meta/book.php:110
+#: core/types/meta/book.php:165
 msgid "Remove Review"
 msgstr "Supprimer la revue"
 
-#: core/types/meta/book.php:115
+#: core/types/meta/book.php:170
 msgid "Quote"
 msgstr "Citation"
 
-#: core/types/meta/book.php:121
+#: core/types/meta/book.php:176
 msgid "Source"
 msgstr "Source"
 
@@ -177,15 +197,35 @@ msgstr "Lier vers la page"
 msgid "Text"
 msgstr "Texte"
 
+#: core/types/meta/writer.php:29 frontend/types/writer.php:81
+msgid "Bibliography"
+msgstr "Bibliographie"
+
+#: core/types/meta/writer.php:48
+msgid "Nationality"
+msgstr ""
+
 #: core/types/p2p/book.php:17
 msgid "Book Writer"
 msgstr "Auteur du livre"
 
-#: core/types/p2p/book.php:18
+#: core/types/p2p/book.php:18 frontend/types/writer.php:139
 msgid "Written Books"
 msgstr "Livres écrits"
 
-#: core/types/p2p/book.php:30
+#: core/types/p2p/book.php:31
+#, fuzzy
+#| msgid "Book Writer"
+msgid "Book Translator"
+msgstr "Auteur du livre"
+
+#: core/types/p2p/book.php:32
+#, fuzzy
+#| msgid "Related Books"
+msgid "Translated Books"
+msgstr "Livres liés"
+
+#: core/types/p2p/book.php:44
 msgid "Related Books"
 msgstr "Livres liés"
 
@@ -242,39 +282,83 @@ msgid "New Category Name"
 msgstr "Nouveau nom de catégorie"
 
 #: core/types/taxonomy/book-category.php:32
-#: core/types/taxonomy/page-category.php:32 frontend/types/book.php:182
+#: core/types/taxonomy/page-category.php:32 frontend/types/book.php:222
 msgid "Categories"
 msgstr "Catégories"
 
-#: frontend/types/book.php:73 frontend/types/search.php:59
+#: core/types/writer.php:19 frontend/types/book.php:248
+msgid "Writer"
+msgstr "Auteur"
+
+#: core/types/writer.php:20
+msgid "Writers"
+msgstr "Auteurs"
+
+#: frontend/types/archive.php:97 frontend/types/book.php:75
+msgid "Pages"
+msgstr ""
+
+#: frontend/types/book.php:79 frontend/types/search.php:59
 msgid "Year"
 msgstr "Année"
 
-#: frontend/types/book.php:151
+#: frontend/types/book.php:112
+msgid "Link"
+msgstr "Lien"
+
+#: frontend/types/book.php:191
 msgid "Read"
 msgstr "Lire"
 
-#: frontend/types/book.php:160
+#: frontend/types/book.php:200
 msgid "First pages"
 msgstr "1ères pages"
 
-#: frontend/types/book.php:219
+#: frontend/types/book.php:233
+msgid "Share"
+msgstr ""
+
+#: frontend/types/book.php:249
+msgid "Translator"
+msgstr "Traducteur"
+
+#: frontend/types/book.php:279
+#, fuzzy
+#| msgid "Press Reviews"
+msgid "No press reviews yet."
+msgstr "Revues de presse"
+
+#: frontend/types/book.php:287
 msgid "Press"
 msgstr "Presse"
 
-#: frontend/types/book.php:227
-msgid "Read more"
-msgstr "En savoir plus"
+#: frontend/types/book.php:296
+#, fuzzy
+#| msgid "work Information"
+msgid "More information"
+msgstr "Information sur l’œuvre"
 
-#: frontend/types/book.php:282
+#: frontend/types/book.php:300
+msgid "Foreign rights"
+msgstr "Droits étrangers"
+
+#: frontend/types/book.php:304
+msgid "Foreign rights sold to following countries"
+msgstr ""
+
+#: frontend/types/book.php:311
+msgid "Foreign Rights"
+msgstr "Droits Étrangers"
+
+#: frontend/types/book.php:384
 msgid "Related books"
 msgstr "Livres liés"
 
-#: frontend/types/frontpage.php:195
+#: frontend/types/frontpage.php:198
 msgid "See all books"
 msgstr "Tous les livres"
 
-#: frontend/types/frontpage.php:233
+#: frontend/types/frontpage.php:236
 msgid "Grants"
 msgstr "Bourses"
 
@@ -282,7 +366,7 @@ msgstr "Bourses"
 msgid "Find books"
 msgstr "Recherche"
 
-#: frontend/types/search.php:82
+#: frontend/types/search.php:101
 msgid "Category"
 msgstr "Catégorie"
 
@@ -453,6 +537,9 @@ msgid_plural "%s "
 msgstr[0] ""
 msgstr[1] ""
 
+#~ msgid "Read more"
+#~ msgstr "En savoir plus"
+
 #~ msgid "Artist"
 #~ msgstr "Artist"
 
@@ -546,9 +633,6 @@ msgstr[1] ""
 #~ msgid "Add Another Sponsor"
 #~ msgstr "Ajouter un nouveau sponsor"
 
-#~ msgid "Link"
-#~ msgstr "Lien"
-
 #~ msgid "Team Member Information"
 #~ msgstr "Information sur le membre"
 
@@ -557,9 +641,6 @@ msgstr[1] ""
 
 #~ msgid "Team Member Links"
 #~ msgstr "Liens du membre"
-
-#~ msgid "work Information"
-#~ msgstr "Information sur l’œuvre"
 
 #~ msgid "Work Portfolio"
 #~ msgstr "Portfolio de l’œuvre"
